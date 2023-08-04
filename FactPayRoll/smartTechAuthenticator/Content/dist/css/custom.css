@@ -1,0 +1,12 @@
+/*
+#main-wrapper .topbar .top-navbar .navbar-header[data-logobg=skin5] {
+  background: #4c4c4c!important;
+}
+#main-wrapper .left-sidebar[data-sidebarbg=skin5], #main-wrapper .left-sidebar[data-sidebarbg=skin5] ul {
+  background: #2255a4;
+}*/
+
+.sidebar-nav ul .sidebar-item.selected>.sidebar-link {
+  background: #4c4c4c;
+  opacity: 1;
+}

@@ -1,0 +1,466 @@
+﻿@model smartTechAuthenticator.ViewModels.MallViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+<style>
+    .rounded-circle {
+        width: 35%;
+        float: right;
+        border-radius: 50% !important;
+    }
+
+    header .product-wrapper .checkout a:first-child {
+        margin-right: 10px;
+    }
+
+    .checkout {
+        display: flex;
+    }
+
+    .single-product .product-content span {
+        display: block;
+    }
+
+    .single-product .product-content {
+        text-align: center;
+    }
+
+        .single-product .product-content .quantity {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .single-product .product-content .input-group {
+            width: 100px;
+            position: relative;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: stretch;
+            align-items: stretch;
+            border: 1px solid #cccc;
+            justify-content: space-between;
+        }
+
+            .single-product .product-content .input-group > div {
+                margin: 0;
+                display: inline-block;
+            }
+
+            .single-product .product-content .input-group input {
+                width: 30px;
+                border: 0;
+                text-align: center;
+                outline: none;
+            }
+
+            .single-product .product-content .input-group > div button {
+                padding: 0;
+                width: 30px;
+                height: 45px;
+                line-height: 45px;
+                border-radius: 0px;
+                background: transparent;
+                color: #282828;
+                font-size: 12px;
+                border: none;
+            }
+
+        .single-product .product-content a.btn.btn-secondary.btn-sm {
+            min-height: 45px;
+            display: flex !important;
+            align-items: center;
+            padding: 0.25rem 1rem;
+            width: auto !important;
+            background: #5c5c8b;
+            border-color: #5c5c8b;
+        }
+
+            .single-product .product-content a.btn.btn-secondary.btn-sm > i {
+                margin-right: 7px;
+            }
+</style>
+<link rel="stylesheet" href="~/Content/assets-mall/css/all.min.css">
+<link rel="stylesheet" href="~/Content/assets-mall/css/bootstrap.min.css">
+<link rel="stylesheet" href="~/Content/assets-mall/css/slick-theme.css">
+<link rel="stylesheet" href="~/Content/assets-mall/css/slick.css">
+<link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+<link rel="stylesheet" href="~/Content/assets-mall/css/style.css">
+<!-- Header -->
+<header style="margin-top: 100px;">
+    <div class="header-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-sm-5 mb-sm-0 mb-3">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="categoreis common">
+                                <div class="title">
+                                    <i class="fas fa-bars"></i>
+                                    <h3>
+                                        <span class="bold">Category</span>
+                                    </h3>
+                                    <i class="fas fa-angle-down"></i>
+                                </div>
+                                <div class="menu">
+                                    <ul>
+                                        @if (Model.ProductCategoryList.Count == 0)
+                                        {
+                                            <li class="hs-item-has-children">
+                                                <a href="javascript:;">
+                                                    <i class="fas fa-laptop"></i>
+                                                    <span>No data found</span>
+                                                    <!-- <i class="fas fa-angle-down"></i> -->
+                                                </a>
+                                            </li>
+
+                                        }
+                                        else
+                                        {
+                                            foreach (var item in Model.ProductCategoryList)
+                                            {
+                                                <li class="hs-item-has-children">
+                                                    <a href="@Url.Action("Index","Mall",new { CategoryId = item.CategoryId })">
+                                                        <i class="fas fa-laptop"></i>
+                                                        <span>@item.CategoryName</span>
+                                                        <!-- <i class="fas fa-angle-down"></i> -->
+                                                    </a>
+                                                </li>
+                                            }
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-5 col-sm-4">
+                    <div class="search">
+
+                        <form action="/Mall/Index" method="get">
+                            <input class="" type="search" placeholder="Search Here ... " id="" name="ProuctName" value="">
+                            <button type="submit" value="Search" class="submit_search">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </form>
+
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-3">
+                    <div class="cart h-100 position-relative d-flex align-items-center justify-content-end" style="padding-top: 4px;">
+                        <div class="cart-wrap">
+                            <a href="javascript:;">
+                                <span class="badg">@Model.TotalQty</span>
+                            </a>
+                        </div>
+                        <div class="product-wrapper">
+                            <div class="product-list">
+
+                                @if (Model.AddToCartList.Count == 0)
+                                {
+                                    <p class="no_products p-3 mb-0"> No products</p>
+                                }
+                                else
+                                {
+                                    foreach (var item in Model.AddToCartList)
+                                    {
+                                        <div class="item">
+                                            <div class="cart-img">
+                                                <a href="@Url.Action("Description","Mall",new { Id = item.ProductId })">
+                                                    <img src="~/Content/Product/@item.Photo" alt="@item.ProductName">
+                                                </a>
+                                            </div>
+                                            <div class="cart-info">
+                                                <div class="product-name">
+                                                    <a class="cart_block_product_name" href="@Url.Action("Description","Mall",new { Id = item.ProductId })">@item.ProductName</a>
+                                                </div>
+                                                <div class="product-atributes">
+                                                    <a href="">@item.Description</a>
+                                                </div>
+                                                <span class="price">
+                                                    RM @item.TotalPrice ,
+                                                </span>
+                                                <span class="price">
+                                                    Qty:@item.Qty
+                                                </span>
+                                            </div>
+                                            <a href="@Url.Action("DeleteCart","AddToCart",new { Id = item.Id })">
+                                                <i class="fas fa-times"></i>
+                                            </a>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                            <div class="cart-prices">
+                                @*<div class="">
+                                        <span> Shipping </span>
+                                        <span class=""> $7.00 </span>
+                                    </div>*@
+                                <div class="">
+                                    <span>Total</span>
+                                    @if (Model.TotalCartPrice > 0)
+                                    {
+                                        <span class="">RM @Model.TotalCartPrice</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="">RM 0</span>
+                                    }
+
+                                </div>
+                            </div>
+                            <div class="checkout">
+                                @if (Model.AddToCartList.Count != 0)
+                                {
+                                    <a href="@Url.Action("ClearCart","Mall")" class="bg-danger">
+                                        Clear Cart
+                                    </a>
+                                    <a href="@Url.Action("Index","AddToCart")">
+                                        Check out
+                                    </a>
+
+                                }
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</header>
+<!-- Header End -->
+<section class="product-area shop-sidebar shop my-5">
+    <div class="container">
+        <div class="row">
+            <!--<div class="col-lg-3 col-md-4 col-12">
+                <div class="shop-sidebar">-->
+            <!-- Single Widget -->
+            <!--<div class="single-widget category">
+                        <h3 class="title">Categories</h3>
+                        <ul class="categor-list">
+                            @if (Model.ProductCategoryList.Count == 0)
+                            {
+                                <li><a href="product.html">No data found</a></li>
+                            }
+                            else
+                            {
+                                foreach (var item in Model.ProductCategoryList)
+                                {
+                                    <li><a href="@Url.Action("Index","Mall",new { CategoryId = item.CategoryId })">@item.CategoryName</a></li>
+                                }
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>-->
+            <div class="col-lg-12 col-md-12 col-12">
+                <!-- Grid -->
+                <div class="row grid">
+                    @if (Model.ProductList.Count == 0)
+                    {
+
+                    }
+                    else
+                    {
+                        var index = 0;
+                        foreach (var item in Model.ProductList)
+                        {
+
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="single-product">
+                                    <div class="product-img">
+                                        <a href="@Url.Action("Description","Mall",new { Id = item.Id })">
+                                            <img src="~/Content/Product/@item.Photo" alt="Iamge">
+                                        </a>
+                                        <div class="button-head">
+                                            <div class="product-action">
+                                                <a title="View" href="description.html">
+                                                    <i class="fas fa-eye"></i>
+                                                    <span>Shop</span>
+                                                </a>
+                                                <a title="Wishlist" href="#" class="wishlist" data-id="1">
+                                                    <i class="far fa-heart"></i>
+                                                    <span>Add to Wishlist</span>
+                                                </a>
+                                            </div>
+                                            <div class="product-action-2">
+                                                <a title="Add to cart" href="#">Add to cart</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h3><a href="@Url.Action("Description","Mall",new { Id = item.Id })">@item.ProductName</a></h3>
+                                        <p>@item.Description</p>
+                                        <span id="Price_@index">RM @item.Price</span>
+                                        @*<del style="padding-left:4%;">$600.00</del>*@
+
+                                        <div class="quantity">
+                                            <div class="input-group">
+                                                <div class="button minus">
+                                                    <button type="button" class="btn-number subs" id="subs">
+                                                        <i class="fas fa-minus"></i>
+                                                    </button>
+                                                </div>
+                                                <input type="text" class="input-number quantity1" readonly="" value="1" id="quantity">
+                                                <input type="hidden" class="input-number quantityhidden" readonly="" value="@item.Price">
+                                                <input type="hidden" class="input-number hiddenid" readonly="" value="Price_@index">
+                                                <input type="hidden" class="input-number ProductId" readonly="" value="@item.Id">
+                                                <div class="button plus">
+                                                    <button type="button" class="btn-number adds" id="adds">
+                                                        <i class="fas fa-plus"></i>
+                                                    </button>
+                                                </div>
+
+                                            </div>
+                                            <a href="javascript:void(0)" class="btn btn-secondary btn-sm btn-Addtocart" style="width: 120px; margin-left:90px;">
+                                                <i class="fas fa-shopping-cart"></i>Add To Cart
+                                            </a>
+
+                                            @*<a href="@Url.Action("AddToCart2","Mall",new { ProductId = item.Id,qty= })" class="btn btn-secondary btn-sm" style="width: 120px; margin-left:90px;">
+                                                    <i class="fas fa-shopping-cart"></i>Add To Cart
+                                                </a>*@
+                                        </div>
+                                    </div>
+                                    @*<a href="@Url.Action("index","Mall",new { ProductId = item.Id })" class="btn btn-secondary btn-sm" style="width: 100px;">
+                                            <i class="fas fa-shopping-cart"></i>Add To Cart
+                                        </a>*@
+
+
+                                </div>
+
+
+                            </div>
+                            index++;
+                        }
+                    }
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer End -->
+<script src="~/Content/assets-mall/js/jquery.min.js"></script>
+<script src="~/Content/assets-mall/js/slick.js"></script>
+<script src="~/Content/assets-mall/js/bootstrap.bundle.min.js"></script>
+@*<script src="~/Content/assets-mall/js/main.js"></script>*@
+<script>
+    $(document).ready(function () {
+        $('.adds').click(function add() {
+            var $rooms = $(this).parent().parent().find(".quantity1");
+            var quantityhidden = $(this).parent().parent().find(".quantityhidden").val();
+            var a = $rooms.val();
+            var getid = $(this).parent().parent().find(".hiddenid").val();
+            var price = parseInt($("#" + getid).text().replace('RM', ''));
+            a++;
+            price = quantityhidden * a;
+            $(".subs").prop("disabled", !a);
+            $rooms.val(a);
+            $("#" + getid).text("RM " + price + ".00");
+
+        });
+        $(".subs").prop("disabled", !$(".quantity1").val());
+
+        $('.subs').click(function subst() {
+            var $rooms = $(this).parent().parent().find(".quantity1");
+            var quantityhidden = $(this).parent().parent().find(".quantityhidden").val();
+            var getid = $(this).parent().parent().find(".hiddenid").val();
+            var price = parseInt($("#" + getid).text().replace('RM', ''));
+            var b = $rooms.val();
+            if (b > 1) {
+                b--;
+                price = quantityhidden * b;
+                $rooms.val(b);
+                $("#" + getid).text("RM " + price + ".00");
+            }
+            else {
+                $(".subs").prop("disabled", true);
+            }
+        });
+
+
+
+    });
+
+    $(document).on("click", ".btn-Addtocart", function () {
+        var ProductId = $(this).parent().parent().find(".ProductId").val();
+        var Qty = $(this).parent().parent().find(".quantity1").val();
+            var customer =
+            {
+                ProductId: ProductId,
+                qty: Qty
+            }
+            $.ajax({
+                type: "POST",
+                url: "/Mall/AddToCartJson",
+                data: customer,
+                success: function (response) {
+                    
+                    if (response == 1) {
+                        showMessage("Success", "Add Cart successfully");
+                        location.reload();
+                    } else {
+                      
+                    }
+                },
+                error: function () {
+                    showMessage("Failed", "Add Cart Not successfully !");
+                }
+            });
+      
+    });
+
+
+</script>
+<script type="text/javascript">
+         $(function Index() {
+            var msg = '@ViewData["result"]';
+            if (msg != null && msg != '') {
+                if (msg == "Add Cart Successfully") {
+                    alert(Done);
+                } else {
+                    if (parseInt(msg) > 0) {
+                        alert("Add Cart Not Successfully");
+                    }
+                }
+            }
+        });
+</script>
+
+<script>
+    $("header .cart .cart-wrap").click(function () {
+        $(this).next().slideToggle(200);
+    });
+
+
+    $("body,.mobile-trigger").click(function () {
+        $("header .product-wrapper").slideUp(200);
+    });
+
+
+    $("header .cart .cart-wrap,header .product-wrapper").click(function (e) {
+        e.stopPropagation();
+    });
+
+
+    $(".common .title").click(function () {
+        $(this).next().parent().toggleClass("active");
+    });
+
+    $("body").click(function () {
+        $(".categoreis.common").removeClass("active");
+    });
+
+    $(".header-bottom .common").click(function (e) {
+        e.stopPropagation();
+    });
+
+</script>

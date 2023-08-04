@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "Payment";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/assets-mall/css/all.min.css">
+<link rel="stylesheet" href="~/Content/assets-mall/css/bootstrap.min.css">
+<link rel="stylesheet" href="~/Content/assets-mall/css/style.css">
+<style>
+    .text-end {
+        text-align: left !important;
+    }
+
+    .card-body:before, .card-body:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+      
+    form.form-horizontal .card-body {
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+    .page-breadcrumb .col-12.d-flex.no-block.align-items-center {
+        display: flex !important;
+    }
+
+</style>
+<div class="page-breadcrumb" style="margin-left: 108px; margin-top: 90px;">
+    <div class="row">
+        <div class="col-12 d-flex no-block align-items-center">
+                @if (ViewData["Error"] != null)
+                {
+                    <h4 class="page-title">@ViewData["Error"] </h4>
+                }
+            <div class="ms-auto text-end">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Content/assets-mall/js/jquery.min.js"></script>
+<script src="~/Content/assets-mall/js/bootstrap.bundle.min.js"></script>
+<script src="~/Content/assets-mall/js/main.js"></script>

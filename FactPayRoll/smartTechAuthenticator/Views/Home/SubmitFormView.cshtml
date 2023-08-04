@@ -1,0 +1,304 @@
+﻿@using smartTechAuthenticator.Models;
+@model smartTechAuthenticator.ViewModels.HtmlResponseDataViewModel
+@{
+    ViewBag.Title = "ViewForm";
+    //Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = null;
+}
+
+<style>
+    .btns button {
+        width: 46%;
+        margin-bottom: 20px;
+        border-radius: 4px;
+        min-height: 50px;
+        background: #2d68a6;
+        border-color: #2d68a6;
+        margin-right: 3%;
+        text-align: left;
+    }
+
+        .btns button:hover {
+            background: #2d68a6;
+        }
+
+    section.form-upper-wrapper {
+        padding: 50px 0;
+    }
+
+    .form-wrapper button.btn.btn-secondary {
+        padding: 8px 25px;
+    }
+
+    .form-wrapper .group {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+    }
+
+        .form-wrapper .group .icons {
+            position: absolute;
+            right: 0;
+            top: -28px;
+        }
+
+        .form-wrapper .group .mb-3 {
+            width: 49%;
+        }
+
+    section.form-wrapper .col-lg-8 {
+        display: flex;
+    }
+
+    section.form-upper-wrapper .form-wrapper {
+        width: 97%;
+    }
+
+        section.form-upper-wrapper .form-wrapper form > label {
+            font-weight: bold;
+            color: #545554;
+        }
+
+        section.form-upper-wrapper .form-wrapper form .group label {
+            color: #9e9e9e;
+        }
+
+        section.form-upper-wrapper .form-wrapper h3 {
+            padding-bottom: 15px;
+            border-bottom: 2px solid #cfcccc;
+            margin-bottom: 20px;
+        }
+
+        section.form-upper-wrapper .form-wrapper form > label span {
+            color: red;
+        }
+
+    section.form-upper-wrapper .col-lg-8 {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .section.form-upper-wrapper .icons a {
+        text-decoration: none;
+    }
+
+    section.form-upper-wrapper .icons a {
+        text-decoration: none;
+        color: gray;
+    }
+
+        section.form-upper-wrapper .icons a:last-child {
+            color: #c64843;
+        }
+
+    .btns button i {
+        margin-right: 10px;
+    }
+
+    .heading {
+        margin-bottom: 30px;
+    }
+
+        .heading h5 {
+            display: flex;
+            justify-content: space-between;
+            color: #484848;
+        }
+
+            .heading h5 i {
+                cursor: pointer;
+                transition: all 0.4s ease;
+            }
+
+            .heading h5.active i {
+                transform: rotate(-180deg);
+            }
+
+
+    div#captchaModal input#flexSwitchCheckDefault {
+        border-radius: 2em;
+        margin-left: 0;
+    }
+
+    div#captchaModal label.form-check-label {
+        margin-left: 40px;
+    }
+
+    div#captchaModal .form-check.form-switch {
+        padding: 0;
+    }
+
+    div#NumberSliderModal input#flexSwitchCheckDefault {
+        border-radius: 2em;
+        margin-left: 0;
+    }
+
+    div#NumberSliderModal label.form-check-label {
+        margin-left: 40px;
+    }
+
+    div#NumberSliderModal .form-check.form-switch {
+        padding: 0;
+    }
+
+    .form-wrapper .group .mb-6 {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .group-wrap {
+        background: #fff;
+        padding: 10px;
+        border-radius: 6px;
+        margin-bottom: 20px;
+        border: 1px dashed #ccc;
+    }
+
+    .page-wrapper {
+        background: #fff;
+    }
+
+    .modal {
+        z-index: 9999 !important;
+        margin-top: 0px !important;
+    }
+
+    @@media(max-width:1110px) and (min-width: 992px) {
+        section.form-upper-wrapper .col-lg-4 {
+            width: 40%;
+        }
+
+        section.form-upper-wrapper .col-lg-8 {
+            width: 60%;
+        }
+    }
+
+
+
+    @@media(max-width:991px) {
+        section.form-upper-wrapper .col-lg-4 {
+            margin-bottom: 30px;
+        }
+
+        section.form-upper-wrapper .col-lg-8 {
+            margin-bottom: 30px;
+        }
+
+        section.form-upper-wrapper .form-wrapper {
+            width: 85%;
+        }
+
+        .btns button:nth-child(even) {
+            margin-right: 0;
+            width: 50%;
+        }
+    }
+
+
+    @@media(max-width: 479px) {
+        .btns button {
+            margin-right: 0;
+            width: 100%;
+        }
+
+            .btns button:nth-child(even) {
+                width: 100%;
+            }
+
+        .form-wrapper .group {
+            flex-direction: column;
+        }
+
+            .form-wrapper .group .mb-3 {
+                width: 100%;
+            }
+
+        section.form-upper-wrapper .form-wrapper {
+            width: 90%;
+        }
+    }
+</style>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+@*<link href="~/assets/css/css1/style.css" rel="stylesheet" />*@
+<link href="~/assets/css/css1/custom (3).css" rel="stylesheet" />
+
+
+<link href="~/Content/dist/css/style.min.css" rel="stylesheet" />
+
+
+@Html.HiddenFor(Model => Model.FormId)
+
+<section class="form-upper-wrapper">
+    <div class="container-fluid">
+        <div class="inner-wrapper">
+            <div class="row">
+                <div class="col-12">
+                    @Html.HiddenFor(Model => Model.UserId)
+                    @Html.HiddenFor(Model => Model.FormId)
+                    @Html.HiddenFor(Model => Model.HtmlResponse)
+                    @if (Model.FormId != null)
+                    {
+                        <div class="content_inner" id="submit">
+                            @Html.Raw(Model.HtmlResponse)
+
+                            </div>
+
+                            <div class="card-body mb-4">
+                                <button id="update" type="submit" class="btn btn-primary" style="float: right;">
+                                    Update
+                                </button>
+                            </div>
+
+                            }
+                        </div>
+                    </div>
+
+        </div>
+    </div>
+</section>
+
+<script src="~/Content/assets-mall/js/jquery.min.js"></script>
+<script src="~/Content/assets-admin/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $(document).on("keyup change", "input", function () {
+            $(this).attr("value", $(this).val());
+        });
+    });
+</script>
+<script type="text/javascript">
+
+    $("#update").click(function () {
+        debugger;
+        $("#update").removeAttr("style").hide();
+        var formdata = $("#submit").html();
+        var formid = $('#FormId').val();
+        var userid = $('#UserId').val();
+
+        var data = { "formdata": formdata, "formid": formid, "userid": userid };
+
+        $.ajax({
+
+     url: '@Url.Action("UpdateSubmitformView", "Home")',
+     type: "post",
+     contentType: 'application/x-www-form-urlencoded',
+     data: data,
+
+            success: function (result) {
+                if (result.Data == 1) {
+                    alert("Tax Form Details Updated successfully");
+                } else {
+                    alert("Failed, Details not Updated");
+                }
+            },
+            error: function (r) {
+                alert(r);
+            }
+        });
+    });
+
+</script>
+<script src="~/Content/assets-admin/libs/jquery/dist/jquery.min.js"></script>

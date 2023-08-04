@@ -1,0 +1,132 @@
+﻿
+@{
+    ViewBag.Title = "SolvedTicket";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    .img-responsive {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+    }
+
+    table#tbl_Solved_Ticketsystem td {
+        padding: 5px;
+    }
+    .page-breadcrumb .filter {
+        display: flex;
+        position: relative;
+        top: 15px;
+    }
+
+        .page-breadcrumb .filter .date {
+            margin-left: 30px;
+            display: flex;
+            align-items: center;
+        }
+
+            .page-breadcrumb .filter .date label {
+                margin: 0;
+                margin-right: 5px;
+                min-width: 45px;
+            }
+
+        .page-breadcrumb .filter .dropdown {
+            margin-left: 140px;
+            min-width: 120px;
+        }
+
+            .page-breadcrumb .filter .dropdown select.form-control {
+                appearance: auto;
+            }
+
+    @@media(max-width:767px) {
+        .page-breadcrumb .filter {
+            position: absolute;
+            top: 70px;
+        }
+
+        .page-breadcrumb {
+            position: relative;
+            padding-bottom: 60px;
+        }
+
+            .page-breadcrumb .filter .date {
+                margin-left: 0;
+            }
+
+            .page-breadcrumb .filter .dropdown {
+                margin-left: 10px;
+            }
+    }
+</style>
+<div class="page-breadcrumb" style="">
+    <div class="row">
+        <div class="col-12 d-flex no-block align-items-center">
+            <h4 class="page-title"> Solved Ticket </h4>
+            <div class="filter">
+                <div class="date">
+                    <label> Filter :</label>
+                    @*<input id="startdate" type="date" class="datepicker form-control" value="">*@
+                    <input type="text" name="datefilter" value="" autocomplete="off" class="datepicker form-control" />
+                </div>
+                <div class="dropdown">
+                    <select class="form-control lblStatus">
+                        <option value="0" selected>Select Label Status</option>
+                        <option value="1">Common</option>
+                        <option value="2">Normal</option>
+                        <option value="3">Urgent</option>
+                        <option value="4">Critical</option>
+                        <option value="5">Extend</option>
+                        <option value="6">Complete</option>
+                    </select>
+                </div>
+            </div>
+            <div class="ms-auto text-end">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="@Url.Action("Index", "Customer")">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            Tickets
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                @* <a class="btn btn-info" style="text-align: center; width: 80px; align-self: end; margin: 40px 40px 0px 0px;" href="@Url.Action("CreateTicket", "TicketSystem")">Create</a>*@
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table id="tbl_Solved_Tickets"
+                               class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Photos</th>
+                                    <th>Title</th>
+                                    <th>Description</th>
+                                    <th>Customer Name</th>
+                                    <th>Created Date</th>
+                                    <th>Label Status</th>
+                                    <th>Status</th>
+                                    <th>View</th>
+                                   @*<th>Delete</th>*@
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script src="~/Content/assets-admin/extra-libs/DataTables/datatables.min.js"></script>
+<script src="~/Scripts/Customers/SolvedTicket.js"></script>

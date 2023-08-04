@@ -1,0 +1,577 @@
+﻿@model smartTechAuthenticator.ViewModels.TrackingFormsViewModel
+@{
+    ViewBag.Title = "ViewTestCertificate";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+    }
+
+    .report-wrapper .page-center {
+        max-width: 700px;
+        padding: 10px;
+        background: #fff;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+        margin: 40px auto;
+        border-radius: 5px;
+    }
+
+    .report-wrapper .header {
+        position: relative;
+        background: #cdcdcd99;
+        margin: -10px -10px 0 -10px;
+        padding: 10px 0;
+    }
+
+        .report-wrapper .header h5 {
+            text-align: center;
+        }
+
+        .report-wrapper .header a {
+            position: absolute;
+            left: 10px;
+            top: 8px;
+            font-size: 20px;
+            color: #20a4d7;
+        }
+
+
+    .report-wrapper section .btns p {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px 0;
+    }
+
+        .report-wrapper section .btns p button {
+            border: 0;
+            padding: 10px 20px;
+            outline: none;
+            margin-bottom: 10px;
+            background: #e9e9e9;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+            .report-wrapper section .btns p button:first-child {
+                background: #69b169;
+                color: #fff;
+            }
+
+    .report-wrapper section .logo-wrapper {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 25px;
+    }
+
+        .report-wrapper section .logo-wrapper .logo-right {
+            text-align: right;
+        }
+
+            .report-wrapper section .logo-wrapper .logo-right p {
+                margin-bottom: 5px;
+            }
+
+        .report-wrapper section .logo-wrapper .logo a {
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 40px;
+            color: #20a4d7;
+        }
+
+    .report-wrapper section .validation {
+        margin-bottom: 20px;
+        border-bottom: 2px solid;
+    }
+
+        .report-wrapper section .validation p {
+            display: flex;
+            margin-bottom: 5px;
+        }
+
+            .report-wrapper section .validation p span:first-child {
+                min-width: 180px;
+                margin-right: 351px;
+            }
+
+            .report-wrapper section .validation p span.bg {
+                background: #a6cdd3;
+                max-height: 22px
+            }
+
+            .report-wrapper section .validation p a {
+                color: #25a8bd;
+                text-decoration: none;
+            }
+
+    .report-wrapper section .view {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+        .report-wrapper section .view span {
+            background: #a6cdd3;
+            display: inline-block;
+            padding-right: 20px;
+        }
+
+        .report-wrapper section .view a {
+            text-decoration: none;
+            color: #25a8bd;
+        }
+
+    .report-wrapper .table-upper-wrapper {
+        border: 2px solid;
+        padding: 30px;
+    }
+
+        .report-wrapper .table-upper-wrapper .footer {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 13px;
+        }
+
+            .report-wrapper .table-upper-wrapper .footer p {
+                margin-bottom: 5px;
+            }
+
+        .report-wrapper .table-upper-wrapper .tab-header {
+            text-align: center;
+        }
+
+            .report-wrapper .table-upper-wrapper .tab-header h5 {
+                margin-bottom: 10px;
+                font-size: 12px;
+                color: gray;
+            }
+
+            .report-wrapper .table-upper-wrapper .tab-header p {
+                margin-bottom: 5px;
+                font-size: 11px;
+            }
+
+                .report-wrapper .table-upper-wrapper .tab-header p a {
+                    color: #25a8bd;
+                }
+
+        .report-wrapper .table-upper-wrapper .tab-head-middle {
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ccc;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+            .report-wrapper .table-upper-wrapper .tab-head-middle h6 {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            .report-wrapper .table-upper-wrapper .tab-head-middle p span {
+                color: #25a8bd;
+            }
+
+        .report-wrapper .table-upper-wrapper .tab-head-bottom {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ccc;
+        }
+
+            .report-wrapper .table-upper-wrapper .tab-head-bottom p {
+                font-size: 13px;
+                margin-bottom: 10px;
+            }
+
+                .report-wrapper .table-upper-wrapper .tab-head-bottom p span:first-child {
+                    min-width: 70px;
+                    display: inline-block;
+                }
+
+                .report-wrapper .table-upper-wrapper .tab-head-bottom p span:last-child {
+                    color: #25a8bd;
+                }
+
+                .report-wrapper .table-upper-wrapper .tab-head-bottom p span.verified {
+                    color: #ff0000;
+                }
+
+        .report-wrapper .table-upper-wrapper > h6 {
+            text-align: center;
+            font-size: 15px;
+            margin: 25px 0;
+        }
+
+        .report-wrapper .table-upper-wrapper table {
+            border: 1px solid;
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+            .report-wrapper .table-upper-wrapper table thead tr th {
+                background: #a59e9e99;
+                border-right: 1px solid;
+                padding: 3px 0;
+                font-size: 11px;
+            }
+
+            .report-wrapper .table-upper-wrapper table tbody tr td {
+                border-right: 1px solid;
+                padding: 5px 4px;
+                text-align: center;
+                font-size: 11px;
+            }
+
+                .report-wrapper .table-upper-wrapper table tbody tr td img {
+                    max-height: 350px;
+                }
+
+                .report-wrapper .table-upper-wrapper table tbody tr td span {
+                    color: red;
+                }
+
+    .logo img {
+        width: 200px;
+    }
+
+    @@media(max-width:479px) {
+        .report-wrapper section .logo-wrapper {
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+            .report-wrapper section .logo-wrapper .logo-right {
+                text-align: left;
+                margin-top: 20px;
+            }
+    }
+
+    @@media(max-width:428px) {
+        .report-wrapper .table-upper-wrapper table {
+            width: 100%;
+            display: block;
+            overflow-x: auto;
+        }
+
+        .report-wrapper section .validation p span:first-child {
+            min-width: auto;
+        }
+
+        .report-wrapper section .validation p {
+            justify-content: space-between;
+        }
+    }
+</style>
+<link rel="stylesheet" href="css/all.min.css">
+<div class="report-wrapper" style="margin-bottom:100px">
+    <div class="page-center">
+        <div class="header">
+            <a href="#">
+                <i class="fa fa-angle-left"></i>
+            </a>
+            <h5>Details</h5>
+        </div>
+        <section style="padding-top:0;">
+            <div class="btns">
+                <p>
+                    <button>@Model.TestResults</button>
+                    <button>Self Test</button>
+                </p>
+            </div>
+            <div class="logo-wrapper">
+                <div class="logo">
+                    <a href="#">
+                        <img src="~/Content/assets/img/logo.png" />
+                    </a>
+                </div>
+                @Html.HiddenFor(x => x.Id, new { @id = "Image" })
+                @Html.HiddenFor(x => x.CustId, new { @id = "Image" })
+                <div class="logo-right">
+                    <p> <b>Time:</b>  @Model.Time  </p>
+                    <p> <b>Date:</b> @Model.Date  </p>
+                    <p>Reffference No: ST-000045006</p>
+                </div>
+            </div>
+            <div class="validation">
+                <p>
+                    <span class="bg">DETAILS:</span>
+                    <span></span>
+                </p>
+                <p>
+                    <span>Validation:</span>
+                    <span>
+                        General Validation (TD) <br>
+                        @Model.Address
+                    </span>
+                </p>
+                <p>
+                    <span>Test Method:</span>
+                    <span>@Model.AntigenType</span>
+
+                </p>
+                <p>
+                    <span class="bg">SUBMIT RESULT:</span>
+                    @{
+                        switch (Model.TestResults)
+                        {
+                            case "Negative":
+                                {
+                                    <button class="btn btn-success btn-negative">@Model.TestResults </button>
+                                }
+                                break;
+                            case "Positive":
+                                {
+                                    <button class="btn btn-danger btn-negative">@Model.TestResults </button>
+                                }
+                                break;
+                            case "Invalid":
+                                {
+                                    <button class="btn btn-info btn-negative">@Model.TestResults </button>
+                                }
+                                break;
+                        }
+                    }
+                </p>
+                <p>
+                    <span>My Sejahtera</span>
+                    <span>
+                        @Model.Address
+                    </span>
+                </p>
+                <p>
+                    <span>PERKESO</span>
+                    <span>
+                        <a href="#">Submit to PERKESO</a>
+                    </span>
+                </p>
+            </div>
+            <div class="view">
+                <span>RESULT DETAILS</span>
+                <a href="#">View</a>
+            </div>
+        </section>
+
+        <div class="table-upper-wrapper" id="hero">
+            <div class="tab-header">
+                <h5>
+                    SMARTTECH ENGINEERING AND RESOURCE MANAGEMENT SDN BHD (1423065-U)
+                </h5>
+                <p>
+                    302C-3, JALAN DATO ISMAIL HASHIM, SUNGAI ARA, BAYAN LEPAS 11900, PENANG.
+                    Phone: 04-637 1041 Email: INFO@SMARTTECHENGINEERING.COM
+                    Website : WWW.SMARTTECHENGINEERING.COM
+                </p>
+            </div>
+            <div class="tab-head-middle">
+                <p>Self-Refrence ID: <span>@Model.QrCode</span></p>
+            </div>
+            <div class="tab-head-bottom">
+                <div class="left">
+                    <p>
+                        <span>Name</span>
+                        <span>@Model.Name</span>
+                    </p>
+                    <p>
+                        <span>User ID</span>
+                        <span>@Model.CustId</span>
+                    </p>
+                    <p>
+                        <span>Email</span>
+                        <span>@Model.Email</span>
+                    </p>
+                </div>
+                <div class="right">
+                    <p>
+                        <span>NRIC No</span>
+                        <span>@Model.Nric</span>
+                    </p>
+                    <p>
+                        <span>Nationality</span>
+                        <span>@Model.StateName</span>
+                    </p>
+                    <p>
+                        <span>ID Verification</span>
+                        @if (Model.IsVerified == 1)
+                        {
+                            <span class="verified">Approved</span>
+                        }
+                        else if (Model.IsVerified == 2)
+                        {
+                            <span class="verified">Rejected</span>
+                        }
+                        else
+                        {
+                            <span class="verified">Pending</span>
+                        }
+
+                    </p>
+                </div>
+            </div>
+
+            <h6>Specimen Particulars</h6>
+            <table>
+                <thead colspan="2">
+                    <tr style="text-align:center;">
+                        <th>Type Of Specimen</th>
+                        <th>Submission (Date &amp; Time)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>@Model.ProductName</td>
+                        <td>
+                            <p>@Model.Date  &amp; @Model.Time </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h6>Antigen Mix Nasal &amp; Saliva Self Test</h6>
+            <table>
+                <thead>
+                    <tr style="text-align:center;">
+                        <th>Specimen</th>
+                        <th style="width: 70px;">Kit Brand</th>
+                        <th>test</th>
+                        <th>result</th>
+                        <th>Valited by</th>
+                        <th>Validation Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+
+                        <td>@Model.Name</td>
+                        <td>Genfarm</td>
+                        <td>@Model.ProductName</td>
+                        <td>@Model.TestResults</td>
+                        <td>@Model.Name</td>
+                        <td>@Model.Date</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="text-align:center;">Image</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            @if (Model.FileUrl != null)
+                            {
+                                <img src="~/Content/UploadedFiles/@Model.FileUrl" alt="">
+                            }
+                            else
+                            {
+                                <img src="https://images.unsplash.com/photo-1650270884824-8a450e44f06e?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=435&amp;q=80" alt="">
+                            }
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="footer">
+                <p>Smarttech Application System</p>
+                <p>This is Computer generated. Test by Validate by above office no signature is required</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/bundle/pdf-generator")
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/toaster/js")
+
+
+<script>
+
+    $("#pdftoImg").on('click', function (data) {
+        var id = $("#Image").val();
+        html2canvas(document.getElementById("hero")).then(function (canvas) {
+            var anchorTag = document.createElement("a");
+            document.body.appendChild(anchorTag);
+            anchorTag.download = "filename.jpg";
+            anchorTag.href = canvas.toDataURL();
+            var datanew = canvas.toDataURL();
+            var data = { "data": datanew, "Id": id };
+
+            $.ajax({
+                url: '/Home/PdftoImg',
+                type: "post",
+                data: data,
+                contentType: 'application/x-www-form-urlencoded',
+                success: function (data) {
+                    if (data != null)
+                    {
+                       window.location.href = "@Url.Action("UserRecord", "Home")";
+
+                    } else {
+
+                    }
+                }
+            });
+        });
+    });
+
+
+
+
+    function downloadReportAsPDF() {
+        toastr.info("Please wait, we are processing things for you", "processsing..", "info");
+        let element = document.getElementById("ignorable-element");
+        element.style.display = "none";
+        var elementHTML = document.getElementById('hero');
+        html2canvas(elementHTML, {
+            useCORS: true,
+            onrendered: function (canvas) {
+                var pdf = new jsPDF('p', 'pt', 'letter');
+                var pageHeight = 990;
+                var pageWidth = 900;
+                for (var i = 0; i <= elementHTML.clientHeight / pageHeight; i++) {
+                    var srcImg = canvas;
+                    var sX = 0;
+                    var sY = pageHeight * i;
+                    var sWidth = pageWidth;
+                    var sHeight = pageHeight;
+                    var dX = 0;
+                    var dY = 0;
+                    var dWidth = pageWidth;
+                    var dHeight = pageHeight;
+                    window.onePageCanvas = document.createElement("canvas");
+                    onePageCanvas.setAttribute('width', pageWidth);
+                    onePageCanvas.setAttribute('height', pageHeight);
+                    var ctx = onePageCanvas.getContext('2d');
+                    ctx.drawImage(srcImg, sX, sY, sWidth, sHeight, dX, dY, dWidth, dHeight);
+                    var canvasDataURL = onePageCanvas.toDataURL("image/png", 1.0);
+                    var width = onePageCanvas.width;
+                    var height = onePageCanvas.clientHeight;
+                    if (i > 0)
+                        pdf.addPage(612, 864);
+                    pdf.setPage(i + 1);
+                    pdf.addImage(canvasDataURL, 'PNG', 25, 25, (width * .80), (height * .90));
+                }
+                pdf.save('document.pdf');
+            }
+        });
+        element.style.display = "block";
+    }
+
+</script>
+

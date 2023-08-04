@@ -1,0 +1,384 @@
+﻿
+@model smartTechAuthenticator.ViewModels.TrackingFormsViewModel
+@{
+    ViewBag.Title = "UserRecord";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+    var temp = true;
+}
+
+@{
+    var day ="";
+
+}
+<style>
+    section#hero {
+        overflow: initial;
+        position: static;
+        background-image: none;
+        padding-bottom: 100px;
+        padding-top: 120px !important;
+        padding-left: 10px;
+        padding-right: 10px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+        .hero.user-record .item {
+            width: 100%;
+        }
+
+            .hero.user-record .item .item-inner {
+                background: #e1edf8;
+                border-radius: 10px;
+                padding: 10px 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom:40px;
+            }
+
+                .hero.user-record .item .item-inner .left {
+                    width: 40%;
+                    border-right: 2px solid #aed5f1;
+                }
+
+                .hero.user-record .item .item-inner .rigth {
+                    width: 60%;
+                }
+
+                .hero.user-record .item .item-inner .right {
+                    width: 60%;
+                    padding-left: 20px;
+                }
+
+                .hero.user-record .item .item-inner .left h5 {
+                    color: #000;
+                    font-size: 20px;
+                    margin-bottom: 5px;
+                }
+
+                .hero.user-record .item .item-inner .left h5 {
+                    display: block;
+                    color: #000;
+                    font-weight: bold;
+                    font-size: 20px;
+                }
+
+                    .hero.user-record .item .item-inner .left h5 + span {
+                        font-size: 15px;
+                        color: #000;
+                        font-weight: bold;
+                        display: block;
+                    }
+
+                        .hero.user-record .item .item-inner .left h5 + span + span {
+                            color: #000;
+                        }
+
+                .hero.user-record .item .item-inner .right span {
+                    display: block;
+                    color: #000;
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+
+                .hero.user-record .item .item-inner .right p {
+                    margin: 0;
+                    display: flex;
+                    align-items: center;
+                    margin-top: 5px;
+                }
+
+                    .hero.user-record .item .item-inner .right p span {
+                        font-weight: normal;
+                        background: #76c043;
+                        border-radius: 20px;
+                        padding: 3px 10px;
+                        color: #fff;
+                        line-height: 1;
+                        margin-right: 10px;
+                    }
+
+                    .hero.user-record .item .item-inner .right p a {
+                        font-weight: normal;
+                        background: #4064af;
+                        border-radius: 20px;
+                        padding: 3px 20px;
+                        color: #fff;
+                        box-shadow: 0 0 10px #a2bddf;
+                    }
+
+
+
+    .search form input[type="search"] {
+        padding: 0 15px;
+        border: 2px solid #e5e5e5;
+        border-right: 0;
+        line-height: 45px;
+        font-size: 15px;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        -ms-border-radius: 2px;
+        -o-border-radius: 2px;
+        border-radius: 2px;
+        outline: none;
+        width: 95%;
+        -webkit-transition: all 300ms ease;
+        -moz-transition: all 300ms ease;
+        -o-transition: all 300ms ease;
+        transition: all 300ms ease;
+    }
+
+    .search form button.submit_search {
+        height: 49px;
+        width: 49px;
+        line-height: 49px;
+        color: #fff;
+        background: #000049a3;
+        padding: 0;
+        border: 0;
+        font-size: 24px;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        -ms-border-radius: 2px;
+        -o-border-radius: 2px;
+        border-radius: 2px;
+        -webkit-transition: all 300ms ease;
+        -moz-transition: all 300ms ease;
+        -o-transition: all 300ms ease;
+        transition: all 300ms ease;
+    }
+
+    .search form {
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+    .text-end {
+        text-align: left !important;
+    }
+
+    .page-breadcrumb {
+        margin-top: 100px;
+    }
+
+        .page-breadcrumb .col-12 {
+            display: flex !important;
+        }
+
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+    input:checked + .slider {
+        background-color: #2196F3;
+    }
+
+    input:focus + .slider {
+        box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 34px;
+    }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+    .switch-wrapper {
+        position: absolute;
+        left: 0;
+        padding: 7px 20px;
+        background: #fff;
+        box-shadow: 0 0 5px rgba(0,0,0,0.4);
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+    }
+
+        .switch-wrapper label.switch {
+            margin: 0;
+        }
+
+    .size-upper-wrapper {
+        margin-top: 20px;
+    }
+
+  
+
+    .search {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        align-items: flex-end;
+    }
+
+        .search > div {
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            align-items: flex-start !important;
+        }
+
+        .search form {
+            margin-bottom: 0;
+        }
+
+        .search .col-12 input {
+            -webkit-transition: all 300ms ease;
+            -moz-transition: all 300ms ease;
+            -o-transition: all 300ms ease;
+            transition: all 300ms ease;
+            padding: 0 15px;
+            border: 2px solid #e5e5e5;
+            line-height: 45px;
+            font-size: 15px;
+        }
+
+
+   @@media(max-width:767px){
+    .hero.user-record .item .item-inner .right span {
+        font-size: 14px;
+    }
+
+    .hero.user-record .item .item-inner .left h5 {
+        font-size: 17px;
+    }
+    .search {
+        flex-direction: column;
+    }
+
+        .search > div {
+            width: 100%;
+        }
+
+            .search .col-12 input{
+                width: 100%;
+                margin-bottom: 10px;
+            }
+   }
+</style>
+
+<section id="hero" class="hero user-record d-flex align-items-center">
+    <input type="hidden" value="@Model.Id" id="id" />
+    <div class="container">
+        <div class="search">
+            <div class="col-12 d-flex1 no-block align-items-center">
+                <label>Filter By Date </label>
+                @*<input type="date" id="txtDate" value="" />*@
+                @Html.TextBoxFor(Model=>Model.Date, new { @type="date", @id= "txtDate" })
+            </div>
+            <form action="/Home/UserRecord" method="get">
+                <input class="" type="search" placeholder="Search Here ... " id="" name="ProuctName" value="">
+                <button type="submit" value="Search" class="submit_search">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
+            <div class="row">
+                @if (Model.ViewTrackingFormsList.Count == 0)
+                {
+                    <div class="row product-row">
+                        <p><label colspan="6" class="text-left pl-2">No data available</label></p>
+                    </div>
+                }
+                else
+                {
+                    foreach (var item in Model.ViewTrackingFormsList)
+                    {
+                        day = Convert.ToDateTime(@item.Date).DayOfWeek.ToString();
+                            <div class="item">
+                                <div class="item-inner">
+                                    <div class="left">
+                                        <h5> @day</h5>
+                                        @*<span>Lorem</span>*@
+                                        <span>@item.Date</span>
+                                    </div>
+                                    <div class="right">
+                                        <span>@item.ProductName</span>
+                                        <span>@item.AuthentiCode</span>
+                                        <p>
+
+                                            @if (@item.IsVerified == 1)
+                                            {
+                                                <span>Approved</span>
+                                            }
+                                            else if (@item.IsVerified == 2)
+                                            {
+                                                <span style="background:red">Rejected</span>
+                                            }
+                                            else
+                                            {
+                                                <span style="background: #e74626">Pending</span>
+                                            }
+                                            <a href="@Url.Action("Certificate","Customer",new {Id=item.Id})">View</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                }
+
+            </div>
+        </div>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</section><!-- End Hero -->
+
+<main id="main">
+    <script>
+    $(document).ready(function () {
+       $("#txtDate").on('change', function () {
+            var date = $("#txtDate").val();
+            if (date != null && date != '') {
+                window.location.href = "/Home/UserRecord/?date=" + date + "";
+            }
+        });
+    });
+    </script>
+
+
+</main><!-- End #main -->

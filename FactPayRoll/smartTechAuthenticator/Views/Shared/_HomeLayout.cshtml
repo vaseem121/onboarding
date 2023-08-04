@@ -1,0 +1,1279 @@
+﻿@using smartTechAuthenticator.ViewModels
+
+@using smartTechAuthenticator.Services
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>SmartTech Authenticator</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <!-- Favicons -->
+    <link href="~/Content/assets/img/favicon.png" rel="icon">
+    <link href="~/Content/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="~/Content/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="~/Content/assets/css/style.css" rel="stylesheet">
+    <link href="~/Content/assets/css/style-landing-page.css" rel="stylesheet">
+    <link href="~/Content/assets-admin/libs/flot/css/float-chart.css" rel="stylesheet" />
+    <link href="~/Content/dist/css/style.min.css" rel="stylesheet" />
+    <link href="Content/assets/error/style-400.css" rel="stylesheet" />
+    <link href="~/Content/dist/css/custom.css" rel="stylesheet" />
+    <link href="~/Content/assets-admin/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        .navbar .dropdown ul {
+            left: -20px !important;
+        }
+
+        #myModal .modal-content {
+            position: fixed;
+            bottom: 0;
+            background-color: #fefefe;
+            width: 80%;
+            height: 100vh;
+        }
+
+        .modal-100 {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            -webkit-animation-name: fadeIn; /* Fade in the background */
+            -webkit-animation-duration: 0.4s;
+            animation-name: fadeIn;
+            animation-duration: 0.4s
+        }
+
+        /* Modal Content */
+        #myModal .modal-content {
+            position: fixed;
+            bottom: 0;
+            background-color: #fefefe;
+            width: 100%;
+            -webkit-animation-name: slideIn;
+            -webkit-animation-duration: 0.4s;
+            animation-name: slideIn;
+            animation-duration: 0.4s
+        }
+
+        /* The Close Button */
+        #myModal .close {
+            color: white;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+        }
+
+        #myModal .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #myModal .modal-header {
+            padding: 2px 16px;
+            background-color: #5cb85c;
+            color: white;
+        }
+
+        #myModal .modal-body {
+            padding: 2px 16px;
+        }
+
+        .footer .copyright > div a > img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+
+        #myModal .modal-footer {
+            padding: 2px 16px;
+            .footer background-color: #5cb85c;
+            color: white;
+        }
+
+
+        footer#footer {
+            box-shadow: 0 0 5px rgb(0 0 0 / 30%);
+            padding: 0;
+        }
+
+
+
+        /* Add Animation */
+        @@-webkit-keyframes slideIn {
+            from {
+                bottom: -300px;
+                opacity: 0
+            }
+
+            to {
+                bottom: 0;
+                opacity: 1
+            }
+        }
+
+        @@keyframes slideIn {
+            from {
+                bottom: -300px;
+                opacity: 0
+            }
+
+            to {
+                bottom: 0;
+                opacity: 1
+            }
+        }
+
+        @@-webkit-keyframes fadeIn {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @@keyframes fadeIn {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @@media(min-width:768px) {
+            #myBtn {
+                position: fixed;
+                bottom: 0px;
+                font-size: 25px;
+                padding: 5px;
+                z-index: 9999;
+                width: 100%;
+                background-color: #e1e1e1;
+                box-shadow: 0px 0px 2px 2px;
+            }
+
+            #myModal .modal-content {
+                position: fixed;
+                bottom: 0;
+                background-color: #fefefe;
+                width: 50% !important;
+                height: 100vh;
+            }
+        }
+
+
+
+        #myModal .close {
+            background-color: gray;
+            border-radius: 11px;
+            width: 25px;
+            height: 25px;
+            text-align: center;
+            padding-top: 0px;
+            line-height: 23px;
+        }
+
+        #myModal .desktop-menu {
+            padding: 0;
+            list-style-type: none;
+            height: 76vh;
+        }
+
+            #myModal .desktop-menu li {
+                padding: 10px;
+                color: #000049;
+            }
+
+                #myModal .desktop-menu li:hover {
+                    padding: 10px;
+                    background-color: #000049;
+                    color: white;
+                }
+
+        #myModal .modal-body {
+            padding: 0px !important;
+        }
+
+        @@media(min-width:768px) {
+            .d-flex {
+                display: block !important;
+            }
+
+            li:hover {
+                cursor: pointer;
+            }
+        }
+
+        @@media (min-width: 769px) {
+            .container {
+                margin-top: 5% !important;
+            }
+
+            #myModal .desktop-menu li > a:hover {
+                padding: 10px;
+                background-color: #000049;
+                color: white;
+            }
+
+            #myModal .desktop-menu li:hover a {
+                padding: 10px;
+                background-color: #000049;
+                color: white;
+            }
+        }
+
+        @@media(max-width:768px) {
+            #myBtn {
+                position: fixed !important;
+                top: 26px !important;
+                font-size: 25px !important;
+                padding: 5px !important;
+                z-index: 9999 !important;
+                left: 10px !important;
+                color: white !important;
+            }
+
+            #footer {
+                display: block !important;
+            }
+
+            .footer-menu .fa {
+                display: block !important;
+                margin: auto !important;
+            }
+        }
+
+        .modal-100 {
+            z-index: 999;
+        }
+
+        #myModal .modal-content {
+            position: fixed;
+            bottom: 0;
+            background-color: #fefefe;
+            width: 80%;
+            height: 100vh;
+        }
+    </style>
+    <Style>
+        .footer-menu .fa {
+            display: block !important;
+            margin: auto;
+        }
+
+        .widgets-img {
+            height: 200px;
+            width: 100%;
+            background-color: #c1e2db;
+            position: relative;
+            border-radius: 15px;
+        }
+
+            .widgets-img .img-fluid {
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            .widgets-img h4 {
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                transform: translate(-50%, 180%);
+                font-weight: bolder;
+                color: #0b0bab;
+                font-size: 27px;
+            }
+
+        .login-btn {
+            border: 1px solid white;
+            border-radius: 50px;
+            width: 85px;
+            height: 35px;
+            line-height: 12px;
+            margin: 20px;
+        }
+
+        .fixed-top {
+            background: #000049;
+            padding: 0px 0;
+            box-shadow: none;
+            height: 90px;
+        }
+
+        .header .logo img {
+            width: 37%;
+            float: left;
+        }
+
+        .header-scrolled {
+            margin-top: -15px !important;
+            height: 105px;
+        }
+
+        .container-fluid {
+            max-width: 1200px;
+        }
+
+        .icon-menu {
+            width: 25px;
+        }
+
+        .ft-icon {
+            width: 20px;
+        }
+
+        .footer-menu .fa {
+            display: block !important;
+            margin: auto;
+            font-size: 20px;
+            color: #171445;
+        }
+
+        .footer .copyright {
+            height: 80px;
+            padding: 15px;
+        }
+
+        .header .logo img {
+            width: 16%;
+            float: left;
+            padding-top: 10px;
+        }
+
+        .footer-menu {
+            float: left;
+        }
+
+        @@media (min-width: 769px) {
+            .footer-menu {
+                width: 263px;
+                padding: 6px;
+            }
+
+            .navbar {
+                float: right;
+            }
+
+            .hero {
+                top: 0% !important;
+            }
+        }
+
+
+        /*Changes*/
+
+        .copyright .fa-qrcode {
+            background-color: transparent;
+            border-radius: 0;
+            width: auto;
+            height: auto;
+            color: #171445;
+            padding-top: 0;
+            font-size: 20px;
+        }
+
+
+        .container {
+            margin-top: 0 !important;
+        }
+
+        section#hero {
+            padding-top: 90px !important;
+        }
+
+        .footer .copyright > div {
+            width: auto;
+            float: none;
+            flex: none;
+        }
+
+        .footer .copyright {
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .footer .copyright > div a {
+                font-size: 18px;
+                color: #111246;
+                text-decoration: none;
+                padding: 0 15px;
+                text-transform: capitalize;
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+                .footer .copyright > div a br {
+                    display: none;
+                }
+
+
+        @@media(min-width:992px) {
+            .login_btn {
+                display: none;
+            }
+
+            button.close-button {
+                display: none;
+            }
+
+            header#header > .container-fluid {
+                height: 100%;
+            }
+
+            nav#navbar {
+                height: 100%;
+            }
+
+            nav#navbar {
+                left: 0 !important;
+            }
+        }
+
+        @@media only screen and (max-width:991px) {
+            section#hero .container {
+                max-width: 100%;
+            }
+
+            section#hero {
+                overflow: auto;
+            }
+
+            nav#navbar {
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 100%;
+                background-color: #fff;
+                height: 100%;
+                overflow: inherit;
+                max-width: 250px;
+                padding: 0px;
+                float: none;
+                align-items: flex-start;
+                justify-content: flex-start;
+                flex-direction: column;
+                transition: all 0.4s ease;
+                z-index: 99999999;
+                /*   -webkit-transform: translateX(-100%);
+                -ms-transform: translateX(-100%);
+                transform: translateX(-100%);
+                transform: translateX(-100%);*/
+            }
+            /* .mobile-open nav#navbar {
+                -webkit-transform: translateX(0);
+                -ms-transform: translateX(0);
+                transform: translateX(0);
+            }*/
+
+            .navbar ul {
+                display: block;
+            }
+
+                .navbar ul > li {
+                    margin-bottom: 10px;
+                }
+
+                    .navbar ul > li > a {
+                        padding: 7px 10px;
+                        color: #111246 !important;
+                        font-size: 14px;
+                    }
+
+                        .navbar ul > li > a > i {
+                            color: #111246 !important;
+                        }
+
+                        .navbar ul > li > a img {
+                            filter: brightness(1) invert(1);
+                        }
+
+                    .navbar ul > li:last-child {
+                        display: none;
+                    }
+
+            body:before {
+                content: "";
+                width: 100vw;
+                height: 100vh;
+                position: fixed;
+                background-color: rgba(0,0,0,0.6);
+                top: 0;
+                left: 0;
+                z-index: 1;
+                display: none;
+                overflow: hidden;
+            }
+
+            body.mobile-open:before {
+                display: block;
+            }
+
+            body.mobile-open {
+                overflow-y: hidden;
+            }
+
+            .login_btn a {
+                white-space: nowrap;
+                transition: 0.3s;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 10px 10px 10px 10px;
+                font-family: "Nunito", sans-serif;
+                font-size: 16px;
+                font-weight: 700;
+                color: #fff;
+                margin: 0;
+                border: 1px solid white;
+                border-radius: 50px;
+                height: 35px;
+                line-height: 12px;
+            }
+
+                .login_btn a i {
+                    margin-right: 5px;
+                }
+
+            header#header > .container-fluid {
+                display: flex !important;
+                height: 100%;
+                padding: 0 20px;
+            }
+
+            .header a.logo {
+                width: auto !important;
+                text-align: center;
+                justify-content: center;
+                display: flex !important;
+            }
+
+                .header a.logo img {
+                    max-width: 150px;
+                    width: 100%;
+                    float: none;
+                    padding: 0;
+                }
+
+            .login_btn > li {
+                list-style: none;
+            }
+
+            button.close-button {
+                display: inline-block;
+                width: 100%;
+                max-width: 300px;
+                border: none;
+                background-color: #fff;
+                border-bottom: solid 1px #dddd;
+                padding: 5px 10px;
+                line-height: normal;
+                text-align: right;
+                opacity: 1;
+                color: #777;
+                font-size: 20px;
+            }
+
+                button.close-button svg {
+                    width: 0.6875em;
+                }
+
+            button.btn.btn-primary {
+                margin-right: 5px;
+            }
+        }
+
+
+        @@media(max-width:767px) {
+            section#hero .widgets > div {
+                width: 50%;
+                margin-bottom: 20px;
+            }
+
+            header#header > .container-fluid {
+                padding: 0 15px;
+            }
+
+            .header a.logo img {
+                max-width: 130px;
+            }
+
+            .footer .copyright {
+                padding-left: 5px;
+                padding-right: 5px;
+                justify-content: space-between;
+            }
+        }
+
+        @@media(max-width:575px) {
+            .footer .copyright > div a {
+                font-size: 11px;
+                padding: 0 7px;
+            }
+
+            .footer-menu .fa {
+                margin: 0;
+            }
+
+            .footer .copyright > div {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+
+        .mobile-nav-toggle {
+            padding-top: 0 !important;
+        }
+
+        .user-block {
+            position: absolute !important;
+            right: 10% !important;
+        }
+
+        .user-setting-icon a {
+            color: black !important;
+        }
+
+        .navbar a i {
+            margin-right: 5px;
+        }
+    </Style>
+    <style>
+        .toast {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 350px;
+            max-width: 100%;
+            font-size: 0.875rem;
+            pointer-events: auto;
+            background-clip: padding-box;
+            border: 1px solid rgba(0,0,0,0.1);
+            box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+            border-radius: 2px;
+            z-index: 999;
+            color: white;
+            background-color: #28b779 !important;
+            box-shadow: 0px 0px 3px 1px;
+        }
+
+        .toast-header button {
+            color: white !important;
+            background-color: #28b779 !important;
+        }
+
+        .toast-header {
+            background-color: #28b779 !important;
+            color: white;
+            font-size: 16px !important;
+            font-weight: bold;
+        }
+
+        .topbar {
+            position: relative;
+            z-index: 9999 !important;
+            box-shadow: 1px 0px 7px rgb(0 0 0 / 5%);
+            background: #fff;
+            height: 64px;
+        }
+
+
+        header#header ul > li > a {
+            padding-left: 15px;
+            margin-right: 0;
+        }
+
+        .header .logo img {
+            width: 14%;
+        }
+
+        li.nitify > a i.fa.fa-bell {
+            font-size: 23px;
+            position: relative;
+            top: -9px;
+            color: #fff;
+        }
+
+        li.nitify {
+            position: relative;
+        }
+
+        .notification {
+            margin-left: 20px;
+        }
+
+        li.nitify span {
+            position: absolute;
+            top: -17px;
+            left: 10px;
+            display: block;
+            overflow: hidden;
+            min-width: 22px;
+            min-height: 22px;
+            line-height: 17px;
+            font-size: 12px;
+            font-weight: 700;
+            color: white;
+            background: #ffa962;
+            text-align: center;
+            padding: 2px 3px 0;
+            -webkit-border-radius: 100%;
+            -moz-border-radius: 100%;
+            -ms-border-radius: 100%;
+            -o-border-radius: 100%;
+            border-radius: 100%;
+        }
+
+        .notification {
+            width: auto;
+            margin-left: 10px;
+            position: relative;
+            top: 14px;
+        }
+
+        header#header > .container-fluid {
+            display: flex !important;
+        }
+
+        header#header .logo img {
+            width: 100px;
+        }
+
+        nav#navbar {
+            margin-left: auto;
+        }
+
+        .notification .zmdi-notifications {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            border-radius: 4px;
+            -webkit-box-shadow: 0 10px 30px 0 rgb(31 45 61 / 10%);
+            box-shadow: 0 10px 30px 0 rgb(31 45 61 / 10%);
+            background: #fff;
+            border: 1px solid #e0e6ed;
+            min-width: 200px;
+            display: none;
+        }
+
+            .notification .zmdi-notifications h4 {
+                text-align: center;
+                font-size: 15px;
+                border-bottom: 1px solid #ccc;
+                padding-bottom: 10px;
+            }
+
+            .notification .zmdi-notifications ul li {
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 10px;
+            }
+
+                .notification .zmdi-notifications ul li a {
+                    color: #5c5c8a;
+                }
+
+                .notification .zmdi-notifications ul li:last-child {
+                    border: 0;
+                }
+
+        .notification ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .notification li {
+            list-style: none;
+        }
+
+
+        .notification .zmdi-notifications ul li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 10px;
+        }
+
+            .notification .zmdi-notifications ul li > a {
+                background: #5c5c8a;
+                color: #fff;
+                border-radius: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 1px 10px;
+            }
+
+        @@media(max-width:1125px) {
+            header#header ul > li > a {
+                padding-left: 13px;
+                font-size: 14px;
+            }
+
+            .header .logo img {
+                width: 13%;
+            }
+
+            header#header ul > li > a.login-btn {
+                padding-left: 10px;
+                font-size: 13px;
+                width: 60px;
+                height: 32px;
+            }
+        }
+
+        @@media(max-width:991px) {
+            .navbar a, .navbar a:focus {
+                color: #111246 !important;
+            }
+
+            li.nitify span {
+                top: -18px;
+            }
+
+            .login_btn {
+                margin-left: auto;
+            }
+
+            .notification {
+                margin-left: 0;
+                position: relative;
+                top: 15px;
+                margin-left: 5px;
+            }
+        }
+    </style>
+
+</head>
+
+<body class="demo">
+    <div class="toast">
+        <div class="toast-header">
+            <strong class="me-auto toast-title"></strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+        </div>
+        <div class="toast-body">
+            <p class="toast-message"></p>
+        </div>
+    </div>
+
+    @RenderBody()
+
+    <header id="header" class="header fixed-top">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+            <i class="bi bi-list mobile-nav-toggle"></i>
+            <a href="@Url.Action("Index","Home")" class="logo d-flex align-items-center">
+                <img src="~/Content/assets/img/logo.png" alt="">
+            </a>
+
+            <nav id="navbar" class="navbar">
+                <button type="button" class="close-button">
+                    <svg class="svg-inline--fa fa-times fa-w-11" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512" data-fa-i2svg=""><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg>
+                </button>
+                <ul>
+                    <li><a class="nav-link scrollto" href="@Url.Action("Index","Home")"><i class="fa fa-home" style="font-size: 17px;"></i> Home</a></li>
+                    <li><a class="nav-link scrollto" href="@Url.Action("Index","Mall")"><img src="~/Content/assets-2/img/Asset6wt.png" alt="icon" class="icon-menu pro-white-img">&nbsp;Shop</a></li>
+                    <li><a class="nav-link scrollto" href="@Url.Action("ScanQr","Home")"><img src="~/Content/assets-2/img/Asset9wt.png" alt="icon" class="icon-menu pro-white-img">&nbsp;Scan </a></li>
+                    <li><a class="nav-link scrollto" href="@Url.Action("ManualSubmit","Home")"><img src="~/Content/assets-2/img/giftwt.png" alt="icon" class="icon-menu pro-white-img">&nbsp;Manual</a></li>
+                    <li><a href="@Url.Action("Faq","Home")"><img src="~/Content/assets-2/img/quetionwt.png" alt="icon" class="icon-menu pro-white-img">&nbsp;FAQ</a></li>
+                    <li><a href="@Url.Action("Index","TicketSystem")"><img src="~/Content/assets-2/img/supportwt.png" alt="icon" class="icon-menu pro-white-img">&nbsp;Support</a></li>
+                    <li>
+                        <a href="@Url.Action("Abouts","Home")">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            About
+                        </a>
+                    </li>
+                    <li><a href="@Url.Action("HelpGuild","Home")"><i class="fa fa-question-circle" aria-hidden="true"></i>Help & Guild</a></li>
+                    <li><a href="@Url.Action("TermPrivacy","Home")"><i class="fa fa-user-secret" aria-hidden="true"></i>Term & Privacy</a></li>
+                    <li><a href="@Url.Action("UserForms","Home")">User Form</a></li>
+                    @if (Session["UserId"] != null)
+                    {
+                        @*<li><a href="@Url.Action("Logout","Account")"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign-Out </a> </li>*@
+
+                        <ul>
+                            <li class="nav-item dropdown user-setting-icon">
+                                <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="~/Content/assets-admin/images/users/1.jpg" alt="user" class="rounded-circle" width="31" />
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end user-dd animated user-block"
+                                    aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="@Url.Action("UserProfile", "Profile")"><i class="mdi mdi-account me-1 ms-1"></i> My Profile</a>
+                                    <a class="dropdown-item" href="@Url.Action("EditCustProfile", "Customer")">
+                                        <i class="mdi mdi-settings me-1 ms-1"></i> Edit Profile
+                                    </a>
+                                    <a class="dropdown-item" href="@Url.Action("Logout", "Account")"><i class="fa fa-power-off me-1 ms-1"></i> Logout</a>
+                                </ul>
+                            </li>
+                        </ul>
+                    }
+                    else
+                    {
+                        <li><a href="@Url.Action("SignIn","Account")" class="login-btn">Login</a></li>
+                    }
+                    @*<li class="nitify"><a href="#"><i class="fa fa-bell" aria-hidden="true"></i><span>1</span></a></li>*@
+                </ul>
+
+            </nav><!-- .navbar -->
+            <div class="login_btn">
+                @if (Session["UserId"] != null)
+                {
+                    <li><a href="@Url.Action("Logout","Account")"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign-Out </a> </li>
+                }
+                else
+                {
+                    <li><a href="@Url.Action("SignIn","Account")" class="login-btn">Login</a></li>
+                }
+            </div>
+            @if (Session["UserId"] != null)
+            {
+                <div class="notification">
+                    <li class="nitify"><a href="#"><i class="fa fa-bell" aria-hidden="true"></i><span id="notifi"></span></a></li>
+                    <div class="zmdi-notifications">
+                        <h4>Notifications</h4>
+                        <ul id="notification_item">
+                        </ul>
+                    </div>
+                </div>
+            }
+        </div>
+    </header><!-- End Header -->
+    @*<main id="main">
+            @{
+
+                if (TempData["toastmessage"] != null)
+                {
+                    ToastModel toastModel = (ToastModel)TempData["toastmessage"];
+                    Html.RenderPartial("_toaster", toastModel);
+                }
+            }
+        </main>*@
+
+    <footer id="footer" class="footer">
+        <div class="container-fluid" style="padding: 0px;">
+            <div class="copyright d-flex">
+                <div class="col footer-menu">
+                    <a href="@Url.Action("Index","Home")"> <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a>
+                </div>
+                <div class="col footer-menu">
+                    <a href="@Url.Action("UserRecord","Home")">    <i class="fa fa-list-ul" aria-hidden="true"></i> Records</a>
+                </div>
+                <div class="col footer-menu active">
+                    <a href="@Url.Action("ScanQr","Home")"><i class="fa fa-qrcode" aria-hidden="true"></i> Scan</a>
+                </div>
+                <div class="col footer-menu">
+                    <a href="@Url.Action("OrderHistory","Mall")"><i class="fa fa-list-alt" aria-hidden="true"></i> Orders</a>
+                </div>
+                <div class="col footer-menu">
+                    <a href="@Url.Action("UserProfile","Profile")"><i class="fa fa-user" aria-hidden="true"></i> Profile</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!--<footer id="footer" class="footer">
+        <div class="container-fluid" style="padding: 0px;width:100%;min-width:100%;">
+            <div class="copyright d-flex">
+                <div class="col footer-menu">
+                    <a href="@Url.Action("Index","Home")">
+                        <img src="~/Content/assets-2/img/icon_3.png" />
+                    </a>
+                </div>
+                <div class="col footer-menu">
+                    <a href="@Url.Action("UserRecord","Home")">
+                        <img src="~/Content/assets-2/img/icon_4.png" />
+                    </a>
+                </div>
+                <div class="col footer-menu active">
+                    <a href="@Url.Action("ScanQr","Home")">
+                        <img src="~/Content/assets-2/img/icon_5.png" />
+                    </a>
+                </div>
+                <div class="col footer-menu">
+                    <a href="@Url.Action("OrderHistory","Mall")">-->
+    @*<i class="fa fa-bell" aria-hidden="true"></i>*@
+    <!--<img src="~/Content/assets-2/img/icon_1.png" alt="logo" class="ft-icon" />
+        </a>
+    </div>
+    <div class="col footer-menu">
+        <a href="@Url.Action("UserProfile","Profile")">-->
+    @*<img src="~/Content/assets-2/img/user.png" alt="logo" class="ft-icon">*@
+    <!--<img src="~/Content/assets-2/img/icon_2.png" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>-->
+    <!-- End Footer -->
+
+    <div id="myModal" class="modal-100">
+        <div class="modal-content">
+            <div class="modal-body">
+                <span class="close">&times;</span>
+                <ul class="desktop-menu">
+                    @{
+                        if (Session["UserId"] != null)
+                        {
+                            <li style="background-color:white!important;"><i class="fa fa-user"></i>&nbsp;@Session["Name"].ToString()  welcome to Fact PayRoll </li>
+                            <li><a href="@Url.Action("Dashboard","User")"><i class="fa fa-home" aria-hidden="true"></i> Dashboard</a> </li>
+                        }
+                        else
+                        {
+                            <li><i class="fa fa-user"></i>&nbsp;Welcome to Fact PayRoll </li>
+                        }
+                    }
+
+                    <li><a href="@Url.Action("Index","Home")"><i class="fa fa-home" aria-hidden="true"></i> Home</a> </li>
+                    <li><a href="@Url.Action("ProductAuthenticity","Home")"><i class="fa fa-list" aria-hidden="true"></i> Product Authenticity </a></li>
+                    <li><a href="@Url.Action("ScanQr","Home")"><i class="fa fa-qrcode" aria-hidden="true"></i> Scan QR</a> </li>
+                    <li><a href="@Url.Action("ManualSubmit","Home")"><i class="fa fa-check" aria-hidden="true"></i> Manual Submit </a></li>
+                    <li><a href="@Url.Action("TrackingForm","Home")"><i class="fa fa-file-text-o" aria-hidden="true"></i> Tracking Form </a></li>
+                    <li><a href="@Url.Action("SelfTestResult","Home")"><i class="fa fa-folder" aria-hidden="true"></i> Self-Test Result </a></li>
+                    <li><a href="@Url.Action("Settings","Home")"><i class="fa fa-cog" aria-hidden="true"></i> Setting </a></li>
+                    @{
+                        if (Session["UserId"] != null)
+                        {
+                            <li><a href="@Url.Action("Logout","Account")"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign-Out </a> </li>
+                        }
+                        else
+                        {
+                            <li><a href="@Url.Action("SignUp","Account")"><i class="fa fa-user-plus" aria-hidden="true"></i> SignUp</a> </li>
+                            <li><a href="@Url.Action("SignIn","Account")"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign-In </a> </li>
+                        }
+
+                    }
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    @section  Scripts{
+        @Scripts.Render("~/toaster/js");
+        @Scripts.Render("~/bundle/js");
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+
+    }
+    <script src="~/Content/assets-admin/libs/jquery/dist/jquery.min.js"></script>
+    <script src="~/Content/assets-admin/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/assets-admin/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="~/Content/assets-admin/extra-libs/sparkline/sparkline.js"></script>
+    <script src="~/Content/dist/js/waves.js"></script>
+    <script src="~/Content/dist/js/sidebarmenu.js"></script>
+    <script src="~/Content/dist/js/custom.min.js"></script>
+    <script src="~/Content/assets-admin/libs/flot/excanvas.js"></script>
+    <script src="~/Content/assets-admin/libs/flot/jquery.flot.js"></script>
+    <script src="~/Content/assets-admin/libs/flot/jquery.flot.pie.js"></script>
+    <script src="~/Content/assets-admin/libs/flot/jquery.flot.time.js"></script>
+    <script src="~/Content/assets-admin/libs/flot/jquery.flot.stack.js"></script>
+    <script src="~/Content/assets-admin/libs/flot/jquery.flot.crosshair.js"></script>
+    <script src="~/Content/assets-admin/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+    <script src="~/Content/dist/js/pages/chart/chart-page-init.js"></script>
+    <script src="~/Content/assets-admin/extra-libs/DataTables/datatables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+    @*<script>
+            function showMessage(title, message) {
+                if (title == "success") {
+                    $(".toast").css("background -color", "#28b779  !important");
+                    $(".toast-header ").css("background -color", "#28b779  !important");
+                }
+                else if (title == "info") {
+                    $(".toast").css("background -color", "#ffb848  !important");
+                    $(".toast-header ").css("background -color", "#ffb848  !important");
+                }
+                else {
+                    $(".toast").css("background -color", "#da542e  !important");
+                    $(".toast-header ").css("background -color", "#da542e  !important");
+                }
+
+                $(".toast-title").text(title);
+                $(".toast-message").text(message);
+                var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+                var toastList = toastElList.map(function (toastEl) {
+                    return new bootstrap.Toast(toastEl)
+                })
+                toastList.forEach(toast => toast.show())
+            }
+
+
+        </script>*@
+    @*@{
+            if (TempData["toastmessage"] != null)
+            {
+                ToastModel toastModel = (ToastModel)TempData["toastmessage"];
+                foreach (ToastMessage toast in toastModel.ToastMessages)
+                {
+                    <script>
+                        showMessage('@toast.Title', '@toast.Message')
+                    </script>
+                }
+            }
+        }*@
+    <script>
+        $(document).ready(function () {
+            //debugger;
+            $.ajax({
+                url: '/TicketSystem/GetNotification',
+                type: 'post',
+                contentType: 'application/x-www-form-urlencoded',
+                success: function (data) {
+                    //   console.log(data);
+                    //  console.log(data.Notification);
+                    $("#notifi").text(data.Notification);
+                    var obj = $.parseJSON(JSON.stringify(data.TicketViewmodelList));
+                    //  console.log(obj);
+                    for (var i = 0; i < obj.length; i++) {
+                        $('#notification_item').append('<li><span>' + obj[i].Title + '</span><a href="/TicketSystem/NotificationView?Id=' + obj[i].Id + '">View</a></li>');
+                    }
+                }
+            });
+
+
+        })
+
+        //var modal = document.getElementById("myModal");
+        //var btn = document.getElementById("myBtn");
+        //var span = document.getElementsByClassName("close")[0];
+        //btn.onclick = function () {
+        //    modal.style.display = "block";
+        //}
+        //span.onclick = function () {
+        //    modal.style.display = "none";
+        //}
+        //window.onclick = function (event) {
+        //    if (event.target == modal) {
+        //        modal.style.display = "none";
+        //    }
+        //}
+
+
+        //$(".mobile-nav-toggle").click(function () {
+        //    $("body").addClass("mobile-open");
+        //});
+
+
+        //var mobTri = document.querySelector(".mobile-nav-toggle");
+        //var body = document.querySelector("body");
+        //var closeTri = document.querySelector("button.close-button");
+
+        //mobTri.addEventListener("click", function () {
+        //    body.classList.add("mobile-open");
+        //});
+
+        //closeTri.addEventListener("click", function () {
+        //    body.classList.remove("mobile-open");
+        //});
+
+        var mobTri = document.querySelector(".mobile-nav-toggle");
+        var body = document.querySelector("body");
+        var closeTri = document.querySelector("button.close-button");
+        var navbar = document.querySelector("nav#navbar");
+
+        navbar.style.left = "-300%";
+
+        mobTri.addEventListener("click", function () {
+            body.classList.add("mobile-open");
+            navbar.style.left = "0";
+            body.style.overflowY = "hidden";
+        });
+
+        closeTri.addEventListener("click", function () {
+            body.classList.remove("mobile-open");
+            navbar.style.left = "-300%";
+            body.style.overflowY = "auto";
+        });
+    </script>
+    <script>
+        function showMessage(title, message) {
+            if (title == "success") {
+                $(".toast").css("background -color", "#28b779  !important");
+                $(".toast-header ").css("background -color", "#28b779  !important");
+            }
+            else if (title == "info") {
+                $(".toast").css("background -color", "#ffb848  !important");
+                $(".toast-header ").css("background -color", "#ffb848  !important");
+            }
+            else {
+                $(".toast").css("background -color", "#da542e  !important");
+                $(".toast-header ").css("background -color", "#da542e  !important");
+            }
+
+            $(".toast-title").text(title);
+            $(".toast-message").text(message);
+            var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+            var toastList = toastElList.map(function (toastEl) {
+                return new bootstrap.Toast(toastEl)
+            })
+            toastList.forEach(toast => toast.show())
+        }
+        $("li.nitify").click(function () {
+            $(".zmdi-notifications").toggle();
+        });
+
+        $("body").click(function () {
+            $(".zmdi-notifications").hide();
+        });
+
+        $("li.nitify,.notification .zmdi-notifications").click(function (e) {
+            e.stopPropagation();
+        });
+
+    </script>
+    @{
+        if (TempData["toastmessage"] != null)
+        {
+            ToastModel toastModel = (ToastModel)TempData["toastmessage"];
+            foreach (ToastMessage toast in toastModel.ToastMessages)
+            {
+                <script>
+                    showMessage('@toast.Title', '@toast.Message')
+                </script>
+            }
+        }
+    }
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+</body>
+</html>

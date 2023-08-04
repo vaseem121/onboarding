@@ -1,0 +1,239 @@
+﻿@model smartTechAuthenticator.Models.CustomerInfo
+@{
+    ViewBag.Title = "UserProfile";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+<style>
+    section#hero {
+        padding: 0;
+        overflow: initial;
+        background: #f0f1f1;
+        padding-bottom: 100px;
+        position: static;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+        section#hero .row {
+            margin: 0;
+        }
+
+
+        section#hero .container {
+            max-width: 100%;
+            width: 100%;
+            padding: 0;
+        }
+
+        section#hero .profile-header {
+            background: #45b5bd;
+            background: #000049;
+            display: flex;
+            padding: 30px 30px;
+            justify-content: space-between;
+        }
+
+        section#hero .profile-header .left img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        section#hero .profile-header .left {
+            display: flex;
+            flex-direction: column;
+        }
+
+        section#hero .profile-header .left span {
+            color: #fff;
+            background: #74bf43;
+            border-radius: 20px;
+            text-align: center;
+            line-height: 1;
+            margin-top: 10px;
+            padding: 3px 0;
+        }
+
+        section#hero .profile-header .right ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        section#hero .profile-header .right ul > li {
+            margin-bottom: 10px;
+        }
+
+        section#hero .profile-header .right ul > li {
+            color: #ffffffb0;
+        }
+
+        section#hero .profile-header .right ul > li:first-child {
+            color: #fff;
+            font-weight: bold;
+        }
+
+        section#hero .profile-header .right .btns {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        section#hero .profile-header .right .btns > a {
+            color: #ffffffb0;
+            border: 2px solid #fff;
+            border-radius: 20px;
+            margin-right: 5px;
+            padding: 2px 10px;
+        }
+
+        section#hero .profile-header .right .btns > a i {
+            color: #fec90f;
+        }
+
+        section#hero .content {
+            padding: 50px 20px;
+        }
+
+        section#hero .content {
+        }
+
+        section#hero .content ul li {
+            margin-bottom: 15px;
+        }
+
+        section#hero .content > ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+            section#hero .content > ul > li > a {
+                background: #fff;
+                padding: 10px 10px;
+                display: block;
+                border-left: 5px solid #000049;
+                color: #000;
+                font-size: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            section#hero .content > ul > li > a i {
+                width: 30px;
+                height: 30px;
+                background: #f3f5f5;
+                color: #000049;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+    section#hero {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+
+
+    section#hero {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        margin-top: 90px !important;
+    }
+
+    section#hero {
+        margin-bottom: 130px;
+    }
+        section#hero .content {
+            padding-bottom: 10px;
+        }
+</style>
+
+
+<section id="hero" class="hero d-flex align-items-center">
+
+    <div class="container">
+        <div class="row">
+            <div class="profile-header">
+                <div class="left">
+                    @if (Model.Photo != null)
+                    {
+                        <a href="javascript:;">
+                            <img src="~/Content/Profile/@Model.Photo" />
+                        </a>
+                    }
+                    else
+                    {
+                <a href="javascript:;">
+                    <img src="/Content/Certificate/image1.png" style="height:90px; width:90px;"/>
+                </a>
+                    }
+                    <span>Verified</span>
+                </div>
+                <div class="right">
+                    <ul>
+                        <li>
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <span>@Model.Name</span>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                            <span>@Model.Email</span>
+                        </li>
+                        <li>
+                            <i class="fa fa-globe" aria-hidden="true"></i>
+                            <span>www.johnsite.com</span>
+                        </li>
+                    </ul>
+                    <div class="btns">
+                        <a href="#">
+                            <i class="fa fa-cog" aria-hidden="true"></i>
+                            Preferances
+                        </a>
+                        <a href="@Url.Action("EditCustProfile","Customer")">
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                            Edit
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <ul>
+                    <li>
+                        <a href="@Url.Action("OrderHistory","Mall")">
+                            Order History
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("UserRecord","Home")">
+                            Certified History
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index","TicketSystem")">
+                            Ticket Support
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("HelpGuild","Home")">
+                            Help & Guild
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("TermPrivacy","Home")">
+                            Terms & Privacy
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+

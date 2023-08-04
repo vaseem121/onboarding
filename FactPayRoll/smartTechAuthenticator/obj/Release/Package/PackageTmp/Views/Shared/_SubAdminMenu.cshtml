@@ -1,0 +1,283 @@
+﻿
+@model smartTechAuthenticator.ViewModels.MenuPermissionViewModel
+@if (Model != null)
+{
+    if (Model.MallManage == true)
+    {
+        <li class="sidebar-item">
+            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                <i class="fas fa-medkit"></i><span class="hide-menu">Mall Manage </span>
+            </a>
+            <ul aria-expanded="false" class="collapse first-level">
+                <li class="sidebar-item">
+                    <a href="@Url.Action("OrderList", "Home")" class="sidebar-link">
+                        <i class="mdi mdi-note-plus"></i>
+                        <span class="hide-menu">Order Manage</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="@Url.Action("Index", "Category")" class="sidebar-link">
+                        <i class="mdi mdi-note-plus"></i>
+                        <span class="hide-menu">Product Categorys</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="@Url.Action("Products", "Customer")" class="sidebar-link">
+                        <i class="mdi mdi-note-plus"></i>
+                        <span class="hide-menu">Products</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="@Url.Action("Shipping", "Customer")" class="sidebar-link">
+                        <i class="fas fa-shipping-fast"></i>
+                        <span class="hide-menu">Manage Shipping</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="@Url.Action("ShippingTracking", "Customer")" class="sidebar-link">
+                        <i class="fa fa-truck" aria-hidden="true"></i>
+                        <span class="hide-menu">Manage Shipping-Tracking</span>
+                    </a>
+                </li>
+
+            </ul>
+        </li>
+    }
+    if (Model.CustomerManage == true)
+    {
+        <li class="sidebar-item">
+            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                <i class="fas fa-user-circle"></i>
+                <span class="hide-menu">Customer Manage</span>
+            </a>
+            <ul aria-expanded="false" class="collapse first-level">
+                <li class="sidebar-item">
+                    <a href="@Url.Action("Customers", "Customer")" class="sidebar-link">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <span class="hide-menu">Manage Customers </span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="@Url.Action("ViewAdmindata", "Customer")">
+                        <i class="fas fa-user-plus"></i>
+                        <span class="hide-menu">Manage SubAdmin </span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="@Url.Action("StaffRoll", "Customer")">
+                        <i class="fas fa-user-plus"></i>
+                        <span class="hide-menu"> Customer data</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
+                    <a href="javascript:void(0);" class="sidebar-link">
+                        <i class="mdi mdi-note-plus"></i><span class="hide-menu"> Other</span>
+                    </a>
+                </li>
+
+            </ul>
+        </li>
+    }
+    if (Model.TicketSupportManage == true)
+    {
+        <li class="sidebar-item">
+            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                <i class="mdi mdi-receipt"></i>
+                <span class="hide-menu">Ticket Support Manage</span>
+            </a>
+            <ul aria-expanded="false" class="collapse first-level">
+                <li class="sidebar-item">
+                    <a href="@Url.Action("Ticket", "Customer")" class="sidebar-link">
+                        <i class="fas fa-ticket-alt" style="font-size:20px;color:red"></i>
+                        <span class="hide-menu">All Tickets</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="@Url.Action("SolvedTicket", "TicketSystem")" class="sidebar-link">
+                        <i class="fas fa-ticket-alt" style="font-size:20px;color:green"></i>
+                        <span class="hide-menu">Solved Tickets</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="@Url.Action("UnSolvedTicket", "TicketSystem")" class="sidebar-link">
+                        <i class="fas fa-ticket-alt" style="font-size:20px;color:red"></i>
+                        <span class="hide-menu">UnSolved Tickets</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    }
+    if (Model.Setting)
+    {
+        <li class="sidebar-item">
+            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                <i class="fas fa-cog"></i><span class="hide-menu">Setting</span>
+            </a>
+            <ul aria-expanded="false" class="collapse first-level">
+                <li class="sidebar-item">
+                    <a href="@Url.Action("EditProfile", "Account")" class="sidebar-link">
+                        <i class=" fas fa-user"></i><span class="hide-menu"> Edit Profile</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="@Url.Action("ChangePassword","Account")" class="sidebar-link">
+                        <i class="mdi mdi-key-change"></i><span class="hide-menu"> Change Password</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    }
+    if (Model.AuthenticatorManage == true)
+    {
+        <li class="sidebar-item">
+            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                <i class="fa fa-lock"></i>
+                <span class="hide-menu">Authenticator Manage</span>
+            </a>
+            <ul aria-expanded="false" class="collapse first-level">
+
+
+                <li class="sidebar-item">
+                    <a href="@Url.Action("ManageQr", "Customer")" class="sidebar-link">
+                        <i class="fa fa-qrcode" aria-hidden="true"></i>
+                        <span class="hide-menu">Manage QR</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="@Url.Action("CheckQr", "Customer")" class="sidebar-link">
+                        <i class="fa fa-qrcode" aria-hidden="true"></i>
+                        <span class="hide-menu">Scanned QR</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="@Url.Action("UploadQrCode", "Customer")" class="sidebar-link">
+                        <i class="fa fa-qrcode" aria-hidden="true"></i>
+                        <span class="hide-menu">Upload Code</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    }
+    if (Model.FrontEndManage == true)
+    {
+        <li class="sidebar-item">
+            <a class="sidebar-link has-arrow waves-effect waves-dark"
+               href="javascript:void(0)"
+               aria-expanded="false">
+                <i class="mdi mdi-note-outline"></i>
+                <span class="hide-menu">Frontend Manage</span>
+            </a>
+            <ul aria-expanded="false" class="collapse first-level">
+                <li class="sidebar-item">
+                    <a href="@Url.Action("ManageBannerCarousal", "Customer")" class="sidebar-link">
+                        <i class="mdi mdi-note-outline"></i>
+                        <span class="hide-menu"> Banner Dashboard</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="@Url.Action("TermPrivacyDetails","Customer")" class="sidebar-link">
+                        <i class="fa fa-gavel" aria-hidden="true"></i>
+                        <span class="hide-menu">Terms & Privacy Page</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="@Url.Action("HelpGuidDetails","Customer")" class="sidebar-link">
+                        <i class="fa fa-rocket" aria-hidden="true"></i>
+                        <span class="hide-menu">Help & Guid </span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="@Url.Action("FAQDetails","Customer")" class="sidebar-link">
+                        <i class="fa fa-question-circle" aria-hidden="true"></i>
+                        <span class="hide-menu">Faq </span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="@Url.Action("AboutDetails","Customer")" class="sidebar-link">
+                        <i class="fa fa-info" aria-hidden="true"></i>
+                        <span class="hide-menu">About </span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    }
+    if (Model.CertificateManage == true)
+    {
+        <li class="sidebar-item">
+            <a class="sidebar-link has-arrow waves-effect waves-dark"
+               href="javascript:void(0)"
+               aria-expanded="false">
+                <i class="fa fa-certificate" aria-hidden="true"></i><span class="hide-menu">Certificate Manage </span>
+            </a>
+            <ul aria-expanded="false" class="collapse first-level">
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="@Url.Action("ViewCertificate", "Customer")">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                        <span class="hide-menu">Virified Certificate List</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="@Url.Action("UnVerifiedCertificate", "Customer")">
+                        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                        <span class="hide-menu">Pending Certificate List</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="@Url.Action("RejectCertificate", "Customer")">
+                        <i class="fa fa-ban" aria-hidden="true"></i>
+                        <span class="hide-menu">Reject Certificate List</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    }
+    if (Model.NewsManage == true)
+    {
+        <li class="sidebar-item">
+            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                <i class="far fa-newspaper"></i>
+                <span class="hide-menu">Post News Manage</span>
+            </a>
+            <ul aria-expanded="false" class="collapse first-level">
+                <li class="sidebar-item">
+                    <a href="@Url.Action("NewsDetails", "News")" class="sidebar-link">
+                        <i class="far fa-newspaper fa-spin" style="font-size:15px"></i>
+                        <span class="hide-menu">News</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    }
+    if (Model.FormManage == true)
+    {
+        <li class="sidebar-item">
+            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <span class="hide-menu">Form Manage</span>
+            </a>
+            <ul aria-expanded="false" class="collapse first-level">
+                <li class="sidebar-item">
+                    <a href="@Url.Action("CreateForm", "Home")" class="sidebar-link">
+                        <i class="mdi mdi-note-outline"></i>
+                        <span class="hide-menu">Form Create</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="@Url.Action("FormAssign", "Home")" class="sidebar-link">
+                        <i class="mdi mdi-note-outline"></i>
+                        <span class="hide-menu">Form Assign</span>
+                    </a>
+                </li>
+
+            </ul>
+        </li>
+    }
+}
+else
+{
+
+}
+
+

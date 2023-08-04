@@ -1,0 +1,73 @@
+﻿@model smartTechAuthenticator.ViewModels.CustomerInfoViewModel
+@{
+    ViewBag.Title = "ViewEmployee";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="page-breadcrumb">
+    <div class="row">
+        <div class="col-12 d-flex no-block align-items-center">
+            <h4 class="page-title"> Employee </h4>
+            <div class="ms-auto text-end">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href=@Url.Action("Index","Category")>Manage Employee</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            Employee
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="row">
+                    @*<div class="col-md-6">
+                            <div class="left-column">
+                                <img data-image="red" class="active" src="~/Content/Product/@Model.Photo" alt="" style="padding: 40px; width: 100%;">
+                            </div>
+                        </div>*@
+                    <div class="col-md-6" style=" margin-top: 35px;">
+                        <div class="right-column" style="padding:0 30px 20px;">
+                            <div class="product-description">
+                                <h6><span>Employee Name :- </span></h6>   <span>@Model.Name</span> <br />
+                                <h6><span> Location  :- </span></h6>  <p>@Model.Location</p>
+                                <h6><span> Website:-</span></h6>  <span>@Model.Website</span><br />
+                                <h6> <span>Email:-</span></h6>         <span>@Model.Email</span>  <br />
+                                <h6><span>Phone Number:-</span></h6>            <span>@Model.MobileNo</span>  <br />
+                                <h6><span>Password:-</span></h6>              <span>@Model.UserPass</span>
+                            </div>
+
+                            @*<div class="product-configuration">
+                                    <div class="cable-config">
+                                        <h6><span>Category :-</span></h6>
+
+                                        <span>@Model.CategoryName</span>
+                                    </div>
+                                </div>*@
+
+                            <!-- Product Pricing -->
+                            @*<div class="product-price">
+                                    <h6><span>Price :-</span></h6>
+                                    <span>RM @Convert.ToDecimal(Model.Price)</span>
+
+                                </div>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+

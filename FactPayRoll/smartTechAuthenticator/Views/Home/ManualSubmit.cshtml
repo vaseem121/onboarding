@@ -1,0 +1,61 @@
+﻿@model smartTechAuthenticator.ViewModels.ManualSubmitViewModel
+@using smartTechAuthenticator.ViewModels;
+@{
+    ViewBag.Title = "ManualSubmit";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+<style>
+    @@media(min-width:768px) {
+        #hero .container {
+            margin-top: auto !important;
+        }
+
+        .hero {
+            width: 100%;
+        }
+    }
+    #hero{
+        overflow:unset;
+    }
+</style>
+<h2>ManualSubmit</h2>
+
+<section id="hero" class="hero d-flex align-items-center">
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <div class="user-profile-block">
+                    @using (Html.BeginForm("ManualSubmit", "Home", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+                        <form class="user-form">
+                            <h3>Manual Submit</h3>
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.CodeText)
+                                @Html.TextBoxFor(x => x.CodeText, new { minlength = "16", maxlength = "17", @class = "form-control", placeholder = "Enter 16 digit code here..." })
+                                @Html.ValidationMessageFor(x => x.CodeText, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group mt-2 mb-2">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-10 col-lg-10">
+                                        @{
+                                            if (TempData["result"] != null)
+                                            {
+                                                ResponseModel response = (ResponseModel)TempData["result"];
+                                                Html.RenderPartial("QrScanResult", response);
+                                            }
+                                        }
+
+                                    </div>
+                                    <div class="col-sm-12 col-md-2 col-lg-2">
+                                        <button type="submit" class="btn btn-primary pull-right">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

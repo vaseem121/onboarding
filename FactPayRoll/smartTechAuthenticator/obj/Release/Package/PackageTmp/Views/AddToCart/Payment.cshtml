@@ -1,0 +1,180 @@
+﻿@model smartTechAuthenticator.ViewModels.CheckOutViewModel
+@{
+    ViewBag.Title = "Payment";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/assets-mall/css/all.min.css">
+<link rel="stylesheet" href="~/Content/assets-mall/css/bootstrap.min.css">
+<link rel="stylesheet" href="~/Content/assets-mall/css/style.css">
+<style>
+    .text-end {
+        text-align: left !important;
+    }
+
+    .card-body:before, .card-body:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    .page-breadcrumb .col-12.d-flex.no-block.align-items-center {
+        display: flex !important;
+    }
+
+    form.form-horizontal .card-body {
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+</style>
+<div class="page-breadcrumb" style=" margin-top: 90px; margin-left: 88px;">
+    <div class="row">
+        <div class="col-12 d-flex no-block align-items-center">
+            <h4 class="page-title">Payment Detail</h4>
+            <div class="ms-auto text-end">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href=@Url.Action("Index","Mall")>Mall</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            Payment
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="payment" style="margin-top:30px">
+    <div class="pay-inner">
+        <div class="cards one">
+            <div class="details">
+                <p>
+                    <i class="fa fa-th" aria-hidden="true"></i>
+                    <span>TDLabs</span>
+                </p>
+                <p>
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <span>@Model.CustomerDetail.Address1 ,@Model.CustomerDetail.Address2 ,@Model.CustomerDetail.PostCode </span>
+                </p>
+                <p>
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <span>@Model.CustomerDetail.Email</span>
+                </p>
+                <p>
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <span>@Model.CustomerDetail.MobileNo</span>
+                </p>
+                <p>
+                    <i class="fa fa-globe" aria-hidden="true"></i>
+                    <a href="#">https://demo.com</a>
+                </p>
+            </div>
+        </div>
+        <div class="time">
+            <p>
+                Time Remaining : <b>09</b> Minute <b>51</b> Seconds
+            </p>
+        </div>
+
+        <div class="cards two">
+            <div class="pay-details">
+                <div class="head">
+                    <p>
+                        <b>$</b> Payment Details
+                    </p>
+                </div>
+                <div class="body">
+                    <p><b>Order ID</b></p>
+                    <p>@Model.OrderDetail.Order_Id</p>
+
+                    <p><b>Payment ID</b></p>
+                    <p>@Model.OrderDetail.PaymentId</p>
+
+                    <p><b>Payment for</b></p>
+                    <p>@Model.OrderDetail.CreatedDate</p>
+
+                    <p><b>Total</b></p>
+                    <p><b>MYR @Model.OrderDetail.TotalAmount</b></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="other-pay">
+            <h5>Others Payment</h5>
+            <div class="accordion" id="payments">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                            MY (MYR 208.00)
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#payments">
+                        <div class="accordion-body">
+                            <div class="accordion" id="payments-options">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="subHeadingOne">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#subOptionOne">
+                                            Online Banking
+                                        </button>
+                                    </h2>
+                                    <div id="subOptionOne" class="accordion-collapse collapse" data-bs-parent="#payments-options">
+                                        <div class="accordion-body">
+                                            <a href="#">
+                                                <img src="data:image/png;base64,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" alt="">
+                                            </a>
+                                            <a href="#">
+                                                <img src="https://www.clipartkey.com/mpngs/m/135-1352218_transparent-background-mastercard-logo.png" alt="">
+                                            </a>
+                                            <a href="#">
+                                                <img src="data:image/png;base64,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" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="subHeadingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#subOptionTwo">
+                                            eWallet
+                                        </button>
+                                    </h2>
+                                    <div id="subOptionTwo" class="accordion-collapse collapse" data-bs-parent="#payments-options">
+                                        <div class="accordion-body">
+                                            <a href="#">
+                                                <img src="https://aniportalimages.s3.amazonaws.com/media/details/pauyau_PlnW2rW.jpg" alt="">
+                                            </a>
+                                            <a href="#">
+                                                <img src="https://lh3.googleusercontent.com/lfSN8-0uxLdHSqBD9ULaZUiBRJ_9lCKK8JqHGWhdgy4WjGJNYQtQ5hPbw2RBCBfEABPTqljEVA4J2J3Pr-emxqnIZu16WIt41CE7Mg" alt="">
+                                            </a>
+                                            <a href="#">
+                                                <img src="data:image/png;base64,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" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="page-center">
+            <p>By submitting the payment, you hereby agree to</p>
+            <p>
+                <a href="#">eGHL PDPA Policy</a>
+            </p>
+            <p>
+                <a href="#">Cancel and Return to TDLabs</a>
+            </p>
+        </div>
+    </footer>
+</div>
+<script src="~/Content/assets-mall/js/jquery.min.js"></script>
+<script src="~/Content/assets-mall/js/bootstrap.bundle.min.js"></script>
+<script src="~/Content/assets-mall/js/main.js"></script>

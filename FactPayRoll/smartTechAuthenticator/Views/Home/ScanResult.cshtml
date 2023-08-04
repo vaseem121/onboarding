@@ -1,0 +1,23 @@
+﻿@model smartTechAuthenticator.ViewModels.ResponseModel
+@using smartTechAuthenticator.ViewModels;
+@{
+    ViewBag.Title = "ScanResult";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+<section id="hero" class="hero d-flex align-items-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                @{
+                    if (Model != null)
+                    {
+                        ResponseModel response = Model;
+                        Html.RenderPartial("QrScanResult", response);
+                    }
+                }
+            </div>
+            <a href="@Url.Action("ManualSubmit","Home")" class="btn btn-default">Back</a>
+        </div>
+    </div>
+</section>
+

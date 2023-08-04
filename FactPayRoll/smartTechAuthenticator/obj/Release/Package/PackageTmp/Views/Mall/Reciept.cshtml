@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Reciept";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+<div class="page-breadcrumb" style="margin-top:100px">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+            
+                @if (ViewData["Success"] != null)
+                {
+                    <h4 class="page-title">@ViewData["Success"] </h4>
+                }
+                @if (ViewData["Error"] != null)
+                {
+                    <h4 class="page-title">@ViewData["Error"] </h4>
+                }
+                <div class="ms-auto text-end">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

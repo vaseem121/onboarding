@@ -1,0 +1,12 @@
+﻿@model smartTechAuthenticator.ViewModels.ResponseModel
+@using smartTechAuthenticator.ViewModels;
+@{
+    if (Model.Status == Status.Success)
+    {
+        <p class="text-success">@Model.Message </p>
+    }
+    else
+    {
+        <p class="text-danger">@Html.Raw(Model.Message)</p>
+    }
+}

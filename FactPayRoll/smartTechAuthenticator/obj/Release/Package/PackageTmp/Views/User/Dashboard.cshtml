@@ -1,0 +1,359 @@
+﻿@model smartTechAuthenticator.ViewModels.BannerCarouselViewModel
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+<style>
+    label {
+        display: inline-block;
+        margin-top: 15px;
+    }
+
+    .user-form h3 {
+        text-align: left;
+    }
+
+    .container h4 {
+        text-align: left;
+    }
+
+    .user-form p {
+        text-align: left;
+    }
+
+    body {
+        background-color: #efefef;
+    }
+
+    .user-form h3 {
+        text-align: left;
+        padding-left: 15px;
+    }
+
+    @@media (max-width: 768px) {
+        .fa-search-head {
+            font-size: 20px;
+            color: white;
+            padding-top: 15px;
+            position: absolute;
+            right: 15px;
+            top: 41%;
+        }
+
+        .mobile-nav-toggle {
+            padding-top: 0 !important;
+        }
+
+            .mobile-nav-toggle.bi-x {
+                top: 0px !important;
+            }
+
+        .banner-img {
+            width: 95%;
+            padding: 11px;
+        }
+    }
+
+    @@media (min-width: 769px) {
+        .atm-img {
+            display: none;
+        }
+
+        .product img {
+            box-shadow: 0px 0px 2px 2px;
+            display: block;
+            margin: 10px auto;
+            border-radius: 8px;
+            width: 75%;
+        }
+
+        #hero .container {
+            margin-top: 0%;
+        }
+
+        .col-md-3 {
+            width: 25% !important;
+        }
+
+        .footer-menu .fa {
+            display: block !important;
+            margin: auto;
+        }
+
+        .banner-img {
+            width: 95%;
+            padding: 11px;
+        }
+
+        .hero {
+            top: 0% !important;
+        }
+
+        .product .btn {
+            margin: 1% 2.6% !important;
+            text-align: center;
+            display: block !important;
+            color: white;
+        }
+    }
+
+    .atm-img {
+        margin: 5px 12px;
+        border-radius: 8px;
+        width: 92%;
+    }
+
+
+    .widgets-img img {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .widgets-img h4 {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, 180%);
+        font-weight: bolder;
+        color: #0b0bab;
+        font-size: 27px;
+    }
+
+    .banner-img {
+        width: 100%;
+        padding: 0;
+    }
+
+    header#header > .container-fluid {
+        height: 100%;
+    }
+
+    nav#navbar {
+        height: 100%;
+    }
+
+    @@media(min-width:992px) {
+        .navbar li:last-child > a {
+            background: transparent;
+            padding: 6px 15px;
+            border-radius: 30px;
+            border: solid 1px #fff;
+            transition: ease 0.5s all-in;
+            margin-left: 20px;
+        }
+    }
+
+    section#hero .container {
+        padding: 0;
+    }
+</style>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+    }
+
+    .slider-wrapper {
+        height: 75vh;
+    }
+
+        .slider-wrapper .slider-item {
+            color: #fff;
+            height: 75vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+/*            background: url("https://images.unsplash.com/photo-1650522147310-13aac44abde2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80") no-repeat center;
+*/    
+background-size: cover;
+        }
+
+    .slider-content {
+        max-width: 60%;
+        margin: 0 auto;
+        padding: 0 20px;
+        font-family: sans-serif;
+        text-align: center;
+    }
+
+        .slider-content h1 {
+            margin-bottom: 20px;
+        }
+
+    button.slick-arrow {
+        display: none !important;
+    }
+</style>
+<section id="hero" class="hero d-flex align-items-center " style=" padding: 90px 0 65px 0;">
+
+    <div class="container">
+        <div class="slider-wrapper">
+            @if (Model.BannerCarouselList.Count != 0)
+            {
+                foreach (var item in Model.BannerCarouselList)
+                {
+                    var img = "/Content/BannerUploadedFiles/" + item.Photo + "";
+
+                    <div class="slider-item" style="background-image:url('@img')">
+                        <div class="slider-content">
+                            <h1>@item.Title</h1>
+                            <p>
+                               @item.Description
+                            </p>
+                        </div>
+                    </div>
+
+                }
+
+            }
+
+
+
+
+            @*<div class="slider-item">
+            <div class="slider-content">
+                <h1>Title</h1>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Repellat accusantium tempora perspiciatis voluptate obcaecati
+                    saepe nam perferendis libero, veniam maxime!
+                </p>
+            </div>
+        </div>
+
+        <div class="slider-item">
+            <div class="slider-content">
+                <h1>Title</h1>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Repellat accusantium tempora perspiciatis voluptate obcaecati
+                    saepe nam perferendis libero, veniam maxime!
+                </p>
+            </div>
+        </div>*@
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-block">
+                    <form class="user-form">
+                        @*<h3>&nbsp;&nbsp;&nbsp;Good Morning</h3>*@
+                        @*<div class="row">
+                                <div class="col-md-12 col-md-12 col-xs-12 col-sm-12 col-lg-12">
+                                    <img src="~/Content/assets/img/top-banner.jpg" alt="banner image" class="banner-img">
+                                </div>
+                            </div>*@
+
+
+                        <div class="row mt-4 mb-5 mx-0 widgets">
+                            <div class="col-3">
+                                <div class="widgets-img">
+                                    <a href="@Url.Action("ScanQr","Home")">
+                                        <img src="~/Content/assets/img/widget-1.jpg" alt="product image">
+                                        <h4>Scan</h4>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="widgets-img">
+                                    <a href="@Url.Action("Index","Mall")">
+                                        <img src="~/Content/assets/img/widget-2.jpg" alt="product image">
+                                        <h4>Mall</h4>
+                                        </a>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="widgets-img">
+                                    <a href="@Url.Action("Index","TicketSystem")">
+                                        <img src="~/Content/assets/img/widget-3.jpg" alt="product image">
+                                        <h4>Service</h4>
+                                        </a>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="widgets-img">
+                                    <img src="~/Content/assets/img/widget-4.jpg" alt="product image">
+                                    <h4>Reward</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        @*<div class="row">
+                                <div class="col-md-6 col-md-3 col-xs-12 col-sm-6 col-lg-6">
+                                    <div class="product">
+                                        <img src="~/Content/assets/img/widget-1.jpg" alt="product image">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-md-3 col-xs-12 col-sm-6 col-lg-6">
+                                    <div class="product">
+                                         <img src="~/Content/assets/img/widget-1.jpg" alt="product image">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-md-3 col-xs-12 col-sm-6 col-lg-6">
+                                    <div class="product">
+                                        <img src="~/Content/assets/img/widget-3.jpg" alt="product image">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-md-3 col-xs-12 col-sm-6 col-lg-6">
+                                    <div class="product">
+                                        <img src="~/Content/assets/img/widget-4.jpg" alt="product image">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 col-md-3 col-xs-12 col-sm-6 col-lg-6">
+                                    <div>
+                                        <img src="~/Content/assets/img/atm.png" class="atm-img" alt="product image">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row text-center mb-5">
+                                <div class="col-md-12">
+                                    <div class="product">
+                                        <a class="btn btn-primary d-flex">View All </a>
+                                    </div>
+                                </div>
+                            </div>*@
+                        <div class="row">
+                            <div class="col-12">
+                                <img src="~/Content/assets/img/bottom-banner.jpg" class="img-fluid" style=" min-width: 100%;width:100%;" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+@if (TempData["Message"] != null)
+{
+    <script type="text/javascript">
+            window.onload = function () {
+                alert("@TempData["Message"]");
+            };
+    </script>
+
+}
+
+<script>
+    $('.slider-wrapper').slick({
+        slidesToShow: 1,
+        dots: false,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000
+    });
+</script>

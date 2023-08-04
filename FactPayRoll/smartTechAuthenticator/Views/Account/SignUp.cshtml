@@ -1,0 +1,210 @@
+﻿@model smartTechAuthenticator.ViewModels.CustomerInfoViewModel
+@using smartTechAuthenticator.Models;
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_SignUpLayout.cshtml";
+}
+<style>
+
+    @@media(max-width:768px) {
+        .password-block {
+            position: relative;
+        }
+
+        .fa-eye {
+            position: absolute;
+            right: 15px;
+            top: 53.5%;
+        }
+
+        .fa-eye-slash {
+            position: absolute;
+            right: 15px;
+            top: 53.5%;
+        }
+
+        .hero {
+            overflow: scroll !important;
+            padding: 0px 0 60px 0 !important;
+            height: 500px;
+            top: 28% !important;
+            background-color: white;
+        }
+
+        .login_container {
+            position: relative;
+            top: 65%;
+        }
+
+        .footer-menu .fa {
+            display: block !important;
+            margin: auto !important;
+        }
+
+        .signin_option_block {
+            margin-bottom: 20px;
+        }
+    }
+
+    @@media (min-width: 769px) {
+        .hero {
+            height: -webkit-fill-available;
+            margin-top: 0px !important;
+            background-color: white;
+        }
+
+        .fa-eye {
+            position: absolute;
+            right: 3%;
+            top: 55%;
+        }
+
+        .fa-eye-slash {
+            position: absolute;
+            right: 3%;
+            top: 55%;
+        }
+
+        .login_section {
+            padding: 0%;
+        }
+
+        #hero .container {
+            margin-top: 0%;
+        }
+
+        .password-block {
+            position: relative;
+        }
+    }
+
+    .fixed-top {
+        padding: 0px;
+    }
+
+    @@media (min-width: 768px) {
+        #hero .container {
+            margin-top: 5%;
+        }
+    }
+    @@media(max-width:479px) {
+        .hero {
+            top: auto !important;
+            bottom: -25px;
+        }
+    }
+</style>
+@using (Html.BeginForm("SignUp", "Account", FormMethod.Post, new { @id = "singUp", enctype = "multipart/form-data" }))
+{
+    <section id="hero" class="hero d-flex align-items-center">
+        @Html.AntiForgeryToken()
+        <div class="container login_container">
+            <div class="row">
+                <div class="col-md-12  mb-1 login_section">
+                    <div class="login-block mb-4">
+                        <h3><b>Create an Account</b></h3>
+                        <span>Signup To Continue</span>
+                    </div>
+                    <div class="row"> 
+                        <div class="col-lg-3">
+                            <div class="form-group mt-3">
+                                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-12" })
+                                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group mt-3">
+                                @Html.LabelFor(model => model.MobileNo, htmlAttributes: new { @class = "control-label col-md-12" })
+                                @Html.EditorFor(model => model.MobileNo, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.MobileNo, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group mt-3">
+                                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-12" })
+                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group mt-3 password-block">
+                                @Html.LabelFor(model => model.UserPass, htmlAttributes: new { @class = "control-label col-md-12" })
+                                @Html.EditorFor(model => model.UserPass, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.UserPass, "", new { @class = "text-danger" })
+                                @*<i class="fa fa-eye" aria-hidden="true"></i>
+                                    <i class="fa fa-eye-slash" aria-hidden="true" onclick="myFunction()"></i>*@
+                                <i class="fa fa-eye-slash" aria-hidden="true" onclick="myFunction()"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="form-group mt-3">
+                                @Html.LabelFor(model => model.StateId, htmlAttributes: new { @class = "control-label col-md-12" })
+                                @Html.DropDownListFor(model => model.StateId, (IEnumerable<SelectListItem>)ViewData["States"], "Select State", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.StateId, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group mt-3 password-block">
+                                @Html.LabelFor(model => model.DistricttId, htmlAttributes: new { @class = "control-label col-md-12" })
+                                @Html.DropDownListFor(model => model.DistricttId, new List<SelectListItem>(), "Select Districtt", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.DistricttId, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group mt-3 password-block">
+                                @Html.LabelFor(model => model.PostCode, htmlAttributes: new { @class = "control-label col-md-12" })
+                                @Html.EditorFor(model => model.PostCode, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.PostCode, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group mt-3 password-block">
+                                @Html.LabelFor(model => model.Photo, htmlAttributes: new { @class = "control-label col-md-12" })
+                                @Html.TextBox("file", "", new { type = "file", @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Photo, "", new { @class = "text-danger" })
+                                <span class="text-danger">@ViewBag.error</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group mt-3">
+                                @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-12" })
+                                @Html.TextAreaFor(model => model.Address, new { @class = "form-control" })
+                                @*<textarea class="form-control" rows="+3"></textarea>*@
+                                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="form-group mt-1 text-center signin_option_block">
+                        <button class="btn btn-primary d-flex justify-content-center">SignUp</button>
+                        <br />
+                        <span>Don't Have An Account <a href="@Url.Action("SignIn","Account")">SignIn</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/validate/js")
+@Scripts.Render("~/bundle/Account");
+@*@Scripts.Render("~/toaster/js");*@
+
+<script>
+    
+    function myFunction(){       
+        var x = document.getElementById("UserPass");
+        if (x.type == "UserPass") {
+            x.type = "text";
+        }
+        else {
+            x.type = "UserPass";
+       } 
+    }
+  
+</script>

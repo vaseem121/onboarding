@@ -1,0 +1,4 @@
+------Error(2022-08-30 16:45:34.7545)DESKTOP-1GOHV86------
+                       Exception Type:System.NullReferenceException |                       Exception Message:Object reference not set to an instance of an object. |                       Stack Trace: |                       Additional Info:System.NullReferenceException: Object reference not set to an instance of an object.
+   at smartTechAuthenticator.Services.Account.AccountRepo.<SignIn>d__6.MoveNext() in E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\Services\Account\AccountRepo.cs:line 95
+

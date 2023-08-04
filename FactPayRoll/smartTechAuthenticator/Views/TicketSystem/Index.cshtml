@@ -1,0 +1,626 @@
+﻿@model smartTechAuthenticator.ViewModels.TicketViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        font-size: 13px;
+    }
+
+    .cards-wrapper {
+        display: flow-root;
+        margin: 40px 0;
+    }
+
+        .cards-wrapper .cards {
+            float: left;
+            width: 48%;
+            margin: 0 0.5%;
+            background: #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            border-radius: 7PX;
+            display: flex;
+            justify-content: space-between;
+            min-height: 120px;
+            border-left: 5px solid #ffb100;
+            margin-bottom: 20px;
+        }
+
+            .cards-wrapper .cards .left-content {
+                border-right: 1px solid #ccc;
+                padding: 10px;
+                width: 25%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .cards-wrapper .cards .right-content {
+                width: 75%;
+                padding: 10px 12px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+                .cards-wrapper .cards .right-content .bottom {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: self-end;
+                    margin-top: 20px;
+                }
+
+                    .cards-wrapper .cards .right-content .bottom .items {
+                        flex: 1;
+                        padding: 0 20px;
+                    }
+
+                .cards-wrapper .cards .right-content p {
+                    margin-bottom: 10px;
+                    font-size: 14px;
+                    color: #808080;
+                }
+
+                .cards-wrapper .cards .right-content .bottom .items span {
+                    display: block;
+                    color: #8080809e;
+                }
+
+                    .cards-wrapper .cards .right-content .bottom .items span:last-child {
+                        color: #808080;
+                        font-size: 13px;
+                        margin-top: 5px;
+                    }
+
+            .cards-wrapper .cards .left-content .price span {
+                font-size: 18px;
+                color: #808080;
+            }
+
+            .cards-wrapper .cards .right-content .bottom .items a.btn.btn-info {
+                line-height: 1 !important;
+            }
+
+    .day-and-time span:first-child {
+        color: #808080;
+        font-size: 11px;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+        display: inline-block;
+    }
+
+    .cards-wrapper .cards .left-content .time {
+        color: #5e4f4f;
+        font-size: 15px;
+    }
+
+    .cards-wrapper .cards .right-content .bottom .items:first-child {
+        padding-left: 0;
+    }
+
+    .cards-wrapper .cards .right-content .bottom .items button.btn.btn-danger.btn-delete {
+        line-height: 1 !important;
+    }
+
+
+    .cards-wrapper .cards .right-content .bottom .items {
+        padding: 0;
+        flex: none;
+        margin-left: 10px;
+    }
+
+    .cards-wrapper .cards .right-content .bottom {
+        justify-content: flex-start;
+    }
+
+        .cards-wrapper .cards .right-content .bottom .items:first-child {
+            margin-left: 0;
+        }
+
+    .cards-wrapper {
+        margin-top: 20px;
+    }
+
+
+
+    @@media(max-width:767px) {
+        .cards-wrapper .cards {
+            margin: 0 0 20px;
+            width: 100%;
+        }
+
+            .cards-wrapper .cards .right-content .bottom .items {
+                padding: 0 4px;
+            }
+
+            .cards-wrapper .cards .left-content {
+                width: 30%;
+                padding: 10px 6px;
+            }
+
+            .cards-wrapper .cards .right-content {
+                width: 70%;
+                padding: 10px 8px;
+            }
+
+                .cards-wrapper .cards .right-content p {
+                    font-size: 14px;
+                }
+
+        .cards-wrapper {
+            padding: 0 8px;
+        }
+
+            .cards-wrapper .cards .right-content .bottom {
+                flex-wrap: wrap;
+            }
+
+                .cards-wrapper .cards .right-content .bottom .items {
+                    margin-left: 0px;
+                    padding: 0 1px;
+                }
+
+                    .cards-wrapper .cards .right-content .bottom .items a.btn.btn-info {
+                        padding-left: 5px;
+                        padding-right: 5px;
+                    }
+
+            .cards-wrapper .cards .left-content .price span {
+                font-size: 14px;
+                word-break: break-all;
+            }
+    }
+    /* //////////////////////////*/
+    .page-breadcrumb {
+        margin-top: 100px;
+    }
+
+        .page-breadcrumb .col-12 {
+            display: flex !important;
+        }
+
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+    input:checked + .slider {
+        background-color: #2196F3;
+    }
+
+    input:focus + .slider {
+        box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
+
+    /*Rounded sliders*/
+    .slider.round {
+        border-radius: 34px;
+    }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+    .switch-wrapper {
+        position: fixed;
+        left: 0;
+        padding: 7px 20px;
+        background: #fff;
+        box-shadow: 0 0 5px rgba(0,0,0,0.4);
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+        margin-top: 25px;
+    }
+
+        .switch-wrapper label.switch {
+            margin: 0;
+        }
+
+    .form-group.row.select-label-status {
+        padding: 0 25px;
+        margin-top: 20px;
+    }
+
+    .page-breadcrumb .col-12 select#LabelStatus {
+        width: auto;
+        margin-left: 30px;
+    }
+
+    .page-breadcrumb .col-12 label.text-end {
+        margin-left: 10px;
+    }
+</style>
+<style>
+    .text-end {
+        text-align: left !important;
+    }
+
+    .page-breadcrumb {
+        margin-top: 100px;
+    }
+
+        .page-breadcrumb .col-12 {
+            display: flex !important;
+        }
+
+
+    .filter-wrapper {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+        .filter-wrapper > div {
+            width: auto;
+        }
+
+            .filter-wrapper > div:last-child {
+                flex-direction: column;
+            }
+
+    input#txtDate {
+        height: calc(1.5em + 0.75rem + 2px);
+        padding: 0.375rem 0.75rem;
+        font-size: 0.875rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #3e5569;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #e9ecef;
+        -webkit-appearance: none;
+        appearance: none;
+        border-radius: 2px;
+        transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
+    }
+
+
+
+    .filter-wrapper > div:first-child a.btn.btn-info {
+        margin-top: 0 !important;
+    }
+
+    .filter-wrapper > div:first-child > label {
+        position: relative;
+        top: 15px;
+    }
+
+    .page-breadcrumb .col-12 select#LabelStatus {
+        width: auto;
+        margin-left: 0;
+    }
+
+    .filter-wrapper > div:last-child label {
+        font-size: 13px;
+        line-height: 19px;
+    }
+
+    .status {
+        margin-left: 20px;
+    }
+
+    .checked {
+        color: orange;
+    }
+    .rating > span:before {
+        content: '★';
+        color: #c7c5c5;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+        .rating:hover > span:before {
+            color: orange;
+        }
+
+        .rating > span:hover ~ span:before {
+            color: #c7c5c5;
+        }
+    @@media(max-width:767px) {
+        .page-breadcrumb .col-12 {
+            padding: 0;
+        }
+
+            .page-breadcrumb .col-12 select#LabelStatus {
+                margin-left: 0;
+            }
+
+        .filter-wrapper {
+            flex-direction: column;
+        }
+
+            .filter-wrapper > div {
+                width: 100%;
+            }
+
+                .filter-wrapper > div:last-child {
+                    margin-top: 20px;
+                    align-items: flex-start !important;
+                }
+    }
+</style>
+<div class="page-breadcrumb">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+                <h4 class="page-title">Ticket System </h4>
+                <div class="ms-auto text-end">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                Ticket System
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+            <div class="filter-wrapper">
+                <div class="col-12 d-flex1 no-block align-items-center">
+                    <a class="btn btn-info" style="text-align: center; width: 141px; align-self: end; margin: 10px 0px 0px 0px;" href="@Url.Action("CreateTicket", "TicketSystem")">Create New Ticket</a>
+                    <div class="status">
+                        @Html.LabelFor(x => x.LabelStatus, new { @class = "text-end control-label col-form-label" })
+                        @Html.DropDownListFor(x => x.LabelStatus, new SelectList(Model.LabelStatuses, "StatusId", "Status"), " Select Label Status ", new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="col-12 d-flex1 no-block align-items-center filter">
+                    @*<label>Filter By Date </label>*@
+                    <div class="date">
+                        <label> Filter :</label>
+                        @*<input id="startdate" type="date" class="datepicker form-control" value="">*@
+                        <input type="text" name="datefilter" value="" autocomplete="off" class="datepicker form-control" />
+                    </div>
+                    @*<input type="date" id="txtDate" value="" />*@
+                    @*@Html.TextBoxFor(Model => Model.date, new { @type = "date", @id = "txtDate" })*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="cards-wrapper" style="margin-bottom:120px">
+    @if (Model.TicketViewmodelList.Count == 0)
+    {
+        <div class="cards">
+            <span>No record Found!</span>
+        </div>
+    }
+    else
+    {
+        foreach (var item in Model.TicketViewmodelList)
+        {
+            <div class="cards">
+                <div class="left-content">
+                    <div class="price">
+                        <span> @item.Title</span>
+                    </div>
+                    <div class="day-and-time">
+                        <span>Ticket Date</span>
+                        <div class="time">@item.CreatedDate</div>
+                    </div>
+                </div>
+                <div class="right-content">
+                    <div class="top">
+                        <p>
+                            <b>Massage :</b> @item.Message
+                            <b  style="float:right; font-size:16px;">
+                                @if (@item.Status == "Solved" && @item.Rating != 0)
+                                {
+                                    for (int i = 1; i < 6; i++)
+                                    {                                      
+                                        if (i <= @item.Rating)
+                                        {
+                                          <span class="checked">★ </span>
+                                          
+                                        }
+                                        else
+                                        {
+                                          <span class="">★ </span>
+                                         }
+                                    }
+                                }
+                                @if (@item.Status == "Solved" && @item.Rating == 0)
+                                {
+                            <b class="rating">
+                                <span id="1" class="" data-id="@item.Id"></span>
+                                <span id="2" class="fa fa-star star1" data-id="@item.Id"></span>
+                                <span id="3" class="fa fa-star star1" data-id="@item.Id"></span>
+                                <span id="4" class="fa fa-star star1" data-id="@item.Id"></span>
+                                <span id="5" class="fa fa-star star1" data-id="@item.Id"></span>
+                            </b>
+                                    
+
+                                }
+                            </b>
+                        </p>
+                        @*<p>Order Id: @item.Id</p>*@
+                    </div>
+                    <div class="bottom">
+                        <div class="items">
+                            <span>Ticket Status</span>
+                            <span class="badge rounded-pill bg-primary text-white">@item.Status</span>
+                        </div>
+                        <div class="items">
+                            <a href='/TicketSystem/TicketEdit?Id=@item.Id' class='btn btn-info'>DISCUSS</a>
+                        </div>
+                        @*<div class="items">
+                                <a href='/TicketSystem/ViewTicketDetails?Id=@item.Id' class='btn btn-info'>View</a>
+                            </div>*@
+                        <div class="items">
+                            @*<a class='btn btn-info btn-delete'>Delete</a>*@
+                            <button class='btn btn-danger btn-delete' data-id=@item.Id>Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script src="~/Content/assets-admin/extra-libs/DataTables/datatables.min.js"></script>
+<script src="~/Scripts/Customers/Order.js"></script>
+
+<script>
+    $(document).on("click", ".btn-delete", function () {
+        if (confirm("Are you sure, you want to delete?")) {
+            var Id = $(this).attr("data-id");
+            var Category =
+            {
+                Id: Id
+            }
+            $.ajax({
+                type: "POST",
+                url: "/TicketSystem/DeleteTicket",
+                data: Category,
+                success: function (response) {
+                    if (response.Status == 1) {
+                       // tbl_Customer.ajax.reload();
+                        location.reload();
+                        showMessage("Success", "Ticket deleted successfully");
+                    } else {
+                    }
+                },
+                error: function () {
+                    showMessage("Failed", "Ticket not deleted successfully",);
+                }
+            });
+        }
+    });
+
+    $(document).ready(function () {
+       $("#LabelStatus").on('change', function () {
+           var data = 0;
+            data = $(this).val();
+           window.location.href = '@Url.Action("Index", "TicketSystem", new { StatusId = "data" })'.replace("data",data);
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+
+        $(function () {
+
+            $('input[name="datefilter"]').daterangepicker({
+                autoUpdateInput: false,
+                locale: {
+                    cancelLabel: 'Clear'
+                }
+            });
+
+            $('input[name="datefilter"]').on('apply.daterangepicker', function (ev, picker) {
+
+                $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+                var startDate = picker.startDate.format('DD/MM/YYYY');
+                var endDate = picker.endDate.format('DD/MM/YYYY');
+                alert(startDate);
+                alert(endDate);
+
+                window.location.href = "@Url.Action("index", "TicketSystem")?startDate=" + startDate + "&endtdate="+endDate+"";
+                var newdata = { "startDate": startDate, "endDate": endDate, "status": 0 }
+
+            });
+
+            $('input[name="datefilter"]').on('cancel.daterangepicker', function (ev, picker) {
+                $(this).val('');
+            });
+
+        });
+
+
+
+
+
+        $("#txtDate").on('change', function () {
+            var date = $("#txtDate").val();
+            if (date != null && date != '') {
+                window.location.href = "/TicketSystem/Index/?date=" + date + "";
+            }
+        });
+    });
+
+
+
+
+
+</script>
+
+<script>
+    $(document).on("click", ".star1", function () {
+        if (confirm("Are you sure, you want to Add Rating ?")) {
+            var Id = $(this).attr("id");
+            var data = $(this).attr("data-id");
+            //alert(Id);
+            //alert(data);
+            var Category =
+            {
+                Rating: Id, TicketId: data
+            }
+            $.ajax({
+                type: "POST",
+                url: "/TicketSystem/AddRating",
+                data: Category,
+                success: function (response) {
+                    if (response.Status == 1) {
+                        // tbl_Customer.ajax.reload();
+                        location.reload();
+                        showMessage("Success", "Rating Add Successfully");
+                    } else {
+                    }
+                },
+                error: function () {
+                    showMessage("Failed", "Rating Add Not Successfully",);
+                }
+            });
+        }
+    })
+</script>

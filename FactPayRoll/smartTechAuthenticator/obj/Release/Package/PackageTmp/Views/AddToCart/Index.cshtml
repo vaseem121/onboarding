@@ -1,0 +1,120 @@
+﻿@model smartTechAuthenticator.ViewModels.MallViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+<link rel="stylesheet" href="~/Content/assets-mall/css/all.min.css">
+<link rel="stylesheet" href="~/Content/assets-mall/css/bootstrap.min.css">
+<link rel="stylesheet" href="~/Content/assets-mall/css/slick-theme.css">
+<link rel="stylesheet" href="~/Content/assets-mall/css/slick.css">
+<link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+<link rel="stylesheet" href="~/Content/assets-mall/css/style.css">
+<section class="cart-page-wrapper mt-5 cart-page" style="margin-top: 100px; padding: 60px 0 100px;">
+    <div class="container-fluid">
+        <h5 class="mb-4">SHOPPING-CART SUMMARY</h5>
+        <div class="row">
+            <div class="col-12">
+                <p id="emptyCartWarning" class="alert alert-warning unvisible">Your shopping cart is empty.</p>
+            </div>
+            <div class="col-12">
+                <div class="table-reponsive">
+                    <table id="cart_summary" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="cart_product first_item">Product</th>
+                                <th class="cart_description item">Description</th>
+                                <th class="cart_unit item text-right">Unit price</th>
+                                <th class="cart_quantity item text-center">Qty</th>
+                                <th class="cart_delete last_item">&nbsp;</th>
+                                <th class="cart_total item text-right">Total</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr class="cart_total_price">
+                                <td colspan="5" class="total_price_container text-right">
+                                    <span>Total</span>
+                                    <div class="hookDisplayProductPriceBlock-price"></div>
+                                </td>
+                                <td colspan="2" class="price" id="total_price_container"> <span id="total_price">RM @Model.TotalCartPrice</span></td>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            @if (Model.AddToCartList.Count == 0)
+                            {
+                                <tr id="product_4_16_0_0" class="cart_item first_item address_0 odd">
+                                    <td> </td>
+                                </tr>
+                            }
+                            else
+                            {
+                                foreach (var item in Model.AddToCartList)
+                                {
+                                    <tr id="product_4_16_0_0" class="cart_item first_item address_0 odd">
+                                        <td class="cart_product">
+                                            <a href="@Url.Action("Description","Mall",new { Id = item.ProductId })">
+                                                <img src="~/Content/Product/@item.Photo" alt="">
+                                            </a>
+                                        </td>
+                                        <td class="cart_description">
+                                            <p class="product-name">
+                                                <a href="@Url.Action("Description","Mall",new { Id = item.ProductId })">@item.ProductName </a>
+                                            </p>
+                                            <small>
+                                                <a href="@Url.Action("Description","Mall",new { Id = item.ProductId })">@item.Description</a>
+                                            </small>
+                                        </td>
+                                        <td class="cart_unit" data-title="Unit price">
+                                            <ul class="price text-right" id="">
+                                                <li class="price">RM @item.Price</li>
+                                            </ul>
+                                        </td>
+                                        <td class="cart_quantity text-center" data-title="Quantity">
+                                            <input size="2" type="text" autocomplete="off" class="cart_quantity form-control" value="@item.Qty" readonly name="" id="txtQty">
+                                            <div class="cart_quantity_button clearfix mt-1">
+                                                <a class="cart_quantity_down " id=""  href="@Url.Action("ManageCart","AddToCart",new { Id = item.Id,Qty=item.Qty,Qt="minus" })"  title="Subtract" style="float:left;">
+                                                    <span>
+                                                        <i class="fas fa-minus"></i>
+                                                    </span>
+                                                </a>
+                                                <a rel="nofollow" class="cart_quantity" id=""   href="@Url.Action("ManageCart","AddToCart",new { Id = item.Id,Qty=item.Qty,Qt="Plus" })"    title="Add" style="float:left;">
+                                                    <span>
+                                                        <i class="fas fa-plus"></i>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </td>
+                                        <td class="cart_delete text-center" data-title="Delete">
+                                            <div>
+                                                <a title="Delete" class="delete" id="" href="@Url.Action("DeleteInCart","AddToCart",new { Id = item.Id })">
+                                                    <i class="far fa-trash-alt"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                        <td class="cart_total" data-title="Total">
+                                            <span class="price" id=""> RM @item.TotalPrice </span>
+                                        </td>
+                                    </tr>
+
+                                }
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 next text-start mb-5">
+                <a href=@Url.Action("Index","Mall")>Back</a>
+            </div>
+            <div class="col-6 next text-end mb-5">
+                <a href=@Url.Action("CartToCheckOut","AddTocart")>Check Out</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer End -->
+<script src="~/Content/assets-mall/js/jquery.min.js"></script>
+<script src="~/Content/assets-mall/js/slick.js"></script>
+<script src="~/Content/assets-mall/js/bootstrap.bundle.min.js"></script>
+<script src="~/Content/assets-mall/js/main.js"></script>

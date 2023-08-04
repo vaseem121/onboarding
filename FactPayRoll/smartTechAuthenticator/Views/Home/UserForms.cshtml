@@ -1,0 +1,431 @@
+﻿   @model smartTechAuthenticator.ViewModels.ProductViewModel
+@{
+    ViewBag.Title = "UserForms";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        font-size: 13px;
+    }
+
+    .cards-wrapper {
+        display: flow-root;
+        margin: 140px 0;
+    }
+
+    .cards-wrapper {
+        margin-top: 0;
+    }
+
+        .cards-wrapper .cards {
+            float: left;
+            width: 48%;
+            margin: 0 0.5%;
+            background: #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            border-radius: 7PX;
+            display: flex;
+            justify-content: space-between;
+            min-height: 120px;
+            border-left: 5px solid #ffb100;
+            margin-bottom: 20px;
+        }
+
+            .cards-wrapper .cards .left-content {
+                border-right: 1px solid #ccc;
+                padding: 10px;
+                width: 25%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .cards-wrapper .cards .right-content {
+                width: 75%;
+                padding: 10px 12px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+                .cards-wrapper .cards .right-content .bottom {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: self-end;
+                    margin-top: 20px;
+                }
+
+                    .cards-wrapper .cards .right-content .bottom .items {
+                        flex: 1;
+                        padding: 0 20px;
+                    }
+
+                .cards-wrapper .cards .right-content p {
+                    margin-bottom: 10px;
+                    font-size: 14px;
+                    color: #808080;
+                }
+
+                .cards-wrapper .cards .right-content .bottom .items span {
+                    display: block;
+                    color: #8080809e;
+                }
+
+                    .cards-wrapper .cards .right-content .bottom .items span:last-child {
+                        color: #808080;
+                        font-size: 13px;
+                        margin-top: 5px;
+                    }
+
+            .cards-wrapper .cards .left-content .price span {
+                font-size: 18px;
+                color: #808080;
+            }
+
+            .cards-wrapper .cards .right-content .bottom .items a.btn.btn-info {
+                line-height: 1 !important;
+            }
+
+    .day-and-time span:first-child {
+        color: #808080;
+        font-size: 11px;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+        display: inline-block;
+    }
+
+    .cards-wrapper .cards .left-content .time {
+        color: #5e4f4f;
+        font-size: 15px;
+    }
+
+    .cards-wrapper .cards .right-content .bottom .items:first-child {
+        padding-left: 0;
+    }
+
+    .search form {
+        padding: 0 10px;
+    }
+
+    @@media(max-width:767px) {
+        .cards-wrapper .cards {
+            margin: 0 0 20px;
+            width: 100%;
+        }
+
+            .cards-wrapper .cards .right-content .bottom .items {
+                padding: 0 4px;
+            }
+
+            .cards-wrapper .cards .left-content {
+                width: 30%;
+                padding: 10px 6px;
+            }
+
+            .cards-wrapper .cards .right-content {
+                width: 70%;
+                padding: 10px 8px;
+            }
+
+                .cards-wrapper .cards .right-content p {
+                    font-size: 14px;
+                }
+
+        .cards-wrapper {
+            padding: 0 8px;
+        }
+    }
+
+
+    .search form input[type="search"] {
+        padding: 0 15px;
+        border: 2px solid #e5e5e5;
+        border-right: 0;
+        line-height: 45px;
+        font-size: 15px;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        -ms-border-radius: 2px;
+        -o-border-radius: 2px;
+        border-radius: 2px;
+        outline: none;
+        width: 95%;
+        -webkit-transition: all 300ms ease;
+        -moz-transition: all 300ms ease;
+        -o-transition: all 300ms ease;
+        transition: all 300ms ease;
+    }
+
+    .search form button.submit_search {
+        height: 49px;
+        width: 49px;
+        line-height: 49px;
+        color: #fff;
+        background: #000049a3;
+        padding: 0;
+        border: 0;
+        font-size: 24px;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        -ms-border-radius: 2px;
+        -o-border-radius: 2px;
+        border-radius: 2px;
+        -webkit-transition: all 300ms ease;
+        -moz-transition: all 300ms ease;
+        -o-transition: all 300ms ease;
+        transition: all 300ms ease;
+    }
+
+    .search form {
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    .search {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    /*  .switch-wrapper {
+        position: fixed;
+        left: 0;
+        padding: 7px 20px;
+        background: #fff;
+        box-shadow: 0 0 5px rgba(0,0,0,0.4);
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+    }
+
+        .switch-wrapper label.switch {
+            margin: 0;
+        }*/
+</style>
+<style>
+    .text-end {
+        text-align: left !important;
+    }
+
+    .page-breadcrumb {
+        margin-top: 100px;
+    }
+
+        .page-breadcrumb .col-12 {
+            display: flex !important;
+        }
+
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+    input:checked + .slider {
+        background-color: #2196F3;
+    }
+
+    input:focus + .slider {
+        box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 34px;
+    }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+    .switch-wrapper {
+        position: fixed;
+        left: 0;
+        padding: 7px 20px;
+        background: #fff;
+        box-shadow: 0 0 5px rgba(0,0,0,0.4);
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+    }
+
+        .switch-wrapper label.switch {
+            margin: 0;
+        }
+
+
+    .search {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        align-items: flex-end;
+    }
+
+        .search > div {
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            align-items: flex-start !important;
+            padding: 0 12px;
+        }
+
+        .search form {
+            margin-bottom: 0;
+        }
+
+        .search > div input {
+            -webkit-transition: all 300ms ease;
+            -moz-transition: all 300ms ease;
+            -o-transition: all 300ms ease;
+            transition: all 300ms ease;
+            padding: 0 15px;
+            border: 2px solid #e5e5e5;
+            line-height: 45px;
+            font-size: 15px;
+        }
+
+    @@media(max-width:767px) {
+        .search {
+            flex-direction: column;
+            margin-top: 20px;
+        }
+
+            .search > div {
+                width: 100%;
+            }
+
+                .search > div input {
+                    width: 100%;
+                    margin-bottom: 10px;
+                }
+    }
+</style>
+<div class="page-breadcrumb" style="">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+                <h4 class="page-title">Forms  </h4>
+                <div class="ms-auto text-end">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                User Form
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="cards-wrapper" style="margin-bottom:120px">
+    @if (Model.FormResPro.Count == 0)
+    {
+        <div class="cards">
+            <span>No record Found!</span>
+        </div>
+    }
+    else
+    {
+        foreach (var item in Model.FormResPro)
+        {
+            <div class="cards">
+                <div class="left-content">
+                    <!--<div class="price">-->
+                        @*<span>$ @item.TotalAmount</span>*@
+                    <!--</div>-->
+                    <div class="day-and-time">
+                        <span>Created Date</span>
+                        <div class="time">@item.DateCreated</div>
+                    </div>
+                </div>
+                <div class="right-content">
+                    <div class="top">
+                        <p>Customer Name: @item.CustomerName</p>
+                        <p>Form Name : @item.Name</p>
+                    </div>
+                    <div class="bottom">
+                        <!--<div class="items">
+                            <span>Total Item</span>-->
+                            @*<span>@item.Qty</span>*@
+                        <!--</div>-->
+                        <!--<div class="items">
+                            <span>Order Status</span>-->
+                            @*@if (item.Shippingstatus == "1")
+                            {
+                                <span class="badge rounded-pill bg-primary text-white">Orderd</span>
+                            }
+                            else if (item.Shippingstatus == "2")
+                            {
+                                <span class="badge rounded-pill bg-warning text-white">Shipped</span>
+                            }
+                            else if (item.Shippingstatus == "3")
+                            {
+                                <span class="badge rounded-pill bg-info text-white">Out for Delivery</span>
+                            }
+                            else
+                            {
+                                <span class="badge rounded-pill bg-success text-white">Delivered</span>
+                            }*@
+                        <!--</div>-->
+                        <div class="items">
+                            <a href='/Home/ViewUserForm?ID=@item.ResponseId' class='btn btn-info'>View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
+
+

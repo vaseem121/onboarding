@@ -1,0 +1,621 @@
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\NLog.config
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\smartTechAuthenticator.dll.config
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\smartTechAuthenticator.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\smartTechAuthenticator.pdb
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\csc.exe
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\csc.exe.config
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\csc.rsp
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\csi.exe
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\csi.exe.config
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\csi.rsp
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\Microsoft.Managed.Core.targets
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\System.Buffers.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\System.Collections.Immutable.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\System.Memory.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\System.Numerics.Vectors.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\System.Reflection.Metadata.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\System.Threading.Tasks.Extensions.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\vbc.exe
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\vbc.exe.config
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\vbc.rsp
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\VBCSCompiler.exe
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\VBCSCompiler.exe.config
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Antlr3.Runtime.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\ExcelDataReader.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Bcl.AsyncInterfaces.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Bcl.HashCode.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Data.SqlClient.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.Design.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.Relational.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.SqlServer.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.Caching.Abstractions.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.Caching.Memory.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.Configuration.Binder.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.Configuration.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.DependencyInjection.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.Logging.Abstractions.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.Logging.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.Options.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.Primitives.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Identity.Client.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.IdentityModel.Logging.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.IdentityModel.Protocols.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.IdentityModel.Tokens.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Web.Infrastructure.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Newtonsoft.Json.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\NLog.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\QRCoder.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Stripe.net.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Buffers.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Collections.Immutable.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.ComponentModel.Annotations.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.IdentityModel.Tokens.Jwt.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Memory.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Numerics.Vectors.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Runtime.CompilerServices.Unsafe.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Threading.Tasks.Extensions.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Web.Helpers.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Web.Mvc.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Web.Optimization.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Web.Razor.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Web.WebPages.Deployment.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Web.WebPages.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Web.WebPages.Razor.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Unity.Abstractions.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Unity.Container.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Unity.Mvc5.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\WebGrease.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\ExcelDataReader.pdb
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\ExcelDataReader.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Bcl.AsyncInterfaces.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Bcl.HashCode.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Data.SqlClient.pdb
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Data.SqlClient.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.Abstractions.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.Design.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.Relational.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.SqlServer.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.Caching.Abstractions.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.Caching.Memory.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.Configuration.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.Configuration.Binder.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.DependencyInjection.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.Logging.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.Logging.Abstractions.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.Options.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.Primitives.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Identity.Client.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.IdentityModel.Logging.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.IdentityModel.Protocols.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.IdentityModel.Tokens.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\NLog.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Stripe.net.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Buffers.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Collections.Immutable.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.IdentityModel.Tokens.Jwt.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Memory.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Numerics.Vectors.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Runtime.CompilerServices.Unsafe.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Threading.Tasks.Extensions.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Web.Helpers.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Web.Mvc.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Web.Optimization.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Web.Razor.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Web.WebPages.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Web.WebPages.Deployment.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Web.WebPages.Razor.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Newtonsoft.Json.xml
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Unity.Abstractions.pdb
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Unity.Container.pdb
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Antlr3.Runtime.pdb
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\de\Microsoft.Data.SqlClient.resources.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\es\Microsoft.Data.SqlClient.resources.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\fr\Microsoft.Data.SqlClient.resources.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\it\Microsoft.Data.SqlClient.resources.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\ja\Microsoft.Data.SqlClient.resources.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\ko\Microsoft.Data.SqlClient.resources.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\pt-BR\Microsoft.Data.SqlClient.resources.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\ru\Microsoft.Data.SqlClient.resources.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\obj\Debug\smartTechAuthenticator.csproj.CoreCompileInputs.cache
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\obj\Debug\smartTechAuthenticator.csproj.CopyComplete
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\obj\Debug\smartTechAuthenticator.dll
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\obj\Debug\smartTechAuthenticator.pdb
+E:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\obj\Debug\smartTechAuthenticator.csproj.AssemblyReference.cache
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\NLog.config
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\smartTechAuthenticator.dll.config
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\smartTechAuthenticator.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\smartTechAuthenticator.pdb
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\csc.exe
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\csc.exe.config
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\csc.rsp
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\csi.exe
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\csi.exe.config
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\csi.rsp
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\Microsoft.CodeAnalysis.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\Microsoft.CSharp.Core.targets
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\Microsoft.Managed.Core.targets
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\Microsoft.VisualBasic.Core.targets
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\System.Buffers.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\System.Collections.Immutable.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\System.Memory.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\System.Numerics.Vectors.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\System.Reflection.Metadata.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\System.Text.Encoding.CodePages.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\System.Threading.Tasks.Extensions.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\vbc.exe
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\vbc.exe.config
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\vbc.rsp
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\VBCSCompiler.exe
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\roslyn\VBCSCompiler.exe.config
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Antlr3.Runtime.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\ExcelDataReader.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Bcl.AsyncInterfaces.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Bcl.HashCode.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Data.SqlClient.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.Abstractions.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.Design.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.Relational.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.SqlServer.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.Caching.Abstractions.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.Caching.Memory.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.Configuration.Binder.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.Configuration.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.DependencyInjection.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.Logging.Abstractions.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.Logging.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.Options.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.Primitives.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Identity.Client.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.IdentityModel.Logging.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.IdentityModel.Protocols.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.IdentityModel.Tokens.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Web.Infrastructure.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Newtonsoft.Json.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\NLog.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\QRCoder.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Stripe.net.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Buffers.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Collections.Immutable.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.ComponentModel.Annotations.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.IdentityModel.Tokens.Jwt.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Memory.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Numerics.Vectors.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Runtime.CompilerServices.Unsafe.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Threading.Tasks.Extensions.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Web.Helpers.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Web.Mvc.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Web.Optimization.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Web.Razor.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Web.WebPages.Deployment.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Web.WebPages.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Web.WebPages.Razor.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Unity.Abstractions.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Unity.Container.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Unity.Mvc5.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\WebGrease.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\ExcelDataReader.pdb
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\ExcelDataReader.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Bcl.AsyncInterfaces.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Bcl.HashCode.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Data.SqlClient.pdb
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Data.SqlClient.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.Abstractions.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.Design.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.Relational.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.SqlServer.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.Caching.Abstractions.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.Caching.Memory.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.Configuration.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.Configuration.Binder.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.DependencyInjection.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.Logging.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.Logging.Abstractions.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.Options.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Extensions.Primitives.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.Identity.Client.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.IdentityModel.Logging.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.IdentityModel.Protocols.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Microsoft.IdentityModel.Tokens.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\NLog.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Stripe.net.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Buffers.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Collections.Immutable.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.IdentityModel.Tokens.Jwt.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Memory.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Numerics.Vectors.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Runtime.CompilerServices.Unsafe.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Threading.Tasks.Extensions.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Web.Helpers.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Web.Mvc.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Web.Optimization.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Web.Razor.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Web.WebPages.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Web.WebPages.Deployment.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\System.Web.WebPages.Razor.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Newtonsoft.Json.xml
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Unity.Abstractions.pdb
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Unity.Container.pdb
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\Antlr3.Runtime.pdb
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\de\Microsoft.Data.SqlClient.resources.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\es\Microsoft.Data.SqlClient.resources.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\fr\Microsoft.Data.SqlClient.resources.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\it\Microsoft.Data.SqlClient.resources.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\ja\Microsoft.Data.SqlClient.resources.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\ko\Microsoft.Data.SqlClient.resources.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\pt-BR\Microsoft.Data.SqlClient.resources.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\ru\Microsoft.Data.SqlClient.resources.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\bin\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\obj\Debug\smartTechAuthenticator.csproj.AssemblyReference.cache
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\obj\Debug\smartTechAuthenticator.csproj.CoreCompileInputs.cache
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\obj\Debug\smartTechAuthenticator.csproj.CopyComplete
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\obj\Debug\smartTechAuthenticator.dll
+G:\Bitbucket\smarttechauthenticatorsecondphase\smartTechAuthenticator\obj\Debug\smartTechAuthenticator.pdb
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\NLog.config
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\smartTechAuthenticator.dll.config
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\smartTechAuthenticator.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\smartTechAuthenticator.pdb
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\roslyn\csc.exe
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\roslyn\csc.exe.config
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\roslyn\csc.rsp
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\roslyn\csi.exe
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\roslyn\csi.exe.config
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\roslyn\csi.rsp
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\roslyn\Microsoft.Managed.Core.targets
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\roslyn\System.Buffers.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\roslyn\System.Collections.Immutable.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\roslyn\System.Memory.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\roslyn\System.Numerics.Vectors.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\roslyn\System.Reflection.Metadata.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\roslyn\vbc.exe
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\roslyn\vbc.exe.config
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\roslyn\vbc.rsp
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\roslyn\VBCSCompiler.exe
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\roslyn\VBCSCompiler.exe.config
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Antlr3.Runtime.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\ExcelDataReader.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Bcl.AsyncInterfaces.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Bcl.HashCode.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Data.SqlClient.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.Design.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.Relational.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.Caching.Abstractions.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.Caching.Memory.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.Configuration.Binder.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.Configuration.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.DependencyInjection.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.Logging.Abstractions.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.Logging.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.Options.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.Primitives.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Identity.Client.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.IdentityModel.Logging.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.IdentityModel.Protocols.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.IdentityModel.Tokens.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Web.Infrastructure.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Newtonsoft.Json.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\NLog.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\QRCoder.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Stripe.net.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\System.Buffers.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\System.Collections.Immutable.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\System.ComponentModel.Annotations.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\System.IdentityModel.Tokens.Jwt.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\System.Memory.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\System.Numerics.Vectors.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\System.Threading.Tasks.Extensions.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\System.Web.Helpers.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\System.Web.Mvc.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\System.Web.Optimization.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\System.Web.Razor.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\System.Web.WebPages.Deployment.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\System.Web.WebPages.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\System.Web.WebPages.Razor.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Unity.Abstractions.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Unity.Container.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Unity.Mvc5.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\WebGrease.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\ExcelDataReader.pdb
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\ExcelDataReader.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Bcl.AsyncInterfaces.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Bcl.HashCode.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Data.SqlClient.pdb
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Data.SqlClient.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.Abstractions.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.Design.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.Relational.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.SqlServer.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.Caching.Abstractions.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.Caching.Memory.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.Configuration.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.Configuration.Binder.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.DependencyInjection.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.Logging.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.Logging.Abstractions.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.Options.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.Primitives.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Identity.Client.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.IdentityModel.Logging.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.IdentityModel.Protocols.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Microsoft.IdentityModel.Tokens.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\NLog.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Stripe.net.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\System.Buffers.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\System.Collections.Immutable.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\System.IdentityModel.Tokens.Jwt.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\System.Memory.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\System.Numerics.Vectors.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\System.Threading.Tasks.Extensions.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\System.Web.Helpers.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\System.Web.Mvc.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\System.Web.Optimization.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\System.Web.Razor.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\System.Web.WebPages.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\System.Web.WebPages.Deployment.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\System.Web.WebPages.Razor.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Newtonsoft.Json.xml
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Unity.Abstractions.pdb
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Unity.Container.pdb
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\Antlr3.Runtime.pdb
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\de\Microsoft.Data.SqlClient.resources.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\es\Microsoft.Data.SqlClient.resources.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\fr\Microsoft.Data.SqlClient.resources.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\it\Microsoft.Data.SqlClient.resources.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\ja\Microsoft.Data.SqlClient.resources.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\ko\Microsoft.Data.SqlClient.resources.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\pt-BR\Microsoft.Data.SqlClient.resources.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\ru\Microsoft.Data.SqlClient.resources.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\obj\Debug\smartTechAuthenticator.csproj.AssemblyReference.cache
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\obj\Debug\smartTechAuthenticator.csproj.CoreCompileInputs.cache
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\obj\Debug\smartTechAuthenticator.csproj.CopyComplete
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\obj\Debug\smartTechAuthenticator.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\obj\Debug\smartTechAuthenticator.pdb
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\System.Web.Http.WebHost.dll
+D:\FactPayRoll\FactPayRoll\smartTechAuthenticator\bin\System.Web.Http.WebHost.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\obj\Debug\smartTechAuthenticator.csproj.AssemblyReference.cache
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\obj\Debug\smartTechAuthenticator.csproj.SuggestedBindingRedirects.cache
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\obj\Debug\smartTechAuthenticator.csproj.CoreCompileInputs.cache
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\NLog.config
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\smartTechAuthenticator.dll.config
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\smartTechAuthenticator.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\smartTechAuthenticator.pdb
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\roslyn\csc.exe
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\roslyn\csc.exe.config
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\roslyn\csc.rsp
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\roslyn\csi.exe
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\roslyn\csi.exe.config
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\roslyn\csi.rsp
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\roslyn\Microsoft.Managed.Core.targets
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\roslyn\System.Buffers.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\roslyn\System.Collections.Immutable.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\roslyn\System.Memory.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\roslyn\System.Numerics.Vectors.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\roslyn\System.Reflection.Metadata.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\roslyn\vbc.exe
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\roslyn\vbc.exe.config
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\roslyn\vbc.rsp
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\roslyn\VBCSCompiler.exe
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\roslyn\VBCSCompiler.exe.config
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Antlr3.Runtime.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\ExcelDataReader.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.AspNetCore.Cors.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.AspNetCore.Http.Extensions.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Bcl.AsyncInterfaces.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Bcl.HashCode.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Data.SqlClient.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.Design.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.Relational.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.Caching.Abstractions.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.Caching.Memory.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.Configuration.Binder.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.Configuration.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.DependencyInjection.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.Logging.Abstractions.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.Logging.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.Options.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.Primitives.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Identity.Client.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.IdentityModel.Logging.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.IdentityModel.Protocols.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.IdentityModel.Tokens.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Web.Infrastructure.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Newtonsoft.Json.Bson.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Newtonsoft.Json.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\NLog.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\QRCoder.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Stripe.net.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\System.Buffers.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\System.Collections.Immutable.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\System.ComponentModel.Annotations.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\System.IdentityModel.Tokens.Jwt.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\System.Memory.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\System.Net.Http.Formatting.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\System.Numerics.Vectors.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\System.Threading.Tasks.Extensions.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\System.Web.Cors.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\System.Web.Helpers.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\System.Web.Http.Cors.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\System.Web.Http.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\System.Web.Http.WebHost.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\System.Web.Mvc.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\System.Web.Optimization.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\System.Web.Razor.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\System.Web.WebPages.Deployment.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\System.Web.WebPages.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\System.Web.WebPages.Razor.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Unity.Abstractions.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Unity.Container.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Unity.Mvc5.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\WebGrease.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\ExcelDataReader.pdb
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\ExcelDataReader.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.AspNetCore.Cors.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.AspNetCore.Http.Extensions.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Bcl.AsyncInterfaces.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Bcl.HashCode.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Data.SqlClient.pdb
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Data.SqlClient.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.Abstractions.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.Design.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.Relational.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.EntityFrameworkCore.SqlServer.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.Caching.Abstractions.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.Caching.Memory.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.Configuration.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.Configuration.Binder.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.DependencyInjection.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.FileProviders.Abstractions.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.Logging.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.Logging.Abstractions.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.Options.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Extensions.Primitives.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.Identity.Client.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.IdentityModel.Logging.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.IdentityModel.Protocols.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Microsoft.IdentityModel.Tokens.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Newtonsoft.Json.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Newtonsoft.Json.Bson.pdb
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Newtonsoft.Json.Bson.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\NLog.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Stripe.net.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\System.Buffers.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\System.Collections.Immutable.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\System.IdentityModel.Tokens.Jwt.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\System.Memory.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\System.Net.Http.Formatting.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\System.Numerics.Vectors.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\System.Threading.Tasks.Extensions.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\System.Web.Http.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\System.Web.Http.Cors.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\System.Web.Http.WebHost.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\System.Web.Helpers.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\System.Web.Mvc.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\System.Web.Optimization.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\System.Web.Razor.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\System.Web.WebPages.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\System.Web.WebPages.Deployment.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\System.Web.WebPages.Razor.xml
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Unity.Abstractions.pdb
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Unity.Container.pdb
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\Antlr3.Runtime.pdb
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\de\Microsoft.Data.SqlClient.resources.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\es\Microsoft.Data.SqlClient.resources.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\fr\Microsoft.Data.SqlClient.resources.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\it\Microsoft.Data.SqlClient.resources.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\ja\Microsoft.Data.SqlClient.resources.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\ko\Microsoft.Data.SqlClient.resources.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\pt-BR\Microsoft.Data.SqlClient.resources.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\ru\Microsoft.Data.SqlClient.resources.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\bin\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\obj\Debug\smartTechAuthenticator.csproj.CopyComplete
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\obj\Debug\smartTechAuthenticator.dll
+D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\obj\Debug\smartTechAuthenticator.pdb

@@ -1,0 +1,1531 @@
+﻿@using smartTechAuthenticator.Models;
+
+@model smartTechAuthenticator.ViewModels.FormPropertyViewModel
+
+@{
+    ViewBag.Title = "CreateForm";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    .btns button {
+        width: 46%;
+        margin-bottom: 20px;
+        border-radius: 4px;
+        min-height: 50px;
+        background: #2d68a6;
+        border-color: #2d68a6;
+        margin-right: 3%;
+        text-align: left;
+    }
+
+        .btns button:hover {
+            background: #2d68a6;
+        }
+
+    section.form-upper-wrapper {
+        padding: 50px 0;
+    }
+
+    .form-wrapper button.btn.btn-secondary {
+        padding: 8px 25px;
+    }
+
+    .form-wrapper .group {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+    }
+
+        .form-wrapper .group .icons {
+            position: absolute;
+            right: 0;
+            top: -28px;
+        }
+
+        .form-wrapper .group .mb-3 {
+            width: 49%;
+        }
+
+    section.form-wrapper .col-lg-8 {
+        display: flex;
+    }
+
+    section.form-upper-wrapper .form-wrapper {
+        width: 97%;
+    }
+
+        section.form-upper-wrapper .form-wrapper form > label {
+            font-weight: bold;
+            color: #545554;
+        }
+
+        section.form-upper-wrapper .form-wrapper form .group label {
+            color: #9e9e9e;
+        }
+
+        section.form-upper-wrapper .form-wrapper h3 {
+            padding-bottom: 15px;
+            border-bottom: 2px solid #cfcccc;
+            margin-bottom: 20px;
+        }
+
+        section.form-upper-wrapper .form-wrapper form > label span {
+            color: red;
+        }
+
+    section.form-upper-wrapper .col-lg-8 {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .section.form-upper-wrapper .icons a {
+        text-decoration: none;
+    }
+
+    section.form-upper-wrapper .icons a {
+        text-decoration: none;
+        color: gray;
+    }
+
+        section.form-upper-wrapper .icons a:last-child {
+            color: #c64843;
+        }
+
+    .btns button i {
+        margin-right: 10px;
+    }
+
+    .heading {
+        margin-bottom: 30px;
+    }
+
+        .heading h5 {
+            display: flex;
+            justify-content: space-between;
+            color: #484848;
+        }
+
+            .heading h5 i {
+                cursor: pointer;
+                transition: all 0.4s ease;
+            }
+
+            .heading h5.active i {
+                transform: rotate(-180deg);
+            }
+
+
+    div#captchaModal input#flexSwitchCheckDefault {
+        border-radius: 2em;
+        margin-left: 0;
+    }
+
+    div#captchaModal label.form-check-label {
+        margin-left: 40px;
+    }
+
+    div#captchaModal .form-check.form-switch {
+        padding: 0;
+    }
+
+    div#NumberSliderModal input#flexSwitchCheckDefault {
+        border-radius: 2em;
+        margin-left: 0;
+    }
+
+    div#NumberSliderModal label.form-check-label {
+        margin-left: 40px;
+    }
+
+    div#NumberSliderModal .form-check.form-switch {
+        padding: 0;
+    }
+
+    div#PhotoModal input#flexSwitchCheckDefault {
+        border-radius: 2em;
+        margin-left: 0;
+    }
+
+    div#PhotoModal label.form-check-label {
+        margin-left: 40px;
+    }
+
+    div#PhotoModal .form-check.form-switch {
+        padding: 0;
+    }
+
+    .form-wrapper .group .mb-6 {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .group-wrap {
+        background: #fff;
+        padding: 10px;
+        border-radius: 6px;
+        margin-bottom: 20px;
+        border: 1px dashed #ccc;
+    }
+
+    .page-wrapper {
+        background: #fff;
+    }
+
+    .modal {
+        z-index: 9999 !important;
+        margin-top: 0px !important;
+    }
+
+    @@media(max-width:1110px) and (min-width: 992px) {
+        section.form-upper-wrapper .col-lg-4 {
+            width: 40%;
+        }
+
+        section.form-upper-wrapper .col-lg-8 {
+            width: 60%;
+        }
+    }
+
+
+
+    @@media(max-width:991px) {
+        section.form-upper-wrapper .col-lg-4 {
+            margin-bottom: 30px;
+        }
+
+        section.form-upper-wrapper .col-lg-8 {
+            margin-bottom: 30px;
+        }
+
+        section.form-upper-wrapper .form-wrapper {
+            width: 85%;
+        }
+
+        .btns button:nth-child(even) {
+            margin-right: 0;
+            width: 50%;
+        }
+    }
+
+
+    @@media(max-width: 479px) {
+        .btns button {
+            margin-right: 0;
+            width: 100%;
+        }
+
+            .btns button:nth-child(even) {
+                width: 100%;
+            }
+
+        .form-wrapper .group {
+            flex-direction: column;
+        }
+
+            .form-wrapper .group .mb-3 {
+                width: 100%;
+            }
+
+        section.form-upper-wrapper .form-wrapper {
+            width: 90%;
+        }
+    }
+</style>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+@Html.HiddenFor(Model => Model.fId)
+<section class="form-upper-wrapper">
+    <div class="container-fluid">
+
+        <div class="inner-wrapper">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="heading">
+                        <h5>
+                            Standard Fields
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </h5>
+                    </div>
+                    <div class="btns">
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-text-width" aria-hidden="true"></i>Single Line Text</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#paragraphModal"><i class="fa fa-paragraph" aria-hidden="true"></i>Paragraph</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#dropdownModal"><i class="fa fa-caret-square-o-down" aria-hidden="true"></i>Dropdown</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#radioModal"><i class="fa fa-stop-circle-o" aria-hidden="true"></i>Multiple Choice</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#checkboxModal"><i class="fa fa-check-square-o" aria-hidden="true"></i>Checkboxes</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#NumbersModal"><i class="fa fa-hashtag" aria-hidden="true"></i>Numbers</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#nameModal"><i class="fa fa-user" aria-hidden="true"></i>Name</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#emailModal"><i class="fa fa-envelope-o" aria-hidden="true"></i>Email</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#textModal"><i class="fa fa-user" aria-hidden="true"></i>TextField</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#dateModal"><i class="fa fa-user" aria-hidden="true"></i>DateField</button>
+
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#EINModal"><i class="fa fa-user" aria-hidden="true"></i>EIN No.</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#HeadingModal"><i class="fa fa-user" aria-hidden="true"></i>Heading TextField</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#checkboxBlackModal"><i class="fa fa-user" aria-hidden="true"></i>Checkbox (Black Title)</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#ListTextModal"><i class="fa fa-user" aria-hidden="true"></i>List TextField</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#MultiLineModal"><i class="fa fa-user" aria-hidden="true"></i>Multiple Line TextField</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#LRtextModal"><i class="fa fa-user" aria-hidden="true"></i>Left Right TextField</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#PhotoModal"><i class="fa fa-question-circle-o" aria-hidden="true"></i>Photo</button>
+
+
+
+                        @*<button class="btn btn-primary" data-toggle="modal" data-target="#NumberSliderModal"><i class="fa fa-sliders" aria-hidden="true"></i>Number Slider</button>
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#captchaModal"><i class="fa fa-question-circle-o" aria-hidden="true"></i>CAPTCHA</button>*@
+                        @*<button class="btn btn-primary" data-toggle="modal" data-target="#PhotoModal"><i class="fa fa-question-circle-o" aria-hidden="true"></i>Photo</button>*@
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="form-wrapper">
+                        @if (Model.formview != null)
+                        {
+                            <div class="title">
+                                <h3>@Model.formview.FormName</h3>
+                            </div>
+
+                            <form>
+                                @if (Model.FormPropertyViewList != null)
+                                {
+
+                                    foreach (var item in Model.FormPropertyViewList)
+                                    {
+                                        if (item.InputType == FieldType.SingleLineText)
+                                        {
+                                            <div class="group-wrap">
+                                                <label for="" class="form-label">@item.Name</label>
+                                                <div class="group">
+                                                    <div class="mb-6">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                    <div class="icons">
+                                                        <a href="@Url.Action("DeleteFormProprty","Home",new {Id=item.Id,fid=Model.fId})">
+                                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+
+                                        else if (item.InputType == FieldType.EIN_No)
+                                        {
+                                            <div class="group-wrap">
+                                                <label for="" class="form-label">@item.Name</label>
+                                                <div class="group">
+                                                    <div class="mb-6">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                    <div class="icons">
+                                                        <a href="@Url.Action("DeleteFormProprty","Home",new {Id=item.Id,fid=Model.fId})">
+                                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+
+                                        else if (item.InputType == FieldType.HeadingTextField)
+                                        {
+                                            <div class="group-wrap">
+                                                <label for="" class="form-label">@item.Name</label>
+                                                <div class="group">
+                                                    @*<div class="mb-6">
+                                <input type="text" class="form-control">
+                            </div>*@
+                                                    <div class="icons">
+                                                        <a href="@Url.Action("DeleteFormProprty","Home",new {Id=item.Id,fid=Model.fId})">
+                                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                        else if (item.InputType == FieldType.MultiLineText)
+                                        {
+                                            <div class="group-wrap">
+                                                <label for="" class="form-label">@item.Name</label>
+                                                <div class="group">
+                                                    @*<div class="mb-6">
+                                <input type="text" class="form-control">
+                            </div>*@
+                                                    <div class="icons">
+                                                        <a href="@Url.Action("DeleteFormProprty","Home",new {Id=item.Id,fid=Model.fId})">
+                                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                        else if (item.InputType == FieldType.LeftRightText)
+                                        {
+                                            <div class="group-wrap">
+                                                <label for="" class="form-label">@item.Name</label>
+                                                <div class="group">
+                                                    @*<div class="mb-6">
+                                <input type="text" class="form-control">
+                            </div>*@
+                                                    <div class="icons">
+                                                        <a href="@Url.Action("DeleteFormProprty","Home",new {Id=item.Id,fid=Model.fId})">
+                                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                        else if (item.InputType == FieldType.CheckboxBlack)
+                                        {
+                                            <div class="group-wrap">
+                                                <label for="" class="form-label">@item.Name </label>
+                                                <div class="group">
+                                                    <div class="mb-6">
+                                                        @foreach (var check in item.CheckBoxViewList)
+                                                        {
+                                                            <input type="checkbox" value="@check.CheckboxText" />
+                                                            <label>@check.CheckboxText</label>
+                                                            <br />
+                                                        }
+                                                    </div>
+                                                    <div class="icons">
+                                                        <a href="@Url.Action("DeleteFormProprty","Home",new {Id=item.Id,fid=Model.fId})">
+                                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                        else if (item.InputType == FieldType.ListTextField)
+                                        {
+                                            <div class="group-wrap">
+                                                <label for="" class="form-label">@item.Name </label>
+                                                <div class="group">
+                                                    <div class="mb-6">
+                                                        @foreach (var check in item.CheckBoxViewList)
+                                                        {
+                                                            //<input type="checkbox" value="@check.CheckboxText" />
+                                                            <label>@check.CheckboxText</label>
+                                                            <br />
+                                                        }
+                                                    </div>
+                                                    <div class="icons">
+                                                        <a href="@Url.Action("DeleteFormProprty","Home",new {Id=item.Id,fid=Model.fId})">
+                                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+
+                                        else if (item.InputType == FieldType.TextField)
+                                        {
+                                            <div class="group-wrap">
+                                                <label for="" class="form-label">@item.Name</label>
+                                                <div class="group">
+                                                    @*<div class="mb-6">
+                                <input type="text" class="form-control">
+                            </div>*@
+                                                    <div class="icons">
+                                                        <a href="@Url.Action("DeleteFormProprty","Home",new {Id=item.Id,fid=Model.fId})">
+                                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+
+                                        else if (item.InputType == FieldType.DatePicker)
+                                        {
+                                            <div class="group-wrap">
+                                                <label for="" class="form-label">@item.Name</label>
+                                                <div class="group">
+                                                    <div class="mb-6">
+                                                        <input type="date" class="form-control">
+                                                    </div>
+                                                    <div class="icons">
+                                                        <a href="@Url.Action("DeleteFormProprty","Home",new {Id=item.Id,fid=Model.fId})">
+                                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+
+
+                                        else if (item.InputType == FieldType.ParagraphText)
+                                        {
+                                            <div class="group-wrap">
+                                                <label for="" class="form-label">@item.Name </label>
+                                                <div class="group">
+                                                    <div class="mb-6">
+                                                        <textarea type="text" class="form-control" rows="3"></textarea>
+                                                    </div>
+                                                    <div class="icons">
+                                                        <a href="@Url.Action("DeleteFormProprty","Home",new {Id=item.Id,fid=Model.fId})">
+                                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                        else if (item.InputType == FieldType.Dropdown)
+                                        {
+                                            <div class="group-wrap">
+                                                <label for="" class="form-label">@item.Name </label>
+                                                <div class="group">
+                                                    <div class="mb-6">
+                                                        <select class="custom-select form-control">
+                                                            <option value="">-- Select Option --</option>
+                                                            @foreach (var drop in item.DropdownViewList)
+                                                            {
+                                                                <option value="@drop.OptionText">@drop.OptionText</option>
+                                                            }
+                                                        </select>
+                                                    </div>
+                                                    <div class="icons">
+                                                        <a href="@Url.Action("DeleteFormProprty","Home",new {Id=item.Id,fid=Model.fId})">
+                                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                        else if (item.InputType == FieldType.MultipleChoice)
+                                        {
+                                            <div class="group-wrap">
+                                                <label for="" class="form-label">@item.Name </label>
+                                                <div class="group">
+                                                    <div class="mb-6">
+                                                        @foreach (var cho in item.MultipleChoiceViewList)
+                                                        {
+                                                            <input type="radio" value="@cho.ChoiceText" name="@item.Id" />
+                                                            <label>@cho.ChoiceText</label>
+                                                            <br />
+                                                        }
+                                                    </div>
+                                                    <div class="icons">
+                                                        <a href="@Url.Action("DeleteFormProprty","Home",new {Id=item.Id,fid=Model.fId})">
+                                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                        else if (item.InputType == FieldType.Checkboxes)
+                                        {
+                                            <div class="group-wrap">
+                                                <label for="" class="form-label">@item.Name </label>
+                                                <div class="group">
+                                                    <div class="mb-6">
+                                                        @foreach (var check in item.CheckBoxViewList)
+                                                        {
+                                                            <input type="checkbox" value="@check.CheckboxText" />
+                                                            <label>@check.CheckboxText</label>
+                                                            <br />
+                                                        }
+                                                    </div>
+                                                    <div class="icons">
+                                                        <a href="@Url.Action("DeleteFormProprty","Home",new {Id=item.Id,fid=Model.fId})">
+                                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                        else if (item.InputType == FieldType.Numbers)
+                                        {
+                                            <div class="group-wrap">
+                                                <label for="" class="form-label">@item.Name </label>
+                                                <div class="group">
+                                                    <div class="mb-6">
+                                                        <input type="number" class="form-control">
+                                                    </div>
+                                                    <div class="icons">
+                                                        <a href="@Url.Action("DeleteFormProprty","Home",new {Id=item.Id,fid=Model.fId})">
+                                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                        else if (item.InputType == FieldType.Name)
+                                        {
+                                            <div class="group-wrap">
+                                                <label for="" class="form-label">@item.Name </label>
+                                                <div class="group">
+                                                    <div class="mb-6">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                    <div class="icons">
+                                                        <a href="@Url.Action("DeleteFormProprty","Home",new {Id=item.Id,fid=Model.fId})">
+                                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                        else if (item.InputType == FieldType.Email)
+                                        {
+                                            <div class="group-wrap">
+                                                <label for="" class="form-label">@item.Name </label>
+                                                <div class="group">
+                                                    <div class="mb-6">
+                                                        <input type="email" class="form-control">
+                                                    </div>
+                                                    <div class="icons">
+                                                        <a href="@Url.Action("DeleteFormProprty","Home",new {Id=item.Id,fid=Model.fId})">
+                                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                        else if (item.InputType == FieldType.NumberSlider)
+                                        {
+                                            <div class="group-wrap">
+                                                <label for="" class="form-label">Number Slider</label>
+                                                <div class="group">
+                                                    <div class="mb-6">
+                                                        <input type="range" min="1" max="100" value="1" style="width: 100%">
+                                                    </div>
+                                                    <div class="icons">
+                                                        <a href="@Url.Action("DeleteFormProprty","Home",new {Id=item.Id,fid=Model.fId})">
+                                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                        else if (item.InputType == FieldType.Captcha)
+                                        {
+                                            <div class="group-wrap">
+                                                <label for="" class="form-label">Captcha</label>
+                                                <div class="group">
+                                                    <div class="mb-6">
+                                                        <div class="g-recaptcha" data-sitekey="6Lejj2MUAAAAAMRtWMsDxj7Rh7wzDPeM8FlPtp4f"></div>
+                                                    </div>
+                                                    <div class="icons">
+                                                        <a href="@Url.Action("DeleteFormProprty","Home",new {Id=item.Id,fid=Model.fId})">
+                                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                        else if (item.InputType == FieldType.Photo)
+                                        {
+                                            <div class="group-wrap">
+                                                <label for="" class="form-label">Photo</label>
+                                                <div class="group">
+                                                    <div class="mb-6">
+                                                        <input type="file" class="form-control" />
+                                                    </div>
+                                                    <div class="icons">
+                                                        <a href="@Url.Action("DeleteFormProprty","Home",new {Id=item.Id,fid=Model.fId})">
+                                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+
+                                        }
+
+
+                                    }
+
+                                }
+
+                            </form>
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--EIN Modal -->
+<div class="modal fade" id="EINModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top:100px">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">EIN Number</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @using (Html.BeginForm("TextField", "Home", FormMethod.Post))
+            {
+                <div class="modal-body">
+                    @Html.HiddenFor(Model => Model.Type, new { Value = 13 })
+                    @Html.HiddenFor(Model => Model.fId)
+                    <h5 class="modal-title">Title Name</h5>
+                    <div class="form-group">
+                        @Html.EditorFor(Model => Model.Name, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    @*<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>*@
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<!--Heading Modal -->
+<div class="modal fade" id="HeadingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top:100px">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Heading TextField</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @using (Html.BeginForm("TextField", "Home", FormMethod.Post))
+            {
+                <div class="modal-body">
+                    @Html.HiddenFor(Model => Model.Type, new { Value = 14 })
+                    @Html.HiddenFor(Model => Model.fId)
+                    <h5 class="modal-title">Heading Title</h5>
+                    <div class="form-group">
+                        @Html.EditorFor(Model => Model.Name, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    @*<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>*@
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<!--MultiLine Modal -->
+<div class="modal fade" id="MultiLineModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top:100px">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Multiple TextField</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @using (Html.BeginForm("TextField", "Home", FormMethod.Post))
+            {
+                <div class="modal-body">
+                    @Html.HiddenFor(Model => Model.Type, new { Value = 17 })
+                    @Html.HiddenFor(Model => Model.fId)
+                    <h5 class="modal-title"> Multiline Text</h5>
+                    <div class="form-group">
+                        @Html.EditorFor(Model => Model.Name, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    @*<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>*@
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+<!--Photo  Modal -->
+<div class="modal fade" id="PhotoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top:100px">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Photo Selection</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @using (Html.BeginForm("SimpleText", "Home", FormMethod.Post))
+            {
+                <div class="modal-body">
+                    @Html.HiddenFor(Model => Model.Type, new { Value = 10 })
+                    @Html.HiddenFor(Model => Model.fId)
+                    <div class="form-group">
+                        <div class="form-check form-switch">
+                            @Html.CheckBoxFor(Model => Model.isFile, new { role = "switch", @class = "form-check-input", @id = "flexSwitchCheckDefault" })
+                            <label class="form-check-label" for="flexSwitchCheckDefault"> Enable Photo Selection </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    @*<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>*@
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<!--Number Slider Modal -->
+<div class="modal fade" id="NumberSliderModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top:100px">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Number Slider</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @using (Html.BeginForm("SimpleText", "Home", FormMethod.Post))
+            {
+                <div class="modal-body">
+                    @Html.HiddenFor(Model => Model.Type, new { Value = 8 })
+                    @Html.HiddenFor(Model => Model.fId)
+                    <div class="form-group">
+                        <div class="form-check form-switch">
+                            @Html.CheckBoxFor(Model => Model.NumberSlider, new { role = "switch", @class = "form-check-input", @id = "flexSwitchCheckDefault" })
+                            <label class="form-check-label" for="flexSwitchCheckDefault"> Enable Number Slider </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    @*<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>*@
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<!--captch Modal -->
+<div class="modal fade" id="captchaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top:100px">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">CAPTCHA</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @using (Html.BeginForm("SimpleText", "Home", FormMethod.Post))
+            {
+                <div class="modal-body">
+                    @Html.HiddenFor(Model => Model.Type, new { Value = 9 })
+                    @Html.HiddenFor(Model => Model.fId)
+                    <div class="form-group">
+                        <div class="form-check form-switch">
+                            @Html.CheckBoxFor(Model => Model.Captcha, new { role = "switch", @class = "form-check-input", @id = "flexSwitchCheckDefault" })
+                            <label class="form-check-label" for="flexSwitchCheckDefault"> Enable CAPTCHA </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    @*<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>*@
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+
+<!--Name Modal -->
+<div class="modal fade" id="nameModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top:100px">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Name</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @using (Html.BeginForm("SimpleText", "Home", FormMethod.Post))
+            {
+                <div class="modal-body">
+                    @Html.HiddenFor(Model => Model.Type, new { Value = 6 })
+                    @Html.HiddenFor(Model => Model.fId)
+                    <h5 class="modal-title">Name</h5>
+                    <div class="form-group">
+                        @Html.EditorFor(Model => Model.Name, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    @*<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>*@
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+<!--Text Modal -->
+<div class="modal fade" id="textModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top:100px">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Name</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @using (Html.BeginForm("TextField", "Home", FormMethod.Post))
+            {
+                <div class="modal-body">
+                    @Html.HiddenFor(Model => Model.Type, new { Value = 11 })
+                    @Html.HiddenFor(Model => Model.fId)
+                    <h5 class="modal-title">Name</h5>
+                    <div class="form-group">
+                        @Html.EditorFor(Model => Model.Name, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    @*<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>*@
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+<!--LRText Modal -->
+<div class="modal fade" id="LRtextModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top:100px">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Left Right Aligned Text</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @using (Html.BeginForm("TextField", "Home", FormMethod.Post))
+            {
+                <div class="modal-body">
+                    @Html.HiddenFor(Model => Model.Type, new { Value = 18 })
+                    @Html.HiddenFor(Model => Model.fId)
+                    <h5 class="modal-title">Text Title</h5>
+                    <div class="form-group">
+                        @Html.EditorFor(Model => Model.Name, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    @*<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>*@
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<!--Date Modal -->
+<div class="modal fade" id="dateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top:100px">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Date</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @using (Html.BeginForm("DateField", "Home", FormMethod.Post))
+            {
+                <div class="modal-body">
+                    @Html.HiddenFor(Model => Model.Type, new { Value = 12 })
+                    @Html.HiddenFor(Model => Model.fId)
+                    <h5 class="modal-title">Field Name</h5>
+                    <div class="form-group">
+                        @Html.EditorFor(Model => Model.Name, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    @*<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>*@
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<!--Email Modal -->
+<div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top:100px">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Email</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @using (Html.BeginForm("SimpleText", "Home", FormMethod.Post))
+            {
+                <div class="modal-body">
+                    @Html.HiddenFor(Model => Model.Type, new { Value = 7 })
+                    @Html.HiddenFor(Model => Model.fId)
+                    <h5 class="modal-title">Email</h5>
+                    <div class="form-group">
+                        @Html.EditorFor(Model => Model.Name, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    @*  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>*@
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+<!--Number Modal -->
+<div class="modal fade" id="NumbersModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top:100px">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Number</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @using (Html.BeginForm("SimpleText", "Home", FormMethod.Post))
+            {
+                <div class="modal-body">
+                    @Html.HiddenFor(Model => Model.Type, new { Value = 5 })
+                    @Html.HiddenFor(Model => Model.fId)
+                    <h5 class="modal-title">Number</h5>
+                    <div class="form-group">
+                        @Html.EditorFor(Model => Model.Name, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    @* <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>*@
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+<!--paragraph Modal -->
+<div class="modal fade" id="paragraphModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top:100px">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Paragraph</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @using (Html.BeginForm("SimpleText", "Home", FormMethod.Post))
+            {
+                <div class="modal-body">
+                    @Html.HiddenFor(Model => Model.Type, new { Value = 1 })
+                    @Html.HiddenFor(Model => Model.fId)
+                    <h5 class="modal-title">Paragraph</h5>
+                    <div class="form-group">
+                        @Html.EditorFor(Model => Model.Name, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    @*  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>*@
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+<!--Multiple choice Modal -->
+<div class="modal fade" id="radioModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Multiple choice</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @using (Html.BeginForm("SaveCheckBox", "Home", FormMethod.Post))
+            {
+                <div class="modal-body">
+                    @Html.HiddenFor(Model => Model.Type, new { Value = 3 })
+                    @Html.HiddenFor(Model => Model.fId)
+                    <h5 class="modal-title">Name</h5>
+                    <div class="form-group">
+                        @Html.EditorFor(Model => Model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                    <div id="MainsubmissionTableRadioButtonNew">
+                        <div class="row" id="tableMainrowRadio0Edit">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    @*<label asp-for="@Model.QuestionUpdateData.RadioButtonText" class="control-label"></label>
+                                        <input asp-for="@Model.QuestionUpdateData.RadioButtonText" class="form-control" required />*@
+                                    @*<span asp-validation-for="@Model.QuestionUpdateData.RadioButtonText" class="text-danger"></span>*@
+                                    @*<label>Multiple Choice Name</label>*@
+                                    @Html.LabelFor(Model => Model.MultipleChoiceView.ChoiceName)
+                                    @Html.TextBoxFor(Model => Model.MultipleChoiceView.ChoiceName, new { @class = "form-control", required = "required" })
+                                </div>
+                            </div>
+                            <div class="col-md-4" style="margin-top: 35px;">
+                                <button type="button" class="btn btn-primary" onclick="removeMainTrNewEdit(0);">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row" id="AddMainTableRadioButtonNew">
+                        <button id="MainaddRadioNewEdit" class="btn btn-primary">Add </button>
+                    </div>
+                    @*   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>*@
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<!--Dropdown Modal -->
+<div class="modal fade" id="dropdownModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Dropdown</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @using (Html.BeginForm("SaveCheckBox", "Home", FormMethod.Post))
+            {
+                <div class="modal-body">
+                    @Html.HiddenFor(Model => Model.Type, new { Value = 2 })
+                    @Html.HiddenFor(Model => Model.fId)
+                    <h5 class="modal-title">Name</h5>
+                    <div class="form-group">
+                        @Html.EditorFor(Model => Model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                    <div id="MainsubmissionTableDropdownButton">
+                        <div class="row" id="tableMainrowDropdown0Edit">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    @Html.LabelFor(Model => Model.DropdownView.OptionName)
+                                    @Html.TextBoxFor(Model => Model.DropdownView.OptionName, new { @class = "form-control", required = "required" })
+                                </div>
+                            </div>
+                            <div class="col-md-4" style="margin-top: 35px;">
+                                <button type="button" class="btn btn-primary" onclick="removeMainTr(0);">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row" id="AddMainTableDropdownButtonNew">
+                        <button id="MainaddDropdownNewEdit" class="btn btn-primary">Add </button>
+                    </div>
+                    @*   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>*@
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<!--Checkboxes Modal -->
+<div class="modal fade" id="checkboxModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Checkboxes</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @using (Html.BeginForm("SaveCheckBox", "Home", FormMethod.Post))
+            {
+                <div class="modal-body">
+                    @Html.HiddenFor(Model => Model.Type, new { Value = 4 })
+                    @Html.HiddenFor(Model => Model.fId)
+                    <h5 class="modal-title">Name</h5>
+                    <div class="form-group">
+                        @* <input type="text" class="form-control" placeholder="Name" id="txtName">*@
+                        @Html.EditorFor(Model => Model.Name, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                    </div>
+                    <div id="MainsubmissionTableAdd">
+                        <div class="row" id="tableMainrow0">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    @Html.LabelFor(Model => Model.CheckBoxView.CheckboxName)
+                                    @Html.TextBoxFor(Model => Model.CheckBoxView.CheckboxName, new { @class = "form-control", required = "required" })
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-4" style="margin-top: 35px;">
+                                <button type="button" class="btn btn-primary" onclick="removeMainTrAdd(0);">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row" id="AddMainTableAdd">
+                        <button id="MainaddAdd" class="btn btn-primary">Add</button>
+                    </div>
+                    @*  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>*@
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<!--CheckboxBlack Modal -->
+<div class="modal fade" id="checkboxBlackModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Checkboxes</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @using (Html.BeginForm("SaveBlackCheckBox", "Home", FormMethod.Post))
+            {
+                <div class="modal-body">
+                    @Html.HiddenFor(Model => Model.Type, new { Value = 15 })
+                    @Html.HiddenFor(Model => Model.fId)
+                    <h5 class="modal-title">Name</h5>
+                    <div class="form-group">
+                        @* <input type="text" class="form-control" placeholder="Name" id="txtName">*@
+                        @Html.EditorFor(Model => Model.Name, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                    </div>
+                    <div id="MainsubmissionTableAdd1">
+                        <div class="row" id="tableMainrow0">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    @Html.LabelFor(Model => Model.CheckBoxView.CheckboxName)
+                                    @Html.TextBoxFor(Model => Model.CheckBoxView.CheckboxName, new { @class = "form-control", required = "required" })
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-4" style="margin-top: 35px;">
+                                <button type="button" class="btn btn-primary" onclick="removeMainTrAdd(0);">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row" id="AddMainTableAdd1">
+                        <button id="MainaddAdd1" class="btn btn-primary">Add</button>
+                    </div>
+                    @*  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>*@
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+<!--ListTextField Modal -->
+<div class="modal fade" id="ListTextModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">List</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @using (Html.BeginForm("SaveCheckBox", "Home", FormMethod.Post))
+            {
+                <div class="modal-body">
+                    @Html.HiddenFor(Model => Model.Type, new { Value = 16 })
+                    @Html.HiddenFor(Model => Model.fId)
+                    <h5 class="modal-title">List Heading Title</h5>
+                    <div class="form-group">
+                        @* <input type="text" class="form-control" placeholder="Name" id="txtName">*@
+                        @Html.EditorFor(Model => Model.Name, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                    </div>
+                    <div id="MainsubmissionTableAdd2">
+                        <div class="row" id="tableMainrow0">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    @Html.LabelFor(Model => Model.CheckBoxView.CheckboxName)
+                                    @Html.TextBoxFor(Model => Model.CheckBoxView.CheckboxName, new { @class = "form-control", required = "required" })
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-4" style="margin-top: 35px;">
+                                <button type="button" class="btn btn-primary" onclick="removeMainTrAdd2(0);">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row" id="AddMainTableAdd2">
+                        <button id="MainaddAdd2" class="btn btn-primary">Add</button>
+                    </div>
+                    @*  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>*@
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Single Line text Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top:100px">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Single Line text</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @using (Html.BeginForm("SimpleText", "Home", FormMethod.Post))
+            {
+                <div class="modal-body">
+                    @Html.HiddenFor(Model => Model.Type, new { Value = 0 })
+                    @Html.HiddenFor(Model => Model.fId)
+                    <h5 class="modal-title">Name</h5>
+                    <div class="form-group">
+                        @Html.EditorFor(Model => Model.Name, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    @*<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>*@
+                    @* <button type="button" class="btn btn-primary">Save</button>*@
+                    <button type="submit" class="btn btn-primary">
+                        Save
+                    </button>
+                </div>
+            }
+        </div>
+
+    </div>
+</div>
+
+<!--form Modal -->
+<div id="myModal" class="modal fade" data-bs-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content" style="margin-top: 100px !important;">
+            <div class="modal-header">
+                <h5 class="modal-title">Add Form</h5>
+                <button type="button" class="close cls" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm("SaveForm", "Home", FormMethod.Post))
+                {
+                    <p>Form Name</p>
+                    if (TempData["error"] != null)
+                    {
+                        <p id="msg" style="color:red;">@TempData["error"]</p>
+                    }
+                    <div class="form-group">
+                        @*    <input type="text" class="form-control" placeholder="Name" id="txtFormName">*@
+                        @Html.EditorFor(Model => Model.FormName, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                }
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
+    var counterNewEdit = 1;
+    $(function () {
+        $('#MainaddDropdownNewEdit').click(function () {
+            $(' <div class="row" id = "tableMainrowDropdown0Edit' + counterNewEdit + '">' +
+                ' <div class= "col-md-8" > ' +
+                '<div class= "form-group" > ' +
+                '<label for="DropdownView_OptionName">Dropdown Option Name</label>' +
+                '<input class="form-control" id="DropdownView_OptionName" name="DropdownView.OptionName" required="required" type="text">' +
+                '</div></div>' +
+                '<div class="col-md-4" style="margin-top: 35px;">' +
+                '<button type="button" class="btn btn-primary" onclick="removeMainTr(' + counterNewEdit + ');">Delete</button>' +
+                ' </div>' +
+                ' </div>').appendTo('#MainsubmissionTableDropdownButton');
+            counterNewEdit++;
+            return false;
+        });
+    });
+    function removeMainTr(index) {
+        if (counterNewEdit > 1) {
+            $('#tableMainrowDropdown0Edit' + index).remove();
+            counterNewEditR1--;
+        }
+        return false;
+    }
+
+
+
+
+    var counterNewEditR1 = 1;
+    $(function () {
+        $('#MainaddRadioNewEdit').click(function () {
+            $(' <div class="row" id = "tableMainrowRadioNewEdit' + counterNewEditR1 + '">' +
+                ' <div class= "col-md-8" > ' +
+                '<div class= "form-group" > ' +
+                '<label for="MultipleChoiceView_ChoiceName">Multiple Choice Name</label>' +
+                '<input class="form-control" id="MultipleChoiceView_ChoiceName" name="MultipleChoiceView.ChoiceName" required="required" type="text">' +
+                '</div></div>' +
+                '<div class="col-md-4" style="margin-top: 35px;">' +
+                '<button type="button" class="btn btn-primary" onclick="removeMainTrNewEdit(' + counterNewEditR1 + ');">Delete</button>' +
+                ' </div>' +
+                ' </div>').appendTo('#MainsubmissionTableRadioButtonNew');
+            counterNewEditR1++;
+            return false;
+        });
+    });
+    function removeMainTrNewEdit(index) {
+        if (counterNewEditR1 > 1) {
+            $('#tableMainrowRadioNewEdit' + index).remove();
+            counterNewEditR1--;
+        }
+        return false;
+    }
+
+    var counter1 = 1;
+    $(function () {
+        $('#MainaddAdd').click(function () {
+            $(' <div class="row" id = "tableMainrowAdd' + counter1 + '">' +
+                ' <div class= "col-md-8" > ' +
+                '<div class= "form-group" > ' +
+                '<label for="CheckBoxView_CheckboxName">Checkbox Name</label>' +
+                '<input class="form-control" id="CheckBoxView_CheckboxName" name="CheckBoxView.CheckboxName" type="text" required="required">' +
+                '</div></div>' +
+                '<div class="col-md-4" style="margin-top: 35px;">' +
+                '<button type="button" class="btn btn-primary" onclick="removeMainTrAdd(' + counter1 + ');">Delete</button>' +
+                ' </div>' +
+                ' </div>').appendTo('#MainsubmissionTableAdd');
+            counter1++;
+            return false;
+        });
+    });
+    function removeMainTrAdd(index) {
+        if (counter1 > 1) {
+            $('#tableMainrowAdd' + index).remove();
+            counter1--;
+        }
+        return false;
+    }
+
+    var bcounter1 = 1;
+    $(function () {
+        $('#MainaddAdd1').click(function () {
+            $(' <div class="row" id = "tableMainrowAdd1' + bcounter1 + '">' +
+                ' <div class= "col-md-8" > ' +
+                '<div class= "form-group" > ' +
+                '<label for="CheckBoxView_CheckboxName">Checkbox Name</label>' +
+                '<input class="form-control" id="CheckBoxView_CheckboxName1" name="CheckBoxView.CheckboxName" type="text" required="required">' +
+                '</div></div>' +
+                '<div class="col-md-4" style="margin-top: 35px;">' +
+                '<button type="button" class="btn btn-primary" onclick="removeMainTrAdd1(' + bcounter1 + ');">Delete</button>' +
+                ' </div>' +
+                ' </div>').appendTo('#MainsubmissionTableAdd1');
+            bcounter1++;
+            return false;
+        });
+    });
+    
+    function removeMainTrAdd1(index) {
+        if (bcounter1 > 1) {
+            $('#tableMainrowAdd1' + index).remove();
+            bcounter1--;
+        }
+        return false;
+    }
+
+
+    var lcounter1 = 1;
+    $(function () {
+        $('#MainaddAdd2').click(function () {
+            $(' <div class="row" id = "tableMainrowAdd2' + lcounter1 + '">' +
+                ' <div class= "col-md-8" > ' +
+                '<div class= "form-group" > ' +
+                '<label for="CheckBoxView_CheckboxName">Checkbox Name</label>' +
+                '<input class="form-control" id="CheckBoxView_CheckboxName2" name="CheckBoxView.CheckboxName" type="text" required="required">' +
+                '</div></div>' +
+                '<div class="col-md-4" style="margin-top: 35px;">' +
+                '<button type="button" class="btn btn-primary" onclick="removeMainTrAdd2(' + lcounter1 + ');">Delete</button>' +
+                ' </div>' +
+                ' </div>').appendTo('#MainsubmissionTableAdd2');
+            lcounter1++;
+            return false;
+        });
+    });
+
+    function removeMainTrAdd2(index) {
+        if (lcounter1 > 1) {
+            $('#tableMainrowAdd2' + index).remove();
+            lcounter1--;
+        }
+        return false;
+    }
+
+    $(document).ready(function () {
+        var id = $("#fId").val();
+        if (id == null || id == "") {
+            $("#myModal").modal('show');
+        }
+        $("button.cls").on("click", function () {
+            $("body").removeClass("modal-open");
+            $("div#myModal").removeClass("show");
+            $(".modal-backdrop.fade").remove();
+            // $("#myModal").modal('hide');
+            window.location.href = '/Customer/Index';
+        });
+        $(".heading").click(function () {
+            $(this).next().slideToggle();
+            $(".heading h5").toggleClass("active");
+
+        });
+
+        //$('#brnForm').click(function () {
+        //    var Name = $('#txtFormName').val();
+        //    if (Name != "") {
+        //        var data = { "Name": Name };
+        //        $.ajax({
+        //            url: "/Home/SaveForm",
+        //            type: 'post',
+        //            contentType: 'application/x-www-form-urlencoded',
+        //            data: data,
+        //            success: function (result) {
+        //                console.log(result);
+        //                if (result.Status == 1) {
+        //                    //  $("body").removeClass("modal-open");
+        //                    //$("div#myModal").removeClass("show");
+        //                    //$(".modal-backdrop.fade").remove();
+        //                    $("#myModal").modal('hide');
+        //                    $("#fId").val(result.OrderId);
+        //                    // $("input[name=fId]:hidden").val(result.OrderId);
+        //                }
+        //                else {
+        //                    //    window.location.href = "/Mall";
+        //                    // alert('Product Not Added !!');
+        //                }
+        //            },
+        //        });
+        //    }
+        //    else {
+        //        $("#msg").css("display", "block");
+        //    }
+
+
+        // })
+    })
+</script>

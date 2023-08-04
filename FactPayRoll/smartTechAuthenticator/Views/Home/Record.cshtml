@@ -1,0 +1,323 @@
+﻿@model smartTechAuthenticator.ViewModels.TrackingFormsViewModel
+@{
+    ViewBag.Title = "Record";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+@{
+    var day = Convert.ToDateTime(@Model.Date).DayOfWeek.ToString();
+
+}
+<style>
+    label {
+        display: inline-block;
+        margin-top: 15px;
+    }
+
+    .user-form h3 {
+        text-align: left;
+    }
+
+    .container h4 {
+        text-align: left;
+    }
+
+    .user-form p {
+        text-align: left;
+    }
+
+    body {
+        background-color: #efefef;
+    }
+
+    .user-form h3 {
+        text-align: left;
+        padding-left: 15px;
+    }
+
+    @@media (max-width: 768px) {
+        .fa-search-head {
+            font-size: 20px;
+            color: white;
+            padding-top: 15px;
+            position: absolute;
+            right: 15px;
+            top: 41%;
+        }
+
+        .mobile-nav-toggle {
+            padding-top: 25px !important;
+        }
+
+            .mobile-nav-toggle.bi-x {
+                top: 0px !important;
+            }
+
+        .col-md-3 {
+            width: 30%;
+        }
+
+        .col-md-6 {
+            width: 50%;
+        }
+
+        .col-md-9 {
+            width: 70%;
+        }
+
+        .img-responsive {
+            width: 100%;
+        }
+
+        .product-content p {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        p label {
+            font-weight: bold !important;
+            padding: 0px;
+            margin: 1px;
+        }
+
+        .user-form h4 {
+            font-weight: bold;
+            color: crimson;
+        }
+
+        .user-form .product-row {
+            background-color: rgb(255 255 255);
+            padding: 10px;
+            box-shadow: 0px 0px 4px 2px;
+            margin: 15px 0px;
+        }
+
+        .product-img {
+            padding-top: 40px;
+        }
+
+        .product-search {
+            position: absolute;
+            right: 25px;
+            top: 50px;
+        }
+
+        .search-row {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .upload-btn {
+            margin: 10px auto;
+        }
+
+        .product .btn {
+            margin: 0px;
+        }
+    }
+
+    @@media (min-width: 769px) {
+        .product img {
+            box-shadow: 0px 0px 2px 2px;
+            display: block;
+            margin: 10px auto;
+            border-radius: 8px;
+            width: 75%;
+        }
+
+        #hero .container {
+            margin-top: 0%;
+        }
+
+        .col-md-3 {
+            width: 25% !important;
+        }
+
+        .footer-menu .fa {
+            display: block !important;
+            margin: auto;
+        }
+
+        .fa-search-head {
+            font-size: 20px;
+            color: white;
+            padding-top: 15px;
+            position: absolute;
+            right: 15px;
+            top: 0%;
+        }
+
+        .mobile-nav-toggle {
+            padding-top: 25px !important;
+        }
+
+            .mobile-nav-toggle.bi-x {
+                top: 0px !important;
+            }
+
+        .col-md-3 {
+            width: 30%;
+        }
+
+        .col-md-6 {
+            width: 50%;
+        }
+
+        .col-md-9 {
+            width: 70%;
+        }
+
+        .img-responsive {
+            width: 50%;
+        }
+
+        .product-content p {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        p label {
+            font-weight: bold !important;
+            padding: 0px;
+            margin: 1px;
+        }
+
+        .user-form h4 {
+            font-weight: bold;
+            color: crimson;
+        }
+
+        .user-form .product-row {
+            background-color: rgb(255 255 255);
+            padding: 10px;
+            box-shadow: 0px 0px 4px 2px;
+            margin: 15px 0px;
+        }
+
+        .product-img {
+            padding-top: 40px;
+        }
+
+        .product-search {
+            position: absolute;
+            right: 25px;
+            top: 50px;
+        }
+
+        .search-row {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .upload-btn {
+            display: block;
+            margin: 10px auto;
+        }
+
+        .hero {
+            overflow: scroll;
+        }
+
+        .product .btn {
+            margin: 0px;
+        }
+
+        .product-img .img-responsive {
+            display: block;
+            margin: auto;
+        }
+    }
+</style>
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="hero d-flex align-items-center">
+         <input type="hidden" value="@Model.Id" id="id" />
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="product-block">
+                    <div class="row search-row">
+                        <div class="col-md-12 ">
+                            <label><b>Search Product</b></label>
+                            <input type="text" class="form-control" />
+                            <i class="fa fa-search product-search" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <form class="user-form">
+                        <h4>@Model.Date, @day</h4>
+                        <div class="row product-row">
+                            <div class="col-md-9">
+                                <div class="product-content">
+                                    <p><label>Product:</label>@Model.ProductName</p>
+                                    <p><label>Authentic Code:</label>@Model.AuthentiCode</p>
+                                    <p><label>Date:</label>@Model.Date</p>
+                                    <p><label>Time:</label>@Model.Time</p>
+                                    <p><label>Location:</label>@Model.Place</p>
+                                    <p><label>Status:</label> <a class="badge badge-success">@Model.TestResults</a></p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="product-img">
+                                    <img src="/Content/assets/img/download.jpg" class="img-responsive" alt="product image">
+                                    <a class="btn btn-success upload-btn">Upload</a>
+                                </div>
+                            </div>
+                        </div>
+                        <h4>@Model.Date, @day</h4>
+                        <div class="row product-row">
+                            <div class="col-md-9">
+                                <div class="product-content">
+                                    <p><label>Product:</label>@Model.ProductName</p>
+                                    <p><label>Authentic Code:</label>@Model.AuthentiCode</p>
+                                    <p><label>Date:</label>@Model.Date</p>
+                                    <p><label>Time:</label>@Model.Time</p>
+                                    <p><label>Location:</label>@Model.Place</p>
+                                    <p><label>Status:</label> <a class="badge badge-danger">Postive</a></p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="product-img">
+                                    <img src="/Content/assets/img/download.jpg" class="img-responsive" alt="product image">
+                                    <a class="btn btn-success upload-btn">Upload</a>
+                                </div>
+                            </div>
+                        </div>
+                        <h4>@Model.Date, @day</h4>
+                        <div class="row product-row">
+                            <div class="col-md-9">
+                                <div class="product-content">
+                                    <p><label>Product:</label>@Model.ProductName</p>
+                                    <p><label>Authentic Code:</label>@Model.AuthentiCode</p>
+                                    <p><label>Date:</label>@Model.Date</p>
+                                    <p><label>Time:</label>@Model.Time</p>
+                                    <p><label>Location:</label>@Model.Place</p>
+                                    <p><label>Status:</label> <a class="badge badge-warning">Invalid</a></p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="product-img">
+                                    <img src="/Content/assets/img/download.jpg" class="img-responsive"  alt="product image">
+                                    <a class="btn btn-success upload-btn" >Upload</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row text-center mb-5">
+                            <div class="col-md-12">
+                                <div class="product">
+                                    <a class="btn btn-primary d-flex">View All </a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section><!-- End Hero -->
+
+<main id="main">
+
+
+</main><!-- End #main -->
+

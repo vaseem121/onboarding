@@ -1,0 +1,30 @@
+﻿@model smartTechAuthenticator.ViewModels.ToastModel
+@using smartTechAuthenticator.ViewModels
+
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/toaster/js")
+@{
+    foreach (ToastMessage toast in Model.ToastMessages)
+    {
+        if (toast.Type == ToastType.success)
+        {
+            <script> 
+                 toastr.success( '@toast.Message', '@toast.Title','@toast.Type')
+            </script>
+        }
+        else if (toast.Type == ToastType.error)
+        {
+            <script>
+                toastr.error('@toast.Message', '@toast.Title', '@toast.Type')
+            </script>
+        }
+        else
+        {
+            <script>
+                toastr.info('@toast.Message', '@toast.Title', '@toast.Type')
+            </script>
+        }
+    }
+
+}

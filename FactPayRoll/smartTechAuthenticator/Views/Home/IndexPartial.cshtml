@@ -1,0 +1,415 @@
+﻿@model smartTechAuthenticator.ViewModels.NewsViewModel
+@{
+    ViewBag.Title = "Register";
+    
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+<style>
+    label {
+        display: inline-block;
+        margin-top: 15px;
+    }
+
+    .user-form h3 {
+        text-align: left;
+    }
+
+    .container h4 {
+        text-align: left;
+    }
+
+    .user-form p {
+        text-align: left;
+    }
+
+    body {
+        background-color: #efefef;
+    }
+
+    .user-form h3 {
+        text-align: left;
+        padding-left: 15px;
+    }
+
+    @@media (max-width: 768px) {
+        .fa-search-head {
+            font-size: 20px;
+            color: white;
+            padding-top: 15px;
+            position: absolute;
+            right: 15px;
+            top: 41%;
+        }
+
+        .mobile-nav-toggle {
+            padding-top: 0 !important;
+        }
+
+            .mobile-nav-toggle.bi-x {
+                top: 0px !important;
+            }
+
+        .banner-img {
+            width: 95%;
+            padding: 11px;
+        }
+    }
+
+    @@media (min-width: 769px) {
+        .atm-img {
+            display: none;
+        }
+
+        .product img {
+            box-shadow: 0px 0px 2px 2px;
+            display: block;
+            margin: 10px auto;
+            border-radius: 8px;
+            width: 75%;
+        }
+
+        #hero .container {
+            margin-top: 0%;
+        }
+
+        .col-md-3 {
+            width: 25% !important;
+        }
+
+        .footer-menu .fa {
+            display: block !important;
+            margin: auto;
+        }
+
+        .banner-img {
+            width: 95%;
+            padding: 11px;
+        }
+
+        .hero {
+            top: 0% !important;
+        }
+
+        .product .btn {
+            margin: 1% 2.6% !important;
+            text-align: center;
+            display: block !important;
+            color: white;
+        }
+    }
+
+    .atm-img {
+        margin: 5px 12px;
+        border-radius: 8px;
+        width: 92%;
+    }
+
+
+    .widgets-img img {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .widgets-img h4 {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, 180%);
+        font-weight: bolder;
+        color: #0b0bab;
+        font-size: 27px;
+    }
+
+    .banner-img {
+        width: 100%;
+        padding: 0;
+    }
+
+    header#header > .container-fluid {
+        height: 100%;
+    }
+
+    nav#navbar {
+        height: 100%;
+    }
+
+    @@media(min-width:992px) {
+        .navbar li:last-child > a {
+            background: transparent;
+            padding: 6px 15px;
+            border-radius: 30px;
+            border: solid 1px #fff;
+            transition: ease 0.5s all-in;
+            margin-left: 20px;
+        }
+    }
+
+    section#hero .container {
+        padding: 0;
+    }
+</style>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+    }
+
+    .slider-wrapper {
+        height: 75vh;
+    }
+
+        .slider-wrapper .slider-item {
+            color: #fff;
+            height: 75vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            /*            background: url("https://images.unsplash.com/photo-1650522147310-13aac44abde2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80") no-repeat center;
+    */
+            background-size: cover;
+        }
+
+    .slider-content {
+        max-width: 60%;
+        margin: 0 auto;
+        padding: 0 20px;
+        font-family: sans-serif;
+        text-align: center;
+    }
+
+        .slider-content h1 {
+            margin-bottom: 20px;
+        }
+</style>
+<style>
+    /* Customer Stories */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: sans-serif;
+    }
+
+    .custom-stories-wrapper {
+        padding: 20px 0;
+    }
+
+        .custom-stories-wrapper .page-center {
+            max-width: 1260px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+
+        .custom-stories-wrapper h4 {
+            margin-bottom: 30px;
+            font-weight: 600;
+            font-size: 22px;
+            text-align: center;
+        }
+
+        .custom-stories-wrapper .c-item .item-inner {
+            display: inline-block;
+            background-color: #f3f3f3;
+            padding: 19px;
+            outline: none;
+            margin: 0 10px;
+        }
+
+        .custom-stories-wrapper .img-wrapper {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            position: relative;
+            max-height: 200px;
+            height: 200px;
+            overflow: hidden;
+        }
+
+            .custom-stories-wrapper .img-wrapper img {
+                width: 100%;
+                object-fit: cover;
+            }
+
+            .custom-stories-wrapper .img-wrapper .img {
+                border-radius: 100px;
+                margin-right: 10px;
+                vertical-align: middle;
+                width: 35px;
+                height: 35px;
+                background-size: cover;
+            }
+
+        .custom-stories-wrapper .user-details {
+            display: inline-block;
+            vertical-align: middle;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+            .custom-stories-wrapper .user-details span {
+                font-size: 13px;
+            }
+
+        .custom-stories-wrapper .ratings a {
+            text-decoration: none;
+        }
+
+            .custom-stories-wrapper .ratings a i {
+                color: #009587;
+                font-size: 13px;
+            }
+
+        .custom-stories-wrapper .content {
+            padding: 0;
+            margin-top: 20px;
+            overflow: auto;
+        }
+
+            .custom-stories-wrapper .content p {
+                margin: 0;
+                font-size: 13px;
+            }
+
+        .custom-stories-wrapper button {
+            padding: 4px;
+            color: #464646;
+            -webkit-box-sizing: unset;
+            box-sizing: unset;
+            -webkit-box-shadow: 0 3px 6px #ccc;
+            box-shadow: 0 3px 6px #ccc;
+            border-radius: 100px;
+            z-index: 1;
+            background-color: #fff;
+        }
+
+            .custom-stories-wrapper button:before {
+                color: #000049;
+                line-height: 1.2;
+            }
+
+        .custom-stories-wrapper .c-item .item-inner a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .custom-stories-wrapper button.slick-prev {
+            left: 0;
+        }
+
+        .custom-stories-wrapper button.slick-next {
+            right: 0;
+        }
+
+        .custom-stories-wrapper .content h3 {
+            margin-bottom: 10px;
+        }
+
+    @@media(max-width:575px) {
+        .custom-stories-wrapper .page-center {
+            padding: 0 15px;
+            max-width: 1230px;
+        }
+    }
+    /* Customer Stories End */
+</style>
+<div class="row">
+    <div class="col-12">
+        <!-- Customer Stories -->
+        <div class="custom-stories-wrapper">
+            <div class="page-center">
+                <h4>News</h4>
+                <div class="stories-inner">
+                    @foreach (var iteam in Model.NewsList)
+                    {
+                        var img = "/Content/NewsFile/" + iteam.Photo + "";
+                        <div class="c-item">
+                            <div class="item-inner">
+                                <a href="post.html">
+
+                                    <div class="img-wrapper">
+                                        <img src="/Content/NewsFile/@iteam.Photo" alt="">
+                                    </div>
+                                    <div class="content">
+                                        <h3>@iteam.NewsTitle</h3>
+                                        <p>
+                                            @Html.Raw(iteam.Description)
+                                        </p>
+                                    </div>
+                                  
+                                </a>
+                            </div>
+
+                        </div>
+                    }
+
+                    </div>
+                </div>
+        </div>
+        <!-- Customer Stories End-->
+      
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+@if (TempData["Message"] != null)
+{
+    <script type="text/javascript">
+            window.onload = function () {
+                alert("@TempData["Message"]");
+            };
+    </script>
+
+}
+
+<script>
+    $('.slider-wrapper').slick({
+        slidesToShow: 1,
+        dots: false,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000
+    });
+</script>
+
+<script>
+    // Slider
+
+    $('.stories-inner').slick({
+        infinite: true,
+        slidesToShow: 3,
+        adaptiveHeight: true,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 1,
+                }
+            }
+        ]
+    });
+
+    //   Slider End
+</script>

@@ -1,0 +1,323 @@
+﻿@model smartTechAuthenticator.Models.MenuPermission
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-light-green.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-deep-orange.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-pink.css">
+
+<style>
+    h6 a {
+        color: white;
+    }
+
+    .box span {
+        color: white;
+    }
+
+</style>
+<div class="page-breadcrumb">
+    <div class="row">
+        <div class="col-12 d-flex no-block align-items-center">
+            <h4 class="page-title">Dashboard</h4>
+            <div class="ms-auto text-end">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="@Url.Action("Index", "Customer")">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            Dashboard
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+
+    @if (Model != null)
+    {
+    <div class="row">
+        @if (Model.CustomerManage == true)
+        {
+            <div class="col-md-6 col-lg-4 col-xlg-3">
+                <div class="card card-hover">
+                    <div class="box bg-info text-center">
+                        <h1 class="font-light text-white">
+                            <i class="mdi mdi-view-dashboard"></i>
+                        </h1>
+                        <h6 class="text-white"><a href="/Customer/Products">No of Employers</a></h6>
+                        @if (TempData["count"] != null)
+                        {
+                            <span>@TempData["count"]</span>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+        @if (Model.AuthenticatorManage == true)
+        {
+            <div class="col-md-6 col-lg-4 col-xlg-3">
+                <div class="card card-hover">
+                    <div class="box bg-success text-center">
+                        <h1 class="font-light text-white">
+                            <i class="mdi mdi-chart-areaspline"></i>
+                        </h1>
+                        <h6 class="text-white"><a href="/Category/Index">No of Employees</a></h6>
+                        @if (TempData["Code"] != null)
+                        {
+                            <span>@TempData["Code"]</span>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+        
+
+    </div>
+    <div class="row">
+        @if (Model.TicketSupportManage == true)
+        {
+            <div class="col-md-6 col-lg-4 col-xlg-3">
+                <div class="card card-hover">
+                    <div class="box w3-theme-d1 text-center">
+                        <h1 class="font-light text-white">
+                            <i class="mdi mdi-collage"></i>
+                        </h1>
+                        <h6 class="text-white"><a href="#">Permissions</a></h6>
+                        @if (TempData["TotalTicket"] != null)
+                        {
+                            <span>@TempData["TotalTicket"]</span>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xlg-3">
+                <div class="card card-hover">
+                    <div class="box bg-warning text-center">
+                        <h1 class="font-light text-white">
+                            <i class="fas fa-ticket-alt" style="font-size:30px;color:red"></i>
+                        </h1>
+                        <h6 class="text-white"><a href="/Home/FormAssign">No of Forms</a></h6>
+                        @if (TempData["UnSolvedTicket"] != null)
+                        {
+                            <span>@TempData["UnSolvedTicket"]</span>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+        @if (Model.CertificateManage == true)
+        {
+            <div class="col-md-6 col-lg-4 col-xlg-3">
+                <div class="card card-hover">
+                    <div class="box w3-theme-d2 text-center">
+                        <h1 class="font-light text-white">
+                            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                        </h1>
+                        <h6 class="text-white"><a href="#">Subscription</a></h6>
+                        @if (TempData["penddingCertificate"] != null)
+                        {
+                            <span>@TempData["penddingCertificate"]</span>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    @*<div class="row">
+        @if (Model.MallManage == true)
+        {
+            <div class="col-md-6 col-lg-4 col-xlg-3">
+                <div class="card card-hover">
+                    <div class="box w3-theme-l3 text-center">
+                        <h1 class="font-light text-white">
+                            <i class="mdi mdi-collage"></i>
+                        </h1>
+                        <h6 class="text-white"><a href="/Home/OrderList">Order Total Daily</a></h6>
+                        @if (TempData["DailyOrderList"] != null)
+                        {
+                            <span>@TempData["DailyOrderList"]</span>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 col-xlg-3">
+                <div class="card card-hover">
+                    <div class="box bg-success text-center">
+                        <h1 class="font-light text-white">
+                            <i class="mdi mdi-note-plus"></i>
+                        </h1>
+                        <h6 class="text-white"><a href="/Home/OrderList">Order Listing</a></h6>
+                        @if (TempData["OrderList"] != null)
+                        {
+                            <span>@TempData["OrderList"]</span>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+        @if (Model.NewsManage == true)
+        {
+            <div class="col-md-6 col-lg-4 col-xlg-3">
+                <div class="card card-hover">
+                    <div class="box bg-cyan text-center">
+                        <h1 class="font-light text-white">
+                            <i class="far fa-newspaper fa-spin" style="font-size:30px"></i>
+                        </h1>
+                        <h6 class="text-white"><a href="/News/NewsDetails">Post News Listing</a></h6>
+                        @if (TempData["PostingNews"] != null)
+                        {
+                            <span>@TempData["PostingNews"]</span>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+        </div>*@
+
+    }
+    else
+    {
+        <div class="row">
+            <div class="col-md-6 col-lg-4 col-xlg-3">
+                <div class="card card-hover">
+                    <div class="box bg-info text-center">
+                        <h1 class="font-light text-white">
+                            <i class="mdi mdi-view-dashboard"></i>
+                        </h1>
+                        <h6 class="text-white"><a href="/Customer/Products">No of Employers</a></h6>
+                        @if (TempData["count"] != null)
+                        {
+                            <span>@TempData["count"]</span>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xlg-3">
+                <div class="card card-hover">
+                    <div class="box bg-success text-center">
+                        <h1 class="font-light text-white">
+                            <i class="mdi mdi-chart-areaspline"></i>
+                        </h1>
+                        <h6 class="text-white"><a href="/Category/Index">No of Employees</a></h6>
+                        @if (TempData["Code"] != null)
+                        {
+                            <span>@TempData["Code"]</span>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xlg-3">
+                <div class="card card-hover">
+                    <div class="box bg-warning text-center">
+                        <h1 class="font-light text-white">
+                            <i class="mdi mdi-collage"></i>
+                        </h1>
+                        <h6 class="text-white"><a href="/Accountant/Index">No of Accountants</a></h6>
+                        @if (TempData["test"] != null)
+                        {
+                            <span>@TempData["test"]</span>
+                        }
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-lg-4 col-xlg-3">
+                <div class="card card-hover">
+                    <div class="box w3-theme-d1 text-center">
+                        <h1 class="font-light text-white">
+                            <i class="mdi mdi-collage"></i>
+                        </h1>
+                        <h6 class="text-white"><a href="#">Permissions</a></h6>
+                        @if (TempData["TotalTicket"] != null)
+                        {
+                            <span>@TempData["TotalTicket"]</span>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xlg-3">
+                <div class="card card-hover">
+                    <div class="box bg-warning text-center">
+                        <h1 class="font-light text-white">
+                            <i class="fas fa-ticket-alt" style="font-size:30px;color:red"></i>
+                        </h1>
+                        <h6 class="text-white"><a href="/Home/FormAssign">No of Forms</a></h6>
+                        @if (TempData["UnSolvedTicket"] != null)
+                        {
+                            <span>@TempData["UnSolvedTicket"]</span>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xlg-3">
+                <div class="card card-hover">
+                    <div class="box w3-theme-d2 text-center">
+                        <h1 class="font-light text-white">
+                            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                        </h1>
+                        <h6 class="text-white"><a href="#">Subscription</a></h6>
+                        @if (TempData["penddingCertificate"] != null)
+                        {
+                            <span>@TempData["penddingCertificate"]</span>
+                        }
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        @*<div class="row">
+            <div class="col-md-6 col-lg-4 col-xlg-3">
+                <div class="card card-hover">
+                    <div class="box w3-theme-l3 text-center">
+                        <h1 class="font-light text-white">
+                            <i class="mdi mdi-collage"></i>
+                        </h1>
+                        <h6 class="text-white"><a href="/Home/OrderList">Order Total Daily</a></h6>
+                        @if (TempData["DailyOrderList"] != null)
+                        {
+                            <span>@TempData["DailyOrderList"]</span>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xlg-3">
+                <div class="card card-hover">
+                    <div class="box bg-success text-center">
+                        <h1 class="font-light text-white">
+                            <i class="mdi mdi-note-plus"></i>
+                        </h1>
+                        <h6 class="text-white"><a href="/Home/OrderList">Order Listing</a></h6>
+                        @if (TempData["OrderList"] != null)
+                        {
+                            <span>@TempData["OrderList"]</span>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xlg-3">
+                <div class="card card-hover">
+                    <div class="box bg-cyan text-center">
+                        <h1 class="font-light text-white">
+                            <i class="far fa-newspaper fa-spin" style="font-size:30px"></i>
+                        </h1>
+                        <h6 class="text-white"><a href="/News/NewsDetails">Post News Listing</a></h6>
+                        @if (TempData["PostingNews"] != null)
+                        {
+                            <span>@TempData["PostingNews"]</span>
+                        }
+                    </div>
+                </div>
+            </div>
+
+        </div>*@
+
+    }
+</div>

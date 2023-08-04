@@ -1,0 +1,121 @@
+﻿@model smartTechAuthenticator.ViewModels.CheckOutViewModel
+@{
+    ViewBag.Title = "Checkout Confirmation";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+    var price = Convert.ToDecimal(Model.ProductDetail.TotalPrice);
+    var ship = Model.Shippingfees;
+    decimal TotalPrice = price + Convert.ToDecimal(ship);
+}
+<style>
+    .checkout-wrapper {
+        margin-top: 30px !important;
+    }
+    .text-end {
+        text-align: left !important;
+    }
+
+    .card-body:before, .card-body:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    .page-breadcrumb .col-12.d-flex.no-block.align-items-center {
+        display: flex !important;
+    }
+
+    form.form-horizontal .card-body {
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+</style>
+
+<link rel="stylesheet" href="~/Content/assets-mall/css/all.min.css">
+<link rel="stylesheet" href="~/Content/assets-mall/css/bootstrap.min.css">
+<link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+<link rel="stylesheet" href="~/Content/assets-mall/css/style.css">
+
+<div class="page-breadcrumb" style=" margin-top: 90px; margin-left: 88px;">
+    <div class="row">
+        <div class="col-12 d-flex no-block align-items-center">
+            <h4 class="page-title">CheckOut Confirmation</h4>
+            <div class="ms-auto text-end">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href=@Url.Action("Index","Mall")>Mall</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            CheckOut Confirmation
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="checkout-wrapper confirm-checkout">
+    <div class="checkout-content">
+        <div class="shipping-details">
+            <h5>Checkout Summary</h5>
+            <ul>
+                <li>
+                    <b>Name</b>
+                    <span>@Model.CustomerDetail.Name</span>
+                </li>
+                <li>
+                    <b>Contact</b>
+                    <span>@Model.CustomerDetail.MobileNo</span>
+                </li>
+                <li>
+                    <b>Address</b>
+                    <span>@Model.CustomerDetail.Address1 ,@Model.CustomerDetail.Address2 ,@Model.CustomerDetail.PostCode </span>
+                </li>
+                <li>
+                    <b>Message</b>
+                    <span>@Model.Message</span>
+                </li>
+                <li>
+                    <b>Item</b>
+                    <span>@Model.ProductDetail.ProductName X @Model.ProductDetail.Qty</span>
+                </li>
+            </ul>
+        </div>
+        <div class="price">
+            <h5>Payment</h5>
+            <ul>
+                <li>
+                    <span>Subtotal</span>
+                    <span>RM @Model.ProductDetail.TotalPrice</span>
+                </li>
+                <li>
+                    <span>Shipping fees</span>
+                    <span>+ RM @ship</span>
+                </li>
+                <li>
+                    <span>Total Payment</span>
+                    <span>RM @TotalPrice</span>
+                </li>
+            </ul>
+        </div>
+        @Html.HiddenFor(model => model.Size, new { id = "prosize" })
+        @Html.HiddenFor(model => model.Color, new { id = "procolor" })
+    </div>
+</div>
+
+
+<div class="footer-fix confirm">
+    <div class="inner">
+        <div class="total">
+            <h6>Total Payment</h6>
+            <h6>RM @TotalPrice</h6>
+        </div>
+        <div class="next">
+            <a href="@Url.Action("Payment","Mall", new {Id=Model.ProductDetail.Id,Qty=Model.ProductDetail.Qty,Amount=TotalPrice,Size=Model.Size,Color=Model.Color})" class="confirm">Confirm</a>
+        </div>
+    </div>
+</div>
+
+<script src="~/Content/assets-mall/js/jquery.min.js"></script>
+<script src="~/Content/assets-mall/js/bootstrap.bundle.min.js"></script>

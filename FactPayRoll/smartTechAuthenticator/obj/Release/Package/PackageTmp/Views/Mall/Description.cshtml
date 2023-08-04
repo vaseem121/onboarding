@@ -1,0 +1,384 @@
+﻿@model smartTechAuthenticator.ViewModels.MallViewModel
+@{
+    ViewBag.Title = "Description";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+    var slidecount = Model.ProductGallery.Count - 1;
+}
+<link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="~/Content/assets-mall/css/style.css">
+
+<style>
+    .text-end {
+        text-align: left !important;
+    }
+
+    .card-body:before, .card-body:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    .page-breadcrumb .col-12.d-flex.no-block.align-items-center {
+        display: flex !important;
+    }
+
+    form.form-horizontal .card-body {
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+
+    .description-wrapper {
+        margin: 50px 0 150px;
+    }
+
+    .description-wrapper {
+        margin: 50px 0 250px;
+    }
+
+    .description-wrapper {
+        padding-bottom: 60px;
+    }
+
+    .color-slider ul li.item a {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 10px;
+        border: 5px solid #d7cece;
+        display: block;
+    }
+
+    .description-page .color-slider ul.slick-initialized {
+        display: inline-block;
+        width: 450px;
+        padding: 0 20px;
+    }
+
+    .description-page .color-slider {
+        display: block !important;
+        margin: 20px 0 0;
+    }
+
+        .description-page .color-slider ul.slick-initialized .slick-track {
+            display: block !important;
+        }
+
+        .description-page .color-slider ul.slick-initialized .slick-list.draggable {
+            display: block !important;
+        }
+
+
+    .size-slider li.item > a {
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+        border: 1px solid #eee;
+        text-align: center;
+        line-height: 30px;
+        font-size: 14px;
+        color: inherit;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .description-page .size-slider ul.slick-initialized {
+        display: inline-block;
+        width: 450px;
+        padding: 0 20px;
+    }
+
+    .color-upper-wrapper {
+        display: block !important;
+    }
+
+    .size-upper-wrapper {
+        display: block !important;
+    }
+    .size-slider {
+        margin-top: 20px;
+    }
+
+
+        .size-slider li.item > a label {
+            margin-bottom: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .size-slider li.item > a input:checked ~ label {
+            background: #e3dcdc;
+        }
+
+    .color-upper-wrapper .size-slider li.item > a input:checked ~ label {
+        border: 3px solid #9b7d7d;
+    }
+    .quantity {
+        width: 100%;
+    }
+    .size-upper-wrapper > label {
+        margin-right: 10px;
+    }
+
+    .color-upper-wrapper > label {
+        margin-right: 10px;
+        position: relative;
+        top: -18px;
+    }
+</style>
+
+<div class="page-breadcrumb" style=" margin-top: 90px; margin-left: 88px;">
+    <div class="row">
+        <div class="col-12 d-flex no-block align-items-center">
+            <h4 class="page-title">Product Description</h4>
+            <div class="ms-auto text-end">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href=@Url.Action("Index","Mall")>Mall</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            Product Description
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="description-wrapper description-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-12">
+                <!-- Product Slider -->
+                <div class="product-gallery">
+                    <!-- Images slider -->
+                    <div class="flexslider-thumbnails">
+                        <ul class="slides">
+                            <li>
+                                <img class="cover_image" src="~/Content/Product/@Model.ProductDetail.Photo" alt="Image">
+                            </li>
+                        </ul>
+                    </div>
+                    @if (Model.ProductGallery.Count > 0)
+                    {
+                        <ul class="slide-iamges">
+
+                            @foreach (var item in Model.ProductGallery)
+                            {
+                                <li>
+                                    <a href="javascript:;">
+                                        <img class="thumbnail" src="~/Content/Gallery/@item.Photo">
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    }
+                    <!-- End Images slider -->
+                </div>
+                <!-- End Product slider -->
+            </div>
+            <div class="col-md-6 col-12">
+                <div class="product-des">
+                    <!-- Description -->
+                    <div class="short">
+                        <h4>@Model.ProductDetail.ProductName</h4>
+                        <p class="price">
+                            <span class="discount">RM @Model.ProductDetail.Price.00</span>
+                            <input type="hidden" value="@Model.ProductDetail.Price" id="hddPrice" />
+                            <input type="hidden" value="@Model.ProductDetail.Id" id="hddProId" />
+                        </p>
+                        <p>
+
+                            <span>&nbsp;@Model.ProductDetail.Description.&nbsp;</span><br>
+                        </p>
+
+                    </div>
+                    <!--/ End Description -->
+                    <!-- Product Buy -->
+                    <div class="product-buy">
+
+                        <div class="quantity">
+                            <h6>Quantity :</h6>
+                            <!-- Input Order -->
+                            <div class="input-group">
+                                <div class="button minus">
+                                    <button type="button" class="btn-number" id="subs">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                </div>
+                                <input type="text" class="input-number" readonly value="1" id="quantity">
+                                <div class="button plus">
+                                    <button type="button" class="btn-number" id="adds">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                                <!--/ End Input Order -->
+                            </div>
+                            <div class="size-upper-wrapper">
+                                @if (Model.ProductDetail.ProductType == 2)
+                                {
+                                    if (Model.productSizeList != null)
+                                    {
+
+                                        @Html.LabelFor(x => x.Size, new { @class = "" })
+
+                                        foreach (var item in Model.productSizeList)
+                                        {
+                                            <div class="size-slider">
+                                                <ul>
+                                                    <li class="item">
+                                                        <a href="javascript:;">
+                                                            <input type="radio" class="btn-check For-Selected-Size-Value" value="@item.Size" name="options" id="@item.Size">
+                                                            <label class="" for="@item.Size">@item.Size</label>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        }
+                                    }
+                                }
+                            </div>
+                            <div class="color-upper-wrapper">
+                                @if (Model.ProductDetail.ProductType == 2)
+                                {
+                                    if (Model.productColorList != null)
+                                    {
+                                        @Html.LabelFor(x => x.Color, new { @class = "" })
+
+                                        foreach (var item in Model.productColorList)
+                                        {
+                                            <div class="size-slider">
+                                                <ul>
+                                                    <li class="item">
+                                                        <a href="javascript:;">
+                                                            <input type="radio" class="btn-check For-Selected-Color-Value" value="@item.Color" name="color" id="@item.Color">
+                                                            <label class="" for="@item.Color" style="background: @item.Color;"></label>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        }
+                                    }
+                                }
+                            </div>
+                            <div class="add-to-cart mt-4">
+                                <button type="button" class="btn" onclick="AddToCart()">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Add to cart
+                                </button>
+                                <button onclick="CheckOut()" class="btn">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Check Out @*<i class="far fa-heart"></i>*@
+                                </button>
+                            </div>
+
+                            <p class="cat">
+                                Category :
+                                <span>@Model.ProductDetail.CategoryName</span>
+                            </p>
+                        </div>
+                        <!--/ End Product Buy -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+<script src="~/Content/assets-mall/js/jquery.min.js"></script>
+<script src="~/Content/assets-mall/js/slick.js"></script>
+<script src="~/Content/assets-mall/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+    });
+</script>
+<script>
+    function CheckOut() {
+        var rValSize = $(".For-Selected-Size-Value:checked ").val();
+        var rValColor = $(".For-Selected-Color-Value:checked ").val();
+        if (rValColor != null || rValColor != undefined) {
+            var newValue = rValColor.replace('#', '');
+        }
+        if (rValColor == undefined && rValSize == undefined) {
+            newValue = null;
+            rValSize = null;
+        }
+        var Qty = $('#quantity').val();
+        var ProId = $('#hddProId').val();
+        window.location.href = "/Mall/CheckOut/" + ProId + "?Qty=" + Qty + "&Size=" + rValSize + "&Color=" + newValue + "";
+    }
+    function AddToCart() {
+        var Qty = $('#quantity').val();
+        var ProId = $('#hddProId').val();
+        var Price = $('#hddPrice').val();
+        var rValSize = $(".For-Selected-Size-Value:checked ").val();
+        var rValColor = $(".For-Selected-Color-Value:checked ").val();
+            var data = { "Qty": Qty, "ProductId": ProId, "Price": Price, "Size": rValSize, "Color": rValColor }
+            $.ajax({
+                url: '/Mall/AddToCart',
+                type: 'post',
+                contentType: 'application/x-www-form-urlencoded',
+                data: data,
+                success: function (result) {
+                    if (result == "1") {
+                        window.location.href = "/Mall";
+                    }
+                    else {
+                    }
+                },
+
+            });
+    }
+
+    // Increment And Decrement
+
+
+    $('#adds').click(function add() {
+        var $rooms = $("#quantity");
+        var a = $rooms.val();
+        var price = parseInt($("#hddPrice").val());
+        a++;
+        price = price * a;
+        $("#subs").prop("disabled", !a);
+        $rooms.val(a);
+        $(".discount").text("RM" + price + ".00");
+    });
+    $("#subs").prop("disabled", !$("#quantity").val());
+
+    $('#subs').click(function subst() {
+        var $rooms = $("#quantity");
+        var ActualPrice = parseInt($("#hddPrice").val());
+        var b = $rooms.val();
+        if (b > 1) {
+            b--;
+            price = ActualPrice * b;
+            $rooms.val(b);
+            $(".discount").text("RM" + price + ".00");
+        }
+        else {
+            $("#subs").prop("disabled", true);
+        }
+    });
+
+
+    $(".thumbnail").click(function () {
+        var src = $(this).attr('src');
+        $(".cover_image").attr('src', src);
+    });
+
+    $('.slide-iamges').slick({
+        infinite: true,
+        slidesToShow: @slidecount,
+        slidesToScroll: 1
+    });
+
+</script>

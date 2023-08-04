@@ -1,0 +1,4 @@
+------Error(2023-06-07 17:52:47.0926)DESKTOP-V8T7H00------
+                       Exception Type:System.NullReferenceException |                       Exception Message:Object reference not set to an instance of an object. |                       Stack Trace: |                       Additional Info:System.NullReferenceException: Object reference not set to an instance of an object.
+   at smartTechAuthenticator.Services.Account.AccountRepo.<SignIn>d__6.MoveNext() in D:\1. Priyanka\GitProjects\factpayrollproject\FactPayRollProject6.6.2023\FactPayRoll\smartTechAuthenticator\Services\Account\AccountRepo.cs:line 95
+

@@ -1,0 +1,331 @@
+﻿@model smartTechAuthenticator.ViewModels.CheckListModel
+@{
+    ViewBag.Title = "ManualSubmitOnSuccess";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+<style>
+    label {
+        display: inline-block;
+        margin-top: 15px;
+    }
+
+    .user-form h3 {
+        text-align: left;
+    }
+
+    .container h4 {
+        text-align: left;
+    }
+
+    .user-form p {
+        text-align: left;
+    }
+
+    body {
+        background-color: #efefef;
+    }
+
+    .user-form h3 {
+        text-align: left;
+        padding-left: 15px;
+    }
+
+    @@media (max-width: 768px) {
+        .fa-search-head {
+            font-size: 20px;
+            color: white;
+            padding-top: 15px;
+            position: absolute;
+            right: 15px;
+            top: 41%;
+        }
+
+        .mobile-nav-toggle {
+            padding-top: 25px !important;
+        }
+
+            .mobile-nav-toggle.bi-x {
+                top: 0px !important;
+            }
+
+        .col-md-3 {
+            width: 30%;
+        }
+
+        .col-md-6 {
+            width: 50%;
+        }
+
+        .col-md-9 {
+            width: 70%;
+        }
+
+        .img-responsive {
+            width: 100%;
+        }
+
+        .product-content p {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        p label {
+            font-weight: bold !important;
+            padding: 0px;
+            margin: 1px;
+        }
+
+        .user-form h4 {
+            font-weight: bold;
+            color: crimson;
+        }
+
+        .user-form .product-row {
+            background-color: rgb(255 255 255);
+            padding: 10px;
+            box-shadow: 0px 0px 4px 2px;
+            margin: 15px 0px;
+        }
+
+        .product-img {
+            padding-top: 40px;
+        }
+
+        .product-search {
+            position: absolute;
+            right: 25px;
+            top: 50px;
+        }
+
+        .search-row {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .upload-btn {
+            margin: 10px auto;
+        }
+
+        .product .btn {
+            margin: 0px;
+        }
+
+        .product-img .img-responsive {
+            display: block;
+            margin: auto;
+            display: block;
+            margin: auto;
+            border-radius: 100px;
+        }
+    }
+
+    @@media (min-width: 769px) {
+        .product img {
+            box-shadow: 0px 0px 2px 2px;
+            display: block;
+            margin: 10px auto;
+            border-radius: 8px;
+            width: 75%;
+        }
+
+        #hero .container {
+            margin-top: 0% !important;
+        }
+
+        .col-md-3 {
+            width: 25% !important;
+        }
+
+        .footer-menu .fa {
+            display: block !important;
+            margin: auto;
+        }
+
+        .fa-search-head {
+            font-size: 20px;
+            color: white;
+            padding-top: 15px;
+            position: absolute;
+            right: 15px;
+            top: 0%;
+        }
+
+        .mobile-nav-toggle {
+            padding-top: 25px !important;
+        }
+
+            .mobile-nav-toggle.bi-x {
+                top: 0px !important;
+            }
+
+        .col-md-3 {
+            width: 30%;
+        }
+
+        .col-md-6 {
+            width: 50%;
+        }
+
+        .col-md-9 {
+            width: 70%;
+        }
+
+        .img-responsive {
+            width: 50%;
+        }
+
+        .product-content p {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        p label {
+            font-weight: bold !important;
+            padding: 0px;
+            margin: 1px;
+        }
+
+        .user-form h4 {
+            font-weight: bold;
+            color: crimson;
+        }
+
+        .user-form .product-row {
+            background-color: rgb(255 255 255);
+            padding: 10px;
+            box-shadow: 0px 0px 4px 2px;
+            margin: 15px 0px;
+        }
+
+        .product-img {
+            padding-top: 20px;
+        }
+
+        .product-search {
+            position: absolute;
+            right: 25px;
+            top: 50px;
+        }
+
+        .search-row {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .upload-btn {
+            display: block;
+            margin: 10px auto;
+            padding: 25px;
+        }
+
+        .hero {
+            overflow: scroll;
+        }
+
+        .product .btn {
+            margin: 0px;
+        }
+
+        .product-img .img-responsive {
+            display: block;
+            margin: auto;
+            display: block;
+            margin: auto;
+            border-radius: 100px;
+        }
+    }
+
+    .result-description-block {
+        background-color: white;
+        padding: 10px;
+        margin: 15px auto;
+        box-shadow: 0px 0px 1px 0px;
+    }
+
+    .product-subdetail {
+        background-color: gainsboro;
+        margin: 4px;
+    }
+
+    .product-img {
+        width: 50% !important;
+        display: block;
+        margin: auto;
+        padding: 19px;
+    }
+
+    .product-result-block {
+        text-align: center !important;
+    }
+
+    .user-form {
+        background-color: #1aa64d;
+        color: white;
+        border-radius: 10px;
+    }
+
+        .user-form .table {
+            color: white;
+        }
+
+    @@media(min-width:768px) {
+        .product-img {
+            width: 20% !important;
+        }
+    }
+</style>
+<section id="hero" class="hero d-flex align-items-center"> 
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="product-result-block">
+                    <form class="user-form">
+                        <img src="~/Content/assets/img/smartech-icon.png" class="product-img" style="width:100%;" />
+                        <p class="text-center"><b>@Model.Data.ProductName</b></p>
+                        <p class="text-center"> @Model.Data.Description</p>
+                        <p class="text-center">
+                            Thankyou for purchasing  @Model.Data.ProductName @Model.Data.ProductCategory.CategoryName
+                        </p>
+                            <div class="product-details-block d-flex" style="display: block!important;width:100%!important;">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <tr>
+                                            <th>Series Number </th>
+                                            <th>Last Checked </th>
+                                            <th>Total Check </th>
+                                        </tr>
+                                        @{
+                                            if (Model.TestkitChecks != null)
+                                            {
+                                                int Index = 0;
+                                                foreach (var row in Model.TestkitChecks.ToList())
+                                                {
+                                                    <tr>
+                                                        <td>@row.Qrcode</td>
+                                                        <td>@row.CreatedTs.ToString("dd-MM-yyyy")</td>
+                                                        <td>1</td>
+                                                    </tr>
+                                                    Index = Index + 1;
+                                                }
+                                            }
+                                        }
+                                    </table>
+                                </div>
+                            </div>
+                    </form>
+                    <div class="row text-center mb-5">
+                        <div class="col-xs-12 col-sm-12">
+                            <div class="product">
+                                <a class="btn btn-primary d-flex mt-2"  href="@Url.Action("Step2","Home")">Submit Test Report</a>
+                                <div class="result-description-block">
+                                    <p><span style="color:#1aa64d;font-weight: 700;">CONGRATULATIONS!</span> The Product you purchase is genuine, you may proceed with testing and upload your result to my sejahterah...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

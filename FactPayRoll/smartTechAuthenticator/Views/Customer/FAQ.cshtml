@@ -1,0 +1,82 @@
+﻿@model smartTechAuthenticator.ViewModels.FaqViewModel
+@{
+    ViewBag.Title = "FAQ";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<script src="https://cdn.ckeditor.com/4.18.0/standard/ckeditor.js"></script>
+
+<style>
+    .text-end {
+        text-align: left !important;
+    }
+
+    .card-body:before, .card-body:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+</style>
+<div class="page-breadcrumb">
+    <div class="row">
+        <div class="col-12 d-flex no-block align-items-center">
+            <h4 class="page-title">Faq</h4>
+            <div class="ms-auto text-end">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            Faq
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                @using (Html.BeginForm("FAQ", "Customer", FormMethod.Post, new { @class = "form-horizontal" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="card-body">
+                        <h4 class="card-title">Add FAQ Content</h4>
+                        <div class="form-group row">
+                            <label class="col-sm-3 text-end control-label col-form-label" for="NewsTitle">Faq Title</label>
+                          
+                            <div class="col-sm-9">
+                                @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 text-end control-label col-form-label" for="NewsTitle">Description</label>
+                            <div class="col-sm-9">
+                                @Html.TextArea("Description", htmlAttributes: new { name = "Description", @id = "FullDescription", @class = "form-control", @rows = "200" })
+                                @Html.ValidationMessageFor(x => x.Description, "", new { @class = "text-danger" })
+                                <script>
+                                    CKEDITOR.replace("FullDescription");
+                                </script>
+                            </div>
+                        </div>
+                       
+                    </div>
+                    <div class="">
+                        <div class="card-body">
+                            <a href="@Url.Action("","" )" class="btn btn-danger" style="float: right;margin:5px;">
+                                Cancel
+                            </a>
+                            <button type="submit" class="btn btn-primary" style="float: right;margin:5px;">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,121 @@
+﻿@model smartTechAuthenticator.ViewModels.CustomerInfoViewModel
+@{
+    ViewBag.Title = "SubAdminDetail";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<style>
+    button.btn.btn-primary {
+        margin-right: 5px;
+    }
+
+    .card-body:before, .card-body:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+</style>
+<div class="page-breadcrumb">
+    <div class="row">
+        <div class="col-12 d-flex no-block align-items-center">
+            <h4 class="page-title">SubAdmin Detail</h4>
+            <div class="ms-auto text-end">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="@Url.Action("Customers", "Customer")">Customers</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            Sub Admin Deatils
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="tab-content tabcontent-border">
+    <div class="tab-pane active" id="home" role="tabpanel">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    @using (Html.BeginForm("SubAdminDetail", "Customer", FormMethod.Post, new { @class = "form-horizontal" }))
+                    {
+
+                        @Html.AntiForgeryToken()
+                        @Html.HiddenFor(x => x.Id)
+                        @Html.HiddenFor(x => x.UserPass)
+                        <div class="card-body">
+                            <h4 class="card-title">Customer Information</h4>
+                            <div class="form-group row">
+                                @Html.LabelFor(x => x.Name, new { @class = "col-sm-3 text-end control-label col-form-label" })
+                                <div class="col-sm-9">
+                                    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.Name, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                                @Html.LabelFor(x => x.Nric, new { @class = "col-sm-3 text-end control-label col-form-label" })
+                                <div class="col-sm-9">
+                                    @Html.TextBoxFor(x => x.Nric, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.Nric, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                @Html.LabelFor(x => x.MobileNo, new { @class = "col-sm-3 text-end control-label col-form-label" })
+                                <div class="col-sm-9">
+                                    @Html.TextBoxFor(x => x.MobileNo, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.MobileNo, "'", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                @Html.LabelFor(x => x.StateId, new { @class = "col-sm-3 text-end control-label col-form-label" })
+                                <div class="col-sm-9">
+                                    @Html.DropDownListFor(model => model.StateId, (IEnumerable<SelectListItem>)ViewData["States"], "Select State", new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.StateId, "", new { @class = "text-danger'" })
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                @Html.LabelFor(x => x.DistricttId, new { @class = "col-sm-3 text-end control-label col-form-label" })
+                                <div class="col-sm-9">
+                                    @Html.DropDownListFor(model => model.DistricttId, (IEnumerable<SelectListItem>)ViewData["Districstts"], "Select Districtt", new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.DistricttId, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                @Html.LabelFor(x => x.PostCode, new { @class = "col-sm-3 text-end control-label col-form-label" })
+                                <div class="col-sm-9">
+                                    @Html.TextBoxFor(x => x.PostCode, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.PostCode, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                @Html.LabelFor(x => x.Address, new { @class = "col-sm-3 text-end control-label col-form-label" })
+                                <div class="col-sm-9">
+                                    @Html.TextAreaFor(x => x.Address, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.Address, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="">
+                            <div class="card-body">
+                                <a href="@Url.Action("Customers","Customer" )" class="btn btn-danger" style="float: right;">
+                                    Cancel
+                                </a>
+                                <button type="submit" class="btn btn-primary" style="float: right;">
+                                    Update
+                                </button>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+

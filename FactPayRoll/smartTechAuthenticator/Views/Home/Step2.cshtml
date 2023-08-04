@@ -1,0 +1,322 @@
+﻿@model smartTechAuthenticator.ViewModels.TrackingFormsViewModel
+@{
+    ViewBag.Title = "Step2";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+<style>
+    label {
+        display: inline-block;
+        margin-top: 15px;
+    }
+
+    .user-form h3 {
+        text-align: left;
+    }
+
+    .container h4 {
+        text-align: left;
+    }
+
+    .user-form p {
+        text-align: left;
+    }
+
+    body {
+        background-color: #efefef;
+    }
+
+    .user-form h3 {
+        text-align: left;
+        padding-left: 15px;
+    }
+
+    @@media (max-width: 768px) {
+        .fa-search-head {
+            font-size: 20px;
+            color: white;
+            padding-top: 15px;
+            position: absolute;
+            right: 15px;
+            top: 41%;
+        }
+
+        .mobile-nav-toggle {
+            padding-top: 25px !important;
+        }
+
+            .mobile-nav-toggle.bi-x {
+                top: 0px !important;
+            }
+
+        .col-md-3 {
+            width: 30%;
+        }
+
+        .col-md-6 {
+            width: 50%;
+        }
+
+        .col-md-9 {
+            width: 70%;
+        }
+
+        .img-responsive {
+            width: 100%;
+        }
+
+        .product-content p {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        p label {
+            font-weight: bold !important;
+            padding: 0px;
+            margin: 1px;
+        }
+
+        .user-form h4 {
+            font-weight: bold;
+            color: crimson;
+        }
+
+        .user-form .product-row {
+            background-color: rgb(255 255 255);
+            padding: 10px;
+            box-shadow: 0px 0px 4px 2px;
+            margin: 15px 0px;
+        }
+
+        .product-img {
+            padding-top: 40px;
+        }
+
+        .product-search {
+            position: absolute;
+            right: 25px;
+            top: 50px;
+        }
+
+        .search-row {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .upload-btn {
+            margin: 10px auto;
+        }
+
+        .product .btn {
+            margin: 0px;
+        }
+
+        .product-img .img-responsive {
+            display: block;
+            margin: auto;
+            display: block;
+            margin: auto;
+            border-radius: 100px;
+        }
+    }
+
+    @@media (min-width: 769px) {
+        .product img {
+            box-shadow: 0px 0px 2px 2px;
+            display: block;
+            margin: 10px auto;
+            border-radius: 8px;
+            width: 75%;
+        }
+
+        #hero .container {
+            margin-top: 0% !important;
+        }
+
+        .col-md-3 {
+            width: 25% !important;
+        }
+
+        .footer-menu .fa {
+            display: block !important;
+            margin: auto;
+        }
+
+        .fa-search-head {
+            font-size: 20px;
+            color: white;
+            padding-top: 15px;
+            position: absolute;
+            right: 15px;
+            top: 0%;
+        }
+
+        .mobile-nav-toggle {
+            padding-top: 25px !important;
+        }
+
+            .mobile-nav-toggle.bi-x {
+                top: 0px !important;
+            }
+
+        .col-md-3 {
+            width: 30%;
+        }
+
+        .col-md-6 {
+            width: 50%;
+        }
+
+        .col-md-9 {
+            width: 70%;
+        }
+
+        .img-responsive {
+            width: 50%;
+        }
+
+        .product-content p {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        p label {
+            font-weight: bold !important;
+            padding: 0px;
+            margin: 1px;
+        }
+
+        .user-form h4 {
+            font-weight: bold;
+            color: crimson;
+        }
+
+        .user-form .product-row {
+            background-color: rgb(255 255 255);
+            padding: 10px;
+            box-shadow: 0px 0px 4px 2px;
+            margin: 15px 0px;
+        }
+
+        .product-img {
+            padding-top: 20px;
+        }
+
+        .product-search {
+            position: absolute;
+            right: 25px;
+            top: 50px;
+        }
+
+        .search-row {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .upload-btn {
+            display: block;
+            margin: 10px auto;
+            padding: 25px;
+        }
+
+        .hero {
+            overflow: scroll;
+        }
+
+        .product .btn {
+            margin: 0px;
+        }
+
+        .product-img .img-responsive {
+            display: block;
+            margin: auto;
+            display: block;
+            margin: auto;
+            border-radius: 100px;
+        }
+    }
+
+    .user-info-row {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+</style>
+<section id="hero" class="hero d-flex align-items-center">
+
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="product-block">
+                    @using (Html.BeginForm("Step2", "Home"))
+                    {
+                        @Html.HiddenFor(x => x.Id)
+                        @Html.HiddenFor(x => x.CustId)
+                        @Html.HiddenFor(x => x.TestkitId)
+                        @Html.HiddenFor(x => x.QrCode)
+                        <h4>Account Info</h4>
+                        <div class="row user-info-row">
+                            <div class="col-md-12">
+                                <div class="user-info-blk">
+                                    @Html.LabelFor(x => x.Name)
+                                    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.Name, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row user-info-row">
+                            <div class="col-md-12">
+                                <div class="user-info-blk">
+                                    @Html.LabelFor(x => x.MobileNo)
+                                    @Html.TextBoxFor(x => x.MobileNo, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.MobileNo, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row user-info-row">
+                            <div class="col-md-12">
+                                <div class="user-info-blk">
+                                    @Html.LabelFor(x => x.LotNumber)
+                                    @Html.TextBoxFor(x => x.LotNumber, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.LotNumber, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row user-info-row">
+                            <div class="col-md-6">
+                                <div class="user-info-blk">
+                                    @Html.LabelFor(x => x.Date)
+                                    @Html.TextBoxFor(x => x.Date, new { @class = "form-control", @type = "date" })
+                                    @Html.ValidationMessageFor(x => x.Date, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="user-info-blk">
+                                    @Html.LabelFor(x => x.Time)
+                                    @Html.TextBoxFor(x => x.Time, new { @class = "form-control", @type = "time" })
+                                    @Html.ValidationMessageFor(x => x.Time, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row user-info-row">
+                            <div class="col-md-12">
+                                <div class="user-info-blk">
+                                    <label>Premise Where you purchase the test kits:</label>
+                                    @Html.LabelFor(x => x.Place)
+                                    @Html.TextAreaFor(x => x.Place, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.Place, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row text-center mb-5">
+                            <div class="col-md-12">
+                                <div class="product">
+                                    <button type="submit" class="btn btn-primary d-flex">Next</button>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div> 
+</section>

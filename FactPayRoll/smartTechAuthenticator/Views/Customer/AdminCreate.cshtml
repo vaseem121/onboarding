@@ -1,0 +1,166 @@
+﻿@model smartTechAuthenticator.ViewModels.CustomerInfoViewModel
+@using smartTechAuthenticator.Models;
+@{
+    ViewBag.Title = "AdminCreate";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<style>
+    .text-end {
+        text-align: left !important;
+    }
+
+    .card {
+        box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+        border-radius: 10px;
+        padding: 10px;
+        margin-top: 50px;
+    }
+
+    .page-breadcrumb {
+        margin-top: 15px;
+    }
+
+        .page-breadcrumb .col-12 {
+            display: flex !important;
+        }
+</style>
+<div class="page-breadcrumb" style="">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+                <div class="ms-auto text-end">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="@Url.Action("ViewAdmindata", "Customer")">Customers</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                Create Admin
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@using (Html.BeginForm("AdminCreate", "Customer", FormMethod.Post, new { @id = "AdminCreate" }))
+{
+    <section id="hero" class="hero d-flex align-items-center">
+        @Html.AntiForgeryToken()
+        <div class="container login_container">
+            <div class="row">
+                <div class="col-md-12  mb-1 login_section">
+                    <div class="login-block mb-4">
+                        <h3><b style="text-align:center;">Create an Account</b></h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="form-group mt-3">
+                                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-12" })
+                                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-3">
+                            <div class="form-group mt-3">
+                                @Html.LabelFor(model => model.MobileNo, htmlAttributes: new { @class = "control-label col-md-12" })
+                                @Html.EditorFor(model => model.MobileNo, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.MobileNo, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3">
+                            <div class="form-group mt-3">
+                                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-12" })
+                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group mt-3 password-block">
+                                @Html.LabelFor(model => model.UserPass, htmlAttributes: new { @class = "control-label col-md-12" })
+                                @Html.EditorFor(model => model.UserPass, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.UserPass, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="form-group mt-3">
+                                @Html.LabelFor(model => model.PostCode, htmlAttributes: new { @class = "control-label col-md-12" })
+                                @Html.EditorFor(model => model.PostCode, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.PostCode, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group mt-3">
+                                @Html.LabelFor(model => model.Address1, htmlAttributes: new { @class = "control-label col-md-12" })
+                                @Html.TextAreaFor(model => model.Address1, new { @class = "form-control" })
+
+                                @Html.ValidationMessageFor(model => model.Address1, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group mt-3">
+                                @Html.LabelFor(model => model.Address2, htmlAttributes: new { @class = "control-label col-md-12" })
+                                @Html.TextAreaFor(model => model.Address2, new { @class = "form-control" })
+
+                                @Html.ValidationMessageFor(model => model.Address2, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group mt-3">
+                                @Html.LabelFor(model => model.Address3, htmlAttributes: new { @class = "control-label col-md-12" })
+                                @Html.TextAreaFor(model => model.Address3, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Address3, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="col-lg-3">
+                            </div>
+                            <div class="form-group mt-3">
+                                @Html.LabelFor(model => model.StateId, htmlAttributes: new { @class = "control-label col-md-12" })
+                                @Html.DropDownListFor(model => model.StateId, (IEnumerable<SelectListItem>)ViewData["States"], "Select State", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.StateId, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="col-lg-3">
+                            </div>
+                            <div class="form-group mt-3">
+                                @Html.LabelFor(model => model.DistricttId, htmlAttributes: new { @class = "control-label col-md-12" })
+                                @Html.DropDownListFor(model => model.DistricttId, new List<SelectListItem>(), "Select Districtt", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.DistricttId, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <br />
+                    <div class="form-group mt-1 text-center signin_option_block">
+
+                        <button class="btn btn-primary" style="Text-align: Center;">Create</button>
+                        <a href="@Url.Action("ViewAdmindata","Customer" )" class="btn btn-danger" style="float: Center;margin:5px">
+                            Cancel
+                        </a>
+                        <br />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/validate/js")
+@Scripts.Render("~/bundle/Account");

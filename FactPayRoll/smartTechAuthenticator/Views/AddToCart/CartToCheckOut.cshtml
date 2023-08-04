@@ -1,0 +1,244 @@
+﻿@model smartTechAuthenticator.ViewModels.CheckOutViewModel
+@{
+    ViewBag.Title = "CartToCheckOut";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+    decimal total = 0;
+    var price = Convert.ToDecimal(Model.ProductDetail.TotalPrice);
+    var ship = Model.Shippingfees;
+    decimal TotalPrice = price + Convert.ToDecimal(ship);
+}
+
+<link rel="stylesheet" href="~/Content/assets-mall/css/all.min.css">
+<link rel="stylesheet" href="~/Content/assets-mall/css/bootstrap.min.css">
+<link rel="stylesheet" href="~/Content/assets-mall/css/slick-theme.css">
+<link rel="stylesheet" href="~/Content/assets-mall/css/slick.css">
+<link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+<link rel="stylesheet" href="~/Content/assets-mall/css/style.css">
+
+
+
+<style>
+    .text-end {
+        text-align: left !important;
+    }
+
+    .card-body:before, .card-body:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    .page-breadcrumb .col-12.d-flex.no-block.align-items-center {
+        display: flex !important;
+    }
+
+    form.form-horizontal .card-body {
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+</style>
+
+<div class="page-breadcrumb" style=" margin-top: 90px; margin-left: 88px;">
+    <div class="row">
+        <div class="col-12 d-flex no-block align-items-center">
+            <h4 class="page-title">Product CheckOut</h4>
+            <div class="ms-auto text-end">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href=@Url.Action("Index","Mall")>Mall</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            CheckOut
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="checkout-wrapper" style="margin-top:30px" id="CheckOutSection">
+    <div class="checkout-content">
+        <div class="shipping-details">
+
+            <h5>Shipping Details</h5>
+            <ul>
+                <li>
+                    <b>Name</b>
+                    <span>@Model.CustomerDetail.Name</span>
+                </li>
+                <li>
+                    <b>Contact</b>
+                    <span>@Model.CustomerDetail.MobileNo</span>
+                </li>
+                <li>
+                    <b>Address <b>*</b></b>
+                    <span id="add">@Model.CustomerDetail.Address1 ,@Model.CustomerDetail.Address2 ,@Model.CustomerDetail.PostCode </span>
+                    <i class="fa fa-angle-right" id="Address"></i>
+                </li>
+                <li>
+                    <b>Message</b>
+                    <input type="text">
+                </li>
+            </ul>
+        </div>
+        <div class="items-wrapper">
+            @if (Model.ProductDetail.productNewViewList.Count != 0)
+            {
+                foreach (var item in Model.ProductDetail.productNewViewList)
+                {
+                    <div class="head">
+                        <span>Item</span>
+                        <span>@item.ProductName X @item.Qty</span>
+                    </div>
+                    <div class="img">
+                        <img src="~/Content/Product/@item.Photo" alt="">
+                    </div>
+                    var a = item.TotalPrice;
+                    total = total + Convert.ToDecimal(a);
+                }
+                TotalPrice = total + Convert.ToDecimal(Model.Shippingfees);
+            }
+        </div>
+        <div class="price">
+            <h5>Price</h5>
+            <ul>
+                <li>
+                    <span>Subtotal</span>
+                    <span>RM @((decimal)System.Math.Round(total, 2))</span>
+                </li>
+                <li>
+                    <span>Shipping fees</span>
+                    <span>+ RM @Model.Shippingfees</span>
+                </li>
+                <li>
+                    <span>Total Payment</span>
+                    <span>RM @((decimal)System.Math.Round(TotalPrice, 2))</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div id="AddressSection" class="checkout-wrapper address" style="display:none">
+    <div class="checkout-content">
+        <div class="shipping-details">
+            <i class="fa fa-angle-left" id="AddressBack"></i>
+            <h5>Currernt Address</h5>
+            <b>Note <b style="color:red">*</b></b> <b>:</b> <span style="color:red"> All fields are required !</span><br /><br />
+            <ul>
+                <li>
+                    <b>Street 1<b>*</b></b>
+                    <input type="text" class="" value="@Model.CustomerDetail.Address1" id="Address1">
+                </li>
+                <li>
+                    <b>Street 2<b>*</b></b>
+                    <input type="text" class="" value="@Model.CustomerDetail.Address2" id="Address2">
+                </li>
+                <li>
+                    <b>Postcode<b>*</b></b>
+                    <input type="text" class="" value="@Model.CustomerDetail.PostCode" id="PostCode">
+                </li>
+                <li>
+                    <b>State<b>*</b></b>
+                    <span>
+                        @Html.DropDownListFor(model => model.CustomerDetail.StateId, (IEnumerable<SelectListItem>)ViewData["States"], "Select State", new { @class = "form-control" })
+                    </span>
+                </li>
+                <li>
+                    <b>District<b>*</b></b>
+                    <span>
+                        @Html.DropDownListFor(model => model.CustomerDetail.DistricttId, (IEnumerable<SelectListItem>)ViewData["District"], "Select District", new { @class = "form-control" })
+                    </span>
+                </li>
+            </ul>
+            <button type="button" id="AddressSubmit">Submit</button>
+        </div>
+    </div>
+</div>
+
+
+<div class="footer-fix" id="FooterButton">
+    <div class="inner">
+        <div class="total">
+            <h6>Total Payment</h6>
+            <h6>RM @((decimal)System.Math.Round(TotalPrice, 2))</h6>
+        </div>
+        <div class="next">
+            <a href=@Url.Action("checkOutConfirmations","AddToCart")>Next</a>
+        </div>
+    </div>
+</div>
+
+<!-- Footer End -->
+
+<script src="~/Content/assets-mall/js/jquery.min.js"></script>
+<script src="~/Content/assets-mall/js/slick.js"></script>
+<script src="~/Content/assets-mall/js/bootstrap.bundle.min.js"></script>
+<script src="~/Content/assets-mall/js/main.js"></script>
+<script src="~/Scripts/Account/Account.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#Address").click(function () {
+            $("#CheckOutSection").css("display", "None")
+            $("#FooterButton").css("display", "None")
+            $("#AddressSection").css("display", "block")
+        });
+        $("#AddressBack").click(function () {
+            $("#CheckOutSection").css("display", "block")
+            $("#FooterButton").css("display", "block")
+            $("#AddressSection").css("display", "None")
+        });
+
+        $("#AddressSubmit").click(function () {
+            // alert();
+
+            var stateId = parseInt($('#CustomerDetail_StateId :selected').val());
+            var district = parseInt($('#CustomerDetail_DistricttId :selected').val());
+            var address1 = $('#Address1').val();
+            var address2 = $('#Address2').val();
+            var postcode = $('#PostCode').val();
+            var data = { "stateId": stateId, "districtId": district, "address1": address1, "address2": address2, "postcode": postcode };
+            $.ajax({
+                url: '/Mall/SaveCheckOutAddress',
+                method: 'post',
+                contentType: 'application/x-www-form-urlencoded',
+                data: data,
+                success: function (result) {
+                    if (result == "1") {
+                        location.reload();
+                    }
+                    else {
+                        
+                    }
+                },
+
+            })
+
+
+        });
+
+        $("#CustomerDetail_StateId").change(function () {
+            var stateId = $(this).val();
+            $.ajax({
+                type: "GET",
+                url: "/Account/GetDistrictts",
+                data: { stateId },
+                success: function (data) {
+                    var ddlDistricttId = $("#CustomerDetail_DistricttId");
+                    ddlDistricttId.empty();
+                    ddlDistricttId.append("<option>Select State</option>");
+                    $.each(data, function (index, item) {
+                        ddlDistricttId.append("<option value='" + item.Value + "'>" + item.Text + "</option>");
+                    });
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            })
+        });
+    });
+
+</script>

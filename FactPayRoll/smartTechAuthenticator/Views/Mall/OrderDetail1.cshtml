@@ -1,0 +1,290 @@
+﻿@model smartTechAuthenticator.ViewModels.OrderHistory
+@{
+    ViewBag.Title = "OrderDetail1";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    var i = 1;
+}
+
+<link rel="stylesheet" href="~/Content/assets-mall/css/style.css">
+<style>
+    .text-end {
+        text-align: left !important;
+    }
+
+    .card-body:before, .card-body:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    .page-breadcrumb .col-12.d-flex.no-block.align-items-center {
+        display: flex !important;
+    }
+
+    form.form-horizontal .card-body {
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+
+    .tracking-wrapper {
+        margin: 50px 0 120px;
+    }
+
+        .tracking-wrapper .tracking {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+    .tracking-inner {
+        box-shadow: 0 0 5px rgb(0 0 0 / 20%);
+        border-radius: 10px;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    .tracking-wrapper ul > li {
+        color: gray;
+        position: relative;
+        padding-left: 20px;
+        padding-bottom: 30px;
+    }
+
+        .tracking-wrapper ul > li:before {
+            content: "";
+            display: block;
+            width: 10px;
+            height: 10px;
+            background: lightgray;
+            border-radius: 50%;
+            position: absolute;
+            top: 6px;
+            left: 0;
+        }
+
+        .tracking-wrapper ul > li:after {
+            content: "";
+            display: block;
+            width: 2px;
+            height: 100%;
+            background: lightgray;
+            position: absolute;
+            top: 15px;
+            left: 4px;
+            transition: all 0.4s linear;
+        }
+
+        .tracking-wrapper ul > li.active:before {
+            background: green;
+        }
+
+        .tracking-wrapper ul > li.active:after {
+            background: green;
+        }
+
+        .tracking-wrapper ul > li:last-child:after {
+            content: none;
+        }
+
+        .tracking-wrapper ul > li p.heading {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+            .tracking-wrapper ul > li p.heading span {
+                color: #000;
+                font-weight: bold;
+                font-size: 17px;
+            }
+
+        .tracking-wrapper ul > li p {
+            color: #000;
+            font-size: 14px;
+            margin-bottom: 0px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+            .tracking-wrapper ul > li p.heading date {
+                font-weight: normal;
+                color: gray;
+            }
+
+    div#AddressSection {
+        margin: 50px 0 50px;
+    }
+
+
+    @@media(max-width:767px) {
+        table.table.align-middle.mb-0.bg-white {
+            overflow-x: auto;
+            width: 100%;
+            display: block;
+        }
+    }
+</style>
+<div class="page-breadcrumb">
+    <div class="row">
+        <div class="col-12 d-flex no-block align-items-center">
+            <h4 class="page-title">Order History</h4>
+            <div class="ms-auto text-end">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href=@Url.Action("OrderList","Home")>Orders</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            Order Details
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="AddressSection" class="checkout-wrapper address" style="margin-top:30px; ">
+    <div class="checkout-content">
+        <div class="shipping-details">
+            <h5 style="text-align:left">Customer Details</h5>
+            <ul>
+                <li>
+                    <b> Name :</b>
+                    <span class="">@Model.CustomerDetail.Name</span>
+                </li>
+                <li>
+                    <b>Address :</b>
+                    <span id="add">@Model.CustomerDetail.Address1 ,@Model.CustomerDetail.Address2 ,@Model.CustomerDetail.State ,@Model.CustomerDetail.District @Model.CustomerDetail.PostCode </span>
+                </li>
+                <li>
+                    <b>Phone Number :</b>
+                    <span>@Model.CustomerDetail.MobileNo</span>
+                </li>
+                <li>
+                    <b>Order Date :</b>
+                    <span>@Model.OrderDate</span>
+                </li>
+                <li>
+                    <strong>Tracking Number : </strong>
+                    <span>@Model.TrackingNumber</span>
+                </li>
+                <li>
+                    <strong>Courier Company :</strong>
+                    <span> @Model.CourierCompany</span>
+                </li>
+                <li>
+                    <b>Payment Satus :</b>
+                    <span class="rounded-pill d-inline">@Model.Paymentstatus</span>
+                </li>
+                <li>
+                    <b>Total Ammount :</b>
+                    <span class="rounded-pill d-inline">RM @Model.TotalAmount</span>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+<div class="tracking-wrapper">
+    <div class="tracking">
+        <div class="tracking-inner">
+            <ul>
+                <li class="active">
+                    <p class="heading">
+                        <span>Ordered</span>
+                        <date>@Model.OrderDate.ToString("dddd, dd MMMM yyyy")</date>
+                    </p>
+                    <p class="placed">Your Order has been placed.</p>
+                </li>
+                @if (Model.Shippingstatus == "2" || Model.Shippingstatus == "3" || Model.Shippingstatus == "4")
+                {
+                    <li class="active">
+                        <p class="heading">
+                            <span>Shipped</span>
+                            <date>@Model.ShippedDate.ToString("dddd, dd MMMM yyyy")</date>
+                        </p>
+                        <p class="picked-up">Yout item has been recieved in the hub nearest to you.</p>
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        <p class="heading">
+                            <span>Shipped</span>
+                        </p>
+                    </li>
+                }
+                @if (Model.Shippingstatus == "3" || Model.Shippingstatus == "4")
+                {
+                    <li class="active">
+                        <p class="heading">
+                            <span>Out For Delivery</span>
+                            <date>@Model.OutForDeliveryDate.ToString("dddd, dd MMMM yyyy")</date>
+                        </p>
+                        <p class="out-for-delivery">Your item is out for  delivery.</p>
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        <p class="heading">
+                            <span>Out For Delivery</span>
+                        </p>
+                    </li>
+                }
+                @if (Model.Shippingstatus == "4")
+                {
+                    <li class="active">
+                        <p class="heading">
+                            <span>Delivered</span>
+                            <date>@Model.Delivered.ToString("dddd, dd MMMM yyyy")</date>
+                        </p>
+                        <p class="out-for-delivery">Your item has been delivered.</p>
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        <p class="heading">
+                            <span>Delivered</span>
+                        </p>
+                    </li>
+                }
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row" style="margin-bottom:150px">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-9">
+            <h4 class="">Products Details</h4>
+            <table class="table align-middle mb-0 bg-white">
+                <thead class="bg-light">
+                    <tr>
+                        <th>Sr. No</th>
+                        <th>Product Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Photo</th>
+                    </tr>
+                </thead>
+                @foreach (var item in Model.OrderDetails)
+                {
+                    <tr>
+                        <td>@i</td>
+                        <td>@item.ProductName</td>
+                        <td>@item.Qty</td>
+                        <td>RM @item.Price</td>
+                        <td><img src="~/Content/Product/@item.Photo" alt="Iamge" style="width:100px;" class="mdi-rounded-corner" /> </td>
+                    </tr>
+                    i++;
+                }
+            </table>
+        </div>
+    </div>
+</div>
+

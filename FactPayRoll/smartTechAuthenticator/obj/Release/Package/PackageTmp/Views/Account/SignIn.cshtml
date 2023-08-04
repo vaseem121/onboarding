@@ -1,0 +1,551 @@
+﻿@model smartTechAuthenticator.ViewModels.SignInViewModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Sign-In</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <!-- Favicons -->
+    <link href="~/Content/assets/img/favicon.png" rel="icon">
+    <link href="~/Content/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet" />
+    <!-- Vendor CSS Files -->
+    <link href="~/Content/assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link href="~/Content/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="~/Content/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+    <link href="~/Content/assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link href="~/Content/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    @*Template Main CSS File*@
+    <link href="~/Content/assets/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="~/assets/css/style.css" rel="stylesheet" />
+    <style>
+        @@media(max-width:768px) {
+            body {
+                background: #00004a;
+            }
+
+            .fixed-top {
+                background: #00004a;
+                padding: 15px 0;
+                box-shadow: none;
+            }
+
+            .hero {
+                border: 1px solid gray;
+                border-radius: 30px;
+                position: fixed;
+                top: 23%;
+                z-index: 999;
+                height: 81vh;
+                background-color: white;
+            }
+
+            label {
+                display: inline-block;
+                font-size: 16px;
+            }
+
+            .fa-eye {
+                position: absolute;
+                right: 15px;
+                top: 53.5%;
+            }
+
+            .fa-eye-slash {
+                position: absolute;
+                right: 15px;
+                top: 53.5%;
+            }
+
+            .login_section {
+                padding: 8%;
+            }
+
+            .footer-menu .fa {
+                display: block !important;
+                margin: auto !important;
+            }
+
+            .password-block {
+                position: relative;
+            }
+        }
+
+        @@media(min-width:769px) {
+            body {
+                background: #00004a;
+            }
+
+            .fixed-top {
+                background: #00004a;
+                padding: 15px 0;
+                box-shadow: none;
+            }
+
+            .hero {
+                border: 1px solid gray;
+                border-radius: 30px;
+                position: fixed;
+                top: 23%;
+                z-index: 999;
+                height: 81vh;
+                background-color: white;
+            }
+
+            label {
+                display: inline-block;
+                font-size: 16px;
+            }
+            /*  .fa-eye {
+                position: absolute;
+                right: 26%;
+                top: 51.5%;
+            }*/
+
+            .fa-eye-slash {
+                position: absolute;
+                right: 26%;
+                top: 51.5%;
+            }
+
+            .login_section {
+                padding: 25%;
+            }
+
+            .logo-header {
+                display: block;
+                margin: auto;
+                width: 20% !important;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -10%);
+            }
+        }
+
+        .toast {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 350px;
+            max-width: 100%;
+            font-size: 0.875rem;
+            pointer-events: auto;
+            background-clip: padding-box;
+            border: 1px solid rgba(0,0,0,0.1);
+            box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+            border-radius: 2px;
+            z-index: 999;
+            color: white;
+            background-color: #28b779 !important;
+            box-shadow: 0px 0px 3px 1px;
+        }
+
+        .toast-header button {
+            color: white !important;
+            background-color: #28b779 !important;
+        }
+
+        .toast-header {
+            background-color: #28b779 !important;
+            color: white;
+            font-size: 16px !important;
+            font-weight: bold;
+        }
+
+        .topbar {
+            position: relative;
+            z-index: 9999 !important;
+            box-shadow: 1px 0px 7px rgb(0 0 0 / 5%);
+            background: #fff;
+            height: 64px;
+        }
+
+        .col-md-2 {
+            flex: 0 0 auto;
+            width: 70.66666667%;
+        }
+    </style>
+    <style>
+
+        /* Login Page */
+        .main_inner {
+            display: flex;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+            .main_inner > div {
+                width: 50%;
+            }
+
+        .main_wrapper {
+            height: 100vh;
+            background-color: #fff;
+        }
+
+        .main_inner .left .logo {
+            padding: 20px 20px;
+        }
+
+            .main_inner .left .logo h1 {
+                font-weight: bold;
+                color: rgb(3, 49, 86);
+                font-size: 26px;
+            }
+
+        .main_inner .login {
+            padding: 20px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+            .main_inner .login h3 {
+                margin-bottom: 30px;
+                font-size: 26px;
+                font-weight: bold;
+                line-height: 20px;
+                text-align: center;
+                color: #061815;
+            }
+
+            .main_inner .login form input:focus {
+                box-shadow: none;
+            }
+            .main_inner .login form .form-group{
+                margin-bottom:20px;
+            }
+
+            .main_inner .login form input {
+                height: 54px;
+                color: #000;
+                outline: 0;
+                border: 1px solid #d1d1d1;
+                padding: 0 20px;
+                border-radius: 8px;
+                position: relative;
+                background: 0 0;
+                box-shadow: none;
+            }
+
+            .main_inner .login form {
+                width: 100%;
+                max-width: 400px;
+            }
+
+                .main_inner .login form button {
+                    width: 100%;
+                    height: 63px;
+                    background-color: #008ecc !important;
+                    font-size: 17px;
+                    font-weight: 500;
+                    text-align: center;
+                    color: rgb(255, 255, 255);
+                    margin-top: 38px;
+                    border: 0;
+                    outline: none;
+                }
+
+                    .main_inner .login form button:hover {
+                        box-shadow: none;
+                    }
+
+        .main_inner {
+            display: flex;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+            .main_inner > div {
+                width: 50%;
+            }
+
+            .main_inner .left .logo {
+                padding: 20px 20px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+                .main_inner .left .logo h1 {
+                    font-weight: bold;
+                    color: #061815;
+                    font-size: 35px;
+                }
+
+            .main_inner .login {
+                padding: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                margin-top: 0;
+            }
+
+                .main_inner .login h3 {
+                    margin-bottom: 30px;
+                    font-size: 30px;
+                    font-weight: bold;
+                    line-height: 20px;
+                    text-align: center;
+                    color: #061815;
+                }
+
+                .main_inner .login form {
+                    width: 100%;
+                    max-width: 400px;
+                }
+
+
+                    .main_inner .login form .buttn {
+                        text-align: center;
+                    }
+
+            .main_inner .right {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                padding: 30px;
+                background: #008ecc;
+            }
+
+            .main_inner .login form .forgot a {
+                font-size: 15px;
+                color: #008ecc;
+            }
+
+            .main_inner .left .logo a:last-child {
+                font-size: 16px;
+                color: #008ecc;
+            }
+
+            .main_inner .login form a.login {
+                color: #fff;
+                width: 100%;
+                height: 63px;
+                background-color: #008ecc;
+                font-size: 17px;
+                font-weight: 500;
+                text-align: center;
+                color: rgb(255, 255, 255);
+                margin-top: 38px;
+                border: 0;
+                border-radius: 4px;
+                outline: none;
+            }
+
+            .main_inner .login.hide {
+                display: none;
+            }
+
+            .main_inner .register {
+                display: none;
+            }
+
+                .main_inner .register.show {
+                    display: flex;
+                }
+
+            .main_inner .right img {
+                max-width: 90%;
+            }
+
+            .main_inner .left .logo {
+                position: absolute;
+                top: 0;
+                width: 100%;
+            }
+
+            .main_inner > div.left {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .main_inner .left .logo h1 {
+                margin: 0;
+            }
+
+        .forgot {
+            text-align: right;
+        }
+
+        .backpage_link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            margin-bottom: 0;
+            font-weight: 600;
+            margin-top: 12px;
+            text-align: center;
+            color: #000;
+            width: 100%;
+        }
+
+            .backpage_link a {
+                color: #008ecc;
+                text-decoration: none;
+                margin: 0 0.3rem;
+                display: flex;
+            }
+
+        .main_inner .register form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 600px;
+        }
+
+            .main_inner .register form .form-group {
+                width: 48%;
+            }
+
+            .main_inner .register form .buttn {
+                width: 100%;
+            }
+
+        .login.forgot_pass {
+            display: none;
+        }
+
+        .backpage_link a {
+            text-decoration: underline;
+        }
+
+        .login.reset_pass {
+            display: none;
+        }
+
+        .main_inner .right .text {
+            text-align: center;
+            color: #fff;
+        }
+
+            .main_inner .right .text h3 {
+                font-size: 40px;
+            }
+
+            .main_inner .right .text p {
+                font-size: 20px;
+            }
+
+        .main_inner .left .logo img {
+            max-width: 200px;
+        }
+
+        /* End Login Page */
+
+        @@media(max-width:767px){
+            .main_inner {
+                flex-direction: column;
+            }
+
+                .main_inner .left {
+                    height: 100%;
+                }
+
+                .main_inner > div {
+                    width: 100%;
+                }
+
+                .main_inner .right {
+                    display: none;
+                }
+        }
+    </style>
+
+</head>
+
+<body>
+    
+        <div class="main_wrapper">
+            <div class="main_inner">
+                <div class="left">
+                    <div class="logo">
+                        <a href="#">
+                            <img src="~/assets/img/logo.png" />
+                            @*<h1>Fact Payroll</h1>*@
+                        </a>
+                    </div>
+                    <div class="login">
+                        <h3>Login</h3>
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+                    <div class="form-group">
+                        @if (TempData["error"] != null)
+                        {
+                            <span style="color:red">@TempData["error"]</span>
+                        }
+                        @*@Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                        @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                    </div>
+                            <div class="form-group mb-0 password-block">
+                                @*@Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                               @* <i class="fa fa-eye-slash" aria-hidden="true" onclick="myFunction()"></i>*@
+                            </div>
+
+                            <div class="buttn">
+                                <!-- <a class="login" href="#!">Login</a> -->
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </div>
+
+                        }
+                        </div>
+
+
+
+                </div>
+                <div class="right">
+                    <img src="~/assets/img/hero-mokeup.svg" />
+                    <div class="text">
+                        <h3>Title goes here...</h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+        @section Scripts{
+            @*@Scripts.Render("~/bundles/jquery")
+                @Scripts.Render("~/bundle/js");
+                @Scripts.Render("~/validate/js");
+                @Scripts.Render("~/toaster/js");*@
+            <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+        }
+    </body>
+</html>
+<script> 
+
+    function myFunction() {
+        var x = document.getElementById("Password");
+        if (x.type === "password") {
+            x.type = "text";
+
+        } else {
+            x.type = "password";
+
+        }
+    }
+
+
+</script>
+

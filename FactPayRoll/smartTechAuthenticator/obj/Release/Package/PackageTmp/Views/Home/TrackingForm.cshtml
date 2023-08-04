@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "TrackingForm";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+<style>
+    @@media(min-width:768px){
+        #hero .container {
+            margin-top: 5%;
+        }
+    }
+</style>
+<section id="hero" class="hero d-flex align-items-center"> 
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="user-profile-block">
+                    <form class="user-form">
+                        <h3>Tracking Form</h3>
+                        <div class="form-group">
+                            <label>Enter Code</label>
+                            <input type="text" class="form-control" placeholder="Enter 16 digit code here." />
+                        </div>
+                        <div class="form-group mt-2 mb-2">
+                            <a class="btn btn-primary pull-right">Submit</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> 
+</section>

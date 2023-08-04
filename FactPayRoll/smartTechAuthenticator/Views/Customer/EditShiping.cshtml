@@ -1,0 +1,310 @@
+﻿@model smartTechAuthenticator.ViewModels.ShippingViewModel
+@{
+    ViewBag.Title = "EditShiping";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    .text-end {
+        text-align: left !important;
+    }
+    .select {
+        min-width: 300px;
+    }
+
+    span#name2 {
+        margin-bottom: 20px;
+    }
+
+    span#name2 button {
+        border: 1px solid #cecbcb;
+        outline: none;
+        padding: 5px 20px;
+        border-radius: 5px;
+        margin-right: 5px;
+        position: relative;
+        margin-bottom: 5px;
+    }
+
+        span#name2 button span {
+            display: inline-block;
+            margin-right: 5px;
+            font-size: 17px;
+            position: absolute;
+            right: 0;
+            top: -3px;
+        }
+
+    select#DistricttId {
+        width: 320px;
+    }
+    select#StateId {
+        width: 320px;
+    }
+</style>
+<div class="page-breadcrumb">
+    <div class="row">
+        <div class="col-12 d-flex no-block align-items-center">
+            <h4 class="page-title"> Shiping</h4>
+            <div class="ms-auto text-end">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="@Url.Action("Index", "Customer")" Home</a></li>
+                        <li class="breadcrumb-item" aria-current="page">
+                            <a href=@Url.Action("Shipping","Customer")>Shiping</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            Edit Shiping
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+
+            <div class="card">
+                @using (Html.BeginForm("EditShiping", "Customer", FormMethod.Post, new { @class = "form-horizontal" }))
+                {
+
+                    @Html.AntiForgeryToken()
+                    @Html.HiddenFor(x => x.Id)
+                    <div class="card-body">
+                        <h4 class="card-title">Shiping Information</h4>
+                        <div class="form-group row">
+                            @Html.LabelFor(x => x.ShippingMethod, new { @class = "col-sm-3 text-end control-label col-form-label" })
+                            <div class="col-sm-9">
+                                @Html.TextBoxFor(x => x.ShippingMethod, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.ShippingMethod, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            @Html.LabelFor(x => x.ShippingCharge, new { @class = "col-sm-3 text-end control-label col-form-label" })
+                            <div class="col-sm-9">
+                                @Html.TextBoxFor(x => x.ShippingCharge, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.ShippingCharge, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+
+                            @Html.LabelFor(x => x.StateId, new { @class = "col-sm-3 text-end control-label col-form-label" })
+                            <div class="col-sm-9">
+                                @Html.HiddenFor(model => model.Final_State, new { @id = "finalState" })
+                                @if (Model.ShippingList.Count > 0)
+                                {
+                                    foreach (var item in Model.ShippingList)
+                                    {
+                                        <span id='name2'>
+                                            <button type='button'>@item.State<span onclick='StateFunction(this,@item.Id)'>&times;</span></button>
+                                        </span>
+                                    }
+                                }
+                                <span id='name4'></span>
+                                <span id='name1' style="display:none"></span>
+                                <input type="hidden" id="name3" value="@Model.State" />
+                                @Html.HiddenFor(model => model.State_Id)
+                                @Html.DropDownListFor(model => model.StateId, (IEnumerable<SelectListItem>)ViewData["States"], "Select State", new { @class = "state statete", @multiple = "multiple", @onchange = "myFunction()" })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            @Html.LabelFor(x => x.DistricttId, new { @class = "col-sm-3 text-end control-label col-form-label" })
+                            <div class="col-sm-9">
+                                @Html.HiddenFor(model => model.Final_Dis, new { @id = "finalDis" })
+                               
+                                @if (Model.ShippingList1.Count>0)
+                                {
+                                    foreach (var item in Model.ShippingList1)
+                                    {
+                                        <span id='name'>
+                                            <button type='button'>@item.District<span onclick='DsiatrictFunction(this,@item.Id)'>&times;</span></button>
+                                        </span>
+                                    }
+                                }
+                                    <span id='name1' style="display:none"></span>
+                                    <input type="hidden" id="name0" value="@Model.District" />
+                                    @Html.HiddenFor(model => model.Districtt_Id)
+                                    @Html.DropDownListFor(model => model.DistricttId, new List<SelectListItem>(), "------Select District------", new { @class = "multi", @multiple = "multiple" })
+                                </div>
+                        </div>
+
+                    </div>
+                    <div class="">
+                        <div class="card-body">
+                            <a href="@Url.Action("Shipping","Customer" )" class="btn btn-danger" style="float: right;margin:5px">
+                                Cancel
+                            </a>
+                            <button type="submit" class="btn btn-primary" style="float: right; margin: 5px">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Content/assets-mall/js/jquery.min.js"></script>
+<script src="~/Scripts/MultipleState.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script>
+    function myFunction() {
+     
+    }
+    $(function () {
+        $('.multi').change(function (e) {
+            var selected = $(e.target).val();
+            var data2 = $('#finalDis').text();
+            if (data2 != null && data2 != "") {
+                var arr = data2.split(",");
+                if (arr.indexOf(selected[0]) !== -1) {
+
+                } else {
+                    $('#finalDis').append(selected + ',');
+                    var final = $('#finalDis').text();
+                    var data = $('#name1').text();
+                    $('#finalDis').val(final);
+                    $('#Districtt_Id').val(data);
+                    var text_t = $(this).find('option:selected').text();
+                    $.each(selected, function (item, element) {
+                        $('#name').append("<button type='button'>" + text_t + "<span onclick='DistrictRemove(this," + selected + ")'>&times;</span>" + "</button>");
+                    });
+
+                }
+
+            } else {
+                $('#finalDis').append(selected + ',');
+                var final = $('#finalDis').text();
+                var data = $('#name1').text();
+                $('#finalDis').val(final);
+                $('#Districtt_Id').val(data);
+                var text_t = $(this).find('option:selected').text();
+                $.each(selected, function (item, element) {
+                    $('#name').append("<button type='button'>" + text_t + "<span onclick='DistrictRemove(this," + selected + ")'>&times;</span>" + "</button>");
+                });
+            }
+
+
+          
+        });
+    });
+    function DistrictRemove(e,id) {
+        var pp = $("#finalDis").text();
+        var data = pp.split(',');
+        var removeItem = id;
+        data = jQuery.grep(data, function (value) {
+            return value != removeItem;
+        });
+        $("#finalDis").text(data);
+        e.parentElement.remove();
+      
+    }
+</script>
+
+<script>
+    $(function () {
+        $('.statete').change(function (e) {
+         
+            var data = "";
+            var selected = $(e.target).val();
+            var data = $('#finalState').text();
+            if (data != null && data != "") {
+                var arr = data.split(",");
+                if (arr.indexOf(selected[0]) !== -1) {
+
+                } else {
+                    $('#finalState').append(',' + selected);
+                    var final = $('#finalState').text();
+                    /* alert(final);*/
+                    var v = $(this).text();
+                    $('#finalState').val(final);
+                    $('#State_Id').val(selected);
+                    var text_t = $(this).find('option:selected').each(function (i) {
+                        //  debugger;
+                        if (this.text != "undefined") {
+                            data = this.text;
+                            $('#name4').append("<button type='button'>" + data + "<span onclick='StateFunction(this," + selected+")'>&times;</span>" + "</button>");
+                        }
+                    });
+                }
+            } else {
+                $('#finalState').append(',' + selected);
+                var final = $('#finalState').text();
+                /* alert(final);*/
+                var v = $(this).text();
+                $('#finalState').val(final);
+                $('#State_Id').val(selected);
+                var text_t = $(this).find('option:selected').each(function (i) {
+                    //  debugger;
+                    if (this.text != "undefined") {
+                        data = this.text;
+                        $('#name4').append("<button type='button'>" + data + "<span onclick='StateFunction(this," + selected +")'>&times;</span>" + "</button>");
+                    }
+                });
+            }
+
+
+
+
+          
+        });    
+    });
+
+    function StateRemove(e,id) {
+        var pp = $("#finalState").text();
+        var data = pp.split(',');
+        var removeItem = id;
+        data = jQuery.grep(data, function (value) {
+            return value != removeItem;
+        });
+        $("#finalState").text(data);
+        e.parentElement.remove();
+    }
+</script>
+
+<script>
+    $(document).ready(function () {
+        var data1 = $('#State_Id').val();
+        $("#finalState").text(data1);
+        $("#finalState").val(data1);
+      
+        var data2 = $('#Districtt_Id').val();
+        $("#finalDis").text(data2);
+        $("#finalDis").val(data2);
+       
+    });
+  
+</script>
+<script>
+    function StateFunction(e,id) {
+        
+        var pp = $("#finalState").text();
+        var data = pp.split(',');
+        var removeItem = id;
+        data = jQuery.grep(data, function (value) {
+            return value != removeItem;
+        });
+        $("#finalState").text(data);
+        var final = $('#finalState').text();
+        $('#finalState').val(final);
+        e.parentElement.remove();
+    }
+
+    function DsiatrictFunction(e, id) {
+
+        var pp = $("#finalDis").text();
+        var data = pp.split(',');
+        var removeItem = id;
+        data = jQuery.grep(data, function (value) {
+            return value != removeItem;
+        });
+      
+        $("#finalDis").text(data);
+        var final = $('#finalDis').text();
+        $('#finalDis').val(final);
+        e.parentElement.remove();
+    }
+</script>

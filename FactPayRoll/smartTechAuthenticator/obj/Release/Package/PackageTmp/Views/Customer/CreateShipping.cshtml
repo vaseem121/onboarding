@@ -1,0 +1,226 @@
+﻿@model smartTechAuthenticator.ViewModels.ShippingViewModel
+@{
+    ViewBag.Title = "CreateShipping";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    .text-end {
+        text-align: left !important;
+    }
+
+    .select {
+        min-width: 300px;
+    }
+
+    span#name {
+        margin-bottom: 20px;
+    }
+
+        span#name button {
+            border: 1px solid #cecbcb;
+            outline: none;
+            padding: 5px 20px;
+            border-radius: 5px;
+            margin-right: 5px;
+            position: relative;
+            margin-bottom: 5px;
+        }
+
+            span#name button span {
+                display: inline-block;
+                margin-right: 5px;
+                font-size: 17px;
+                position: absolute;
+                right: 0;
+                top: -3px;
+            }
+
+    select#DistricttId {
+        width: 320px;
+    }
+    select#StateId {
+        width: 320px;
+    }
+</style>
+
+<div class="page-breadcrumb">
+    <div class="row">
+        <div class="col-12 d-flex no-block align-items-center">
+            <h4 class="page-title"> Shiping</h4>
+            <div class="ms-auto text-end">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="@Url.Action("Index", "Customer")">Home</a></li>
+                        <li class="breadcrumb-item" aria-current="page">
+                            <a href=@Url.Action("Shipping","Customer")>Shiping</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            Create Shiping
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                @using (Html.BeginForm("CreateShipping", "Customer", FormMethod.Post, new { @class = "form-horizontal" }))
+                {
+
+                    @Html.AntiForgeryToken()
+                    // @Html.HiddenFor(x => x.Id)
+                    <div class="card-body">
+                        <h4 class="card-title">Shiping Information</h4>
+                        <div class="form-group row">
+                            @Html.LabelFor(x => x.ShippingMethod, new { @class = "col-sm-3 text-end control-label col-form-label" })
+                            <div class="col-sm-9">
+                                @Html.TextBoxFor(x => x.ShippingMethod, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.ShippingMethod, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            @Html.LabelFor(x => x.ShippingCharge, new { @class = "col-sm-3 text-end control-label col-form-label" })
+                            <div class="col-sm-9">
+                                @Html.TextBoxFor(x => x.ShippingCharge, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.ShippingCharge, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            @Html.LabelFor(x => x.StateId, new { @class = "col-sm-3 text-end control-label col-form-label" })
+                            <div class="col-sm-9">
+                                <div class="row">
+                                    <span id='name3'></span>
+                                </div>
+                                <span id='name2' style="display:none"></span>
+                                @Html.HiddenFor(model => model.State_Id ,new {@id="State_ID" })
+                                @Html.DropDownListFor(model => model.StateId, (IEnumerable<SelectListItem>)ViewData["States"], "--------Select State--------", new { @class = "selectpicker state", @multiple = "true" })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            @Html.LabelFor(x => x.DistricttId, new { @class = "col-sm-3 text-end control-label col-form-label" })
+                            <div class="col-sm-9">
+                                <div class="row">
+                                    <span id='name'></span>
+                                </div>
+                                <span id='name1' style="display:none"></span>
+                                @Html.HiddenFor(model => model.Districtt_Id, new { @id = "Districtt_ID" })
+                                @Html.DropDownListFor(model => model.DistricttId, new List<SelectListItem>(), "------Select District------", new { @class = "multi", @multiple = "multiple" })
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="">
+                        <div class="card-body">
+                            <a href="@Url.Action("ManageBannerCarousal", "Customer")" class="btn btn-danger" style="float: right;margin:5px">
+                                Cancel
+                            </a>
+                            <button type="submit" class="btn btn-primary" style="float: right; margin: 5px">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Content/assets-admin/libs/jquery/dist/jquery.min.js"></script>
+<script src="~/Scripts/MultipleState.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script>
+    $(function () {
+        $('.multi').change(function (e) {
+            debugger;
+            var selected = $(e.target).val();
+            var data1 = $('#name1').text();
+            if (data1 != null && data1 != "") {
+                var arr = data1.split(",");
+                if (arr.indexOf(selected[0]) !== -1) {
+
+                } else {
+                    $('#name1').append(selected + ',')
+                    var data = $('#name1').text();
+                    $('#Districtt_ID').val(data);
+                    var text_t = $(this).find('option:selected').text();
+                    $.each(selected, function (item, element) {
+                        $('#name').append("<button type='button'>" + text_t + "<span  onclick='myFunction(this," + selected+")'>&times;</span>" + "</button>");
+                    })
+                }
+
+            } else {
+                $('#name1').append(selected + ',')
+                var data = $('#name1').text();
+                $('#Districtt_ID').val(data);
+                var text_t = $(this).find('option:selected').text();
+                $.each(selected, function (item, element) {
+                    $('#name').append("<button type='button'>" + text_t + "<span  onclick='myFunction(this," + selected +")'>&times;</span>" + "</button>");
+                })
+            }              
+        });
+
+    });
+
+    function myFunction(e,se) {
+        debugger;
+        var selected = $(".multi").val();
+        var pp = $("#Districtt_ID").val();
+        var data = pp.split(',');
+        var removeItem = se;
+        data2 = jQuery.grep(data, function (value) {
+            return value != removeItem;
+        });
+        $("#Districtt_ID").val(data2);
+        var data1 = $('#name1').text(data2);
+        e.parentElement.remove();
+    }
+</script>
+<script>
+    $(function () {
+        $('.state').change(function (e, id) {
+            var selected = $(e.target).val();
+            var data = $('#name2').text();
+            if (data != null && data != "") {              
+                var arr = data.split(",");
+                if (arr.indexOf(selected[0]) !== -1) {
+                   
+                } else {
+                    $('#name2').append(selected + ',')
+                    var data1 = $('#name2').text();
+                    $('#State_ID').val(data1);
+                    var text_ts = $(this).find('option:selected').text();
+                    $.each(selected, function (item, element) {
+                        $('#name3').append("<button type='button'>" + text_ts + "<span  onclick='StateRemove(this," + selected+")'>&times;</span>" + "</button>");
+                    });
+                }
+            } else {
+                $('#name2').append(selected + ',')
+                var data1 = $('#name2').text();
+                $('#State_ID').val(data1);
+                var text_ts = $(this).find('option:selected').text();
+                $.each(selected, function (item, element) {
+                    $('#name3').append("<button type='button'>" + text_ts + "<span  onclick='StateRemove(this," + selected +")'>&times;</span>" + "</button>");
+                });
+            }         
+        });
+
+    });
+    function StateRemove(e,select) {
+        var selected = $(".state").val();
+        var pp = $("#State_ID").val();
+        var data = pp.split(',');
+        var removeItem = select;
+        data1 = jQuery.grep(data, function (value) {
+            return value != removeItem;
+        });
+        $("#State_ID").val(data1);
+        $('#name2').text(data1)
+        e.parentElement.remove();
+    }
+
+</script>
